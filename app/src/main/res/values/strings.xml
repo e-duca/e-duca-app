@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">E-duca</string>
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tv_postada">Postada em 01/01/2023</string>
+    <string name="tv_title">Título da Aula</string>
+    <string name="tv_ability">Habilidade 1</string>
 </resources>
