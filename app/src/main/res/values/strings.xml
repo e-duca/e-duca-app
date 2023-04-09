@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">E-duca</string>
+    <string name="titulo_login">Faça seu login</string>
+    <string name="hint_navbar">O que você deseja estudar hoje?...</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_password">Senha</string>
+    <string name="txt_link_sign_up">Ainda não tem uma conta?</string>
+    <string name="txt_link">Realizar cadastro</string>
+
+
 </resources>
