@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LikertFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50mm"
+            android:backgroundTint="#FFFFFF"
+            android:src="@drawable/naogostei" />
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="50mm"
+            android:backgroundTint="#FFFFFF"
+            android:src="@drawable/poderiamelhorar" />
+
+
+        <ImageView
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="50mm"
+            android:backgroundTint="#FFFFFF"
+            android:src="@drawable/naosei" />
+
+
+        <ImageView
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="245dp"
+            android:layout_marginTop="50mm"
+            android:backgroundTint="#FFFFFF"
+            android:src="@drawable/gostei" />
+
+        <ImageView
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="310dp"
+            android:layout_marginTop="50mm"
+            android:backgroundTint="#FFFFFF"
+            android:src="@drawable/amei" />
+
+        <TextView
+            android:layout_width="194dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="82dp"
+            android:layout_marginTop="141dp"
+            android:textStyle="bold"
+            android:text="O quanto você gostou desse conteúdo?"
+            android:textSize="16dp"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Não gostei"
+            android:layout_marginTop="60mm"
+            android:textStyle="bold"
+            android:textSize="10sp"
+            android:layout_marginLeft="50dp"
+            />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:text="Poderia Melhorar"
+            android:textStyle="bold"
+            android:layout_marginTop="60mm"
+            android:textSize="10sp"
+            android:layout_marginLeft="120dp"
+            />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:text="Não sei"
+            android:textStyle="bold"
+            android:layout_marginTop="60mm"
+            android:textSize="10sp"
+            android:layout_marginLeft="188dp"
+            />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:text="Gostei"
+            android:textStyle="bold"
+            android:layout_marginTop="60mm"
+            android:textSize="10sp"
+            android:layout_marginLeft="255dp"
+            />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:text="Amei!"
+            android:textStyle="bold"
+            android:layout_marginTop="60mm"
+            android:textSize="10sp"
+            android:layout_marginLeft="322dp"
+            />
+
+    </RelativeLayout>
+
+
+
+
+</FrameLayout>
