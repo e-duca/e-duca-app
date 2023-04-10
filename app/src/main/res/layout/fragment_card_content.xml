@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CardContent">
+
+    <RelativeLayout
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/card_content"
+        >
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="29dp"
+            android:id="@+id/imageCard"
+            android:src="@drawable/CardContentImage"
+            android:layout_marginTop="15dp"
+            />
+
+        <TextView
+            android:id="@+id/postada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_postada"
+            android:layout_marginLeft="300dp"
+            android:textSize="6sp"
+            android:textStyle="bold"
+            android:textColor="@color/grey"
+            android:layout_marginTop="20dp"
+
+            />
+
+        <TextView
+            android:id="@+id/text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imageCard"
+            android:padding="8dp"
+            android:text="@string/tv_title"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hability"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_view"
+            android:layout_toRightOf="@id/imageCard"
+            android:paddingLeft="8dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="8dp"
+            android:text="@string/tv_ability"
+            android:textColor="@color/blue300"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>
