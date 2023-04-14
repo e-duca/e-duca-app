@@ -8,23 +8,21 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/img_header"
             android:layout_width="match_parent"
-            android:layout_height="320dp"
-            android:background="@mipmap/banner" />
+            android:layout_height="wrap_content"
+            android:background="@mipmap/banner01" />
 
         <ImageView
             android:id="@+id/img_logo"
-            android:layout_width="180dp"
-            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:background="@mipmap/logo" />
+            android:background="@mipmap/logo_m" />
 
         <TextView
             android:id="@+id/tv_titulo_login"
@@ -59,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_input"
-                android:drawableEnd="@drawable/ic_baseline_person"
+                android:drawableEnd="@drawable/ic_baseline_email"
                 android:hint="@string/hint_email"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
@@ -111,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="@string/txt_link_sign_up"
+                android:text="@string/txt_link_login"
                 android:textColor="#0C0C0C"
                 android:textSize="16sp" />
 
