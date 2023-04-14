@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SaudacaoFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/rectangle_2"
+            android:layout_width="304.5dp"
+            android:layout_height="93.6dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="77dp"
+            android:background="@drawable/borda" />
+
+        <ImageView
+
+            android:id="@+id/image_74"
+            android:layout_width="121dp"
+            android:layout_height="121dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="232dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/icon" />
+
+        <TextView
+            android:id="@+id/ol_lucas_"
+            android:layout_width="209dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="67dp"
+            android:layout_marginTop="90dp"
+            android:gravity="top"
+            android:text="@string/txt_nome_usuario"
+            android:textAppearance="Olá, Lucas"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/com_d_vidas"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="67dp"
+            android:layout_marginTop="114dp"
+            android:gravity="top"
+            android:text="@string/txt_saudacao"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+
+
+</FrameLayout>
