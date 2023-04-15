@@ -1,68 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="30dp"
-    android:layout_marginTop="15dp"
-    android:layout_marginRight="30dp"
-    android:layout_marginBottom="15dp"
-    android:background="@drawable/card_content"
-    android:elevation="5dp"
-    android:leftColor="@android:color/black"
     tools:context=".CardContent">
 
-
-    <ImageView
-        android:id="@+id/imageCard"
-        android:layout_width="35dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:src="@mipmap/card" />
-
-    <LinearLayout
-        android:id="@+id/linear_title"
+    <RelativeLayout
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/imageCard"
-        android:gravity="start">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/card_content"
+        android:elevation="5dp">
 
-        <TextView
-            android:id="@+id/title"
-            style="@style/style_subText"
+        <ImageView
+            android:id="@+id/imageCard"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:src="@mipmap/card" />
+
+        <LinearLayout
+            android:id="@+id/linear_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tv_title"
-            android:textColor="@color/black" />
-    </LinearLayout>
+            android:layout_toEndOf="@id/imageCard"
+            android:gravity="start">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="end">
+            <TextView
+                android:id="@+id/title"
+                style="@style/style_subText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_title"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/posted"
+                style="@style/style_textXXSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/tv_postada"
+                android:textColor="#B1B1B1" />
+        </LinearLayout>
+
 
         <TextView
-            android:id="@+id/posted"
-            style="@style/style_textXXSmall"
-            android:layout_width="wrap_content"
+            android:id="@+id/hability"
+            style="@style/style_textXSmall"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/linear_title"
+            android:layout_toEndOf="@id/imageCard"
             android:fontFamily="@font/montserrat_semibold"
-            android:text="@string/tv_postada"
-            android:textColor="#B1B1B1" />
-    </LinearLayout>
+            android:text="@string/tv_ability"
+            android:textColor="@color/blue300" />
 
 
-    <TextView
-        android:id="@+id/hability"
-        style="@style/style_textXSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linear_title"
-        android:layout_toEndOf="@id/imageCard"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="@string/tv_ability"
-        android:textColor="@color/blue300" />
-
-
-</RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>
