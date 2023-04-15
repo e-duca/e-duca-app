@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,32 +9,33 @@
         android:id="@+id/containerTop"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@mipmap/header01"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@mipmap/header01" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="start">
 
         <ImageView
             android:id="@+id/img_logo"
-            android:layout_width="0dp"
+            android:layout_width="60dp"
             android:layout_height="20dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="280dp"
-            android:layout_weight="1"
-            android:background="@mipmap/logo_m" />
+            android:background="@mipmap/logo_s" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/menu"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_weight="1"
             android:backgroundTint="@color/purple800"
-            android:drawableLeft="@drawable/ic_baseline_menu" />
+            android:drawableBottom="@drawable/ic_baseline_menu" />
 
     </LinearLayout>
 
