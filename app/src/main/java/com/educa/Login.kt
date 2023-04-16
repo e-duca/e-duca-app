@@ -2,6 +2,7 @@ package com.educa
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -24,27 +25,42 @@ class Login : AppCompatActivity() {
         apiClient = ApiClient()
         sessionManager = SessionManager(this)
 
-        val emailField = findViewById<EditText>(R.id.ipt_email)
-        val email = emailField.text.toString()
-
-        val passwordField = findViewById<EditText>(R.id.ipt_password)
-        val password = passwordField.text.toString()
-
-        val loginButton = findViewById<Button>(R.id.btn_cadastro)
+        val loginButton = findViewById<Button>(R.id.btn_login)
 
         loginButton.setOnClickListener {
+            val emailField = findViewById<EditText>(R.id.ipt_email)
+            val email = emailField.text.toString()
+
+            val passwordField = findViewById<EditText>(R.id.ipt_password)
+            val password = passwordField.text.toString()
+
             apiClient.getAuthApiService().login(LoginRequest(email, password))
                 .enqueue(object : Callback<LoginResponse> {
                     override fun onResponse(
                         call: Call<LoginResponse>,
                         response: Response<LoginResponse>
                     ) {
-                        val loginResponse = response.body()
 
-                        if (loginResponse?.statusCode == 200) {
-                            sessionManager.saveAuthToken(loginResponse.token)
+                        if (response.isSuccessful) {
+                            val loginResponse = response.body()?.token
+                            if (loginResponse != null) {
+                                sessionManager.saveAuthToken(loginResponse)
+                                Toast.makeText(
+                                    baseContext, "Autenticação realizada com sucesso",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                Log.w("TOKEN", "${response.body()?.token}")
+                            }
+
                         } else {
-                            // Error logging in
+                            Log.e(
+                                "ERRO AO FAZER LOGIN",
+                                "Call: ${call} Response: ${response}"
+                            )
+                            Toast.makeText(
+                                baseContext, "Erro, conferir Log",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
 

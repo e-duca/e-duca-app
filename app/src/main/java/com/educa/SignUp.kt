@@ -3,6 +3,7 @@ package com.educa
 import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -64,10 +65,16 @@ class SignUp : AppCompatActivity() {
                     ) {
                         if (response.isSuccessful) {
                             val student = response.body()
+                            Log.w("newStudent", "${newStudent}")
                             Toast.makeText(
                                 baseContext, "Estudante Cadastrado: ${student}",
                                 Toast.LENGTH_SHORT
                             ).show()
+                        } else {
+                            Log.e(
+                                "ERRO AO CRIAR NOVO ESTUDANTE",
+                                "Call: ${call} Response: ${response} NewStudent: ${newStudent}"
+                            )
                         }
                     }
 
