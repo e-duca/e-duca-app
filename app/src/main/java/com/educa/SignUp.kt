@@ -5,17 +5,28 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.educa.api.model.Student
+import com.educa.api.service.ApiClient
+import com.educa.api.service.SessionManager
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 
 class SignUp : AppCompatActivity() {
     private lateinit var tvDatePicker: com.google.android.material.textfield.TextInputEditText
     private lateinit var clickCalendar: com.google.android.material.textfield.TextInputEditText
+    private lateinit var sessionManager: SessionManager
+    private lateinit var apiClient: ApiClient
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
+        apiClient = ApiClient()
+        sessionManager = SessionManager(this)
 
         val signUpButton = findViewById<Button>(R.id.btn_cadastro)
         signUpButton.setOnClickListener {
@@ -40,10 +51,35 @@ class SignUp : AppCompatActivity() {
             val newStudent = Student(
                 nome = name,
                 sobrenome = lastName,
-                email =  email,
+                email = email,
                 dataNasc = birthdate,
                 senha = password
             )
+
+            apiClient.getMainApiService().registerStudent(newStudent)
+                .enqueue(object : Callback<Student> {
+                    override fun onResponse(
+                        call: Call<Student>,
+                        response: Response<Student>
+                    ) {
+                        if (response.isSuccessful) {
+                            val student = response.body()
+                            Toast.makeText(
+                                baseContext, "Estudante Cadastrado: ${student}",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<Student>, t: Throwable) {
+                        Toast.makeText(
+                            baseContext, "Erro na API: ${t.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        t.printStackTrace()
+                    }
+
+                })
         }
 
         tvDatePicker = findViewById(R.id.ipt_birthdate)

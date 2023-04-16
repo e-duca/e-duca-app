@@ -32,35 +32,30 @@ class Login : AppCompatActivity() {
 
         val loginButton = findViewById<Button>(R.id.btn_cadastro)
 
-        /*
         loginButton.setOnClickListener {
-            apiClient.getAuthApiService().login(
-                LoginRequest(email, password)
-                    .enqueue(object : Callback<LoginResponse> {
+            apiClient.getAuthApiService().login(LoginRequest(email, password))
+                .enqueue(object : Callback<LoginResponse> {
+                    override fun onResponse(
+                        call: Call<LoginResponse>,
+                        response: Response<LoginResponse>
+                    ) {
+                        val loginResponse = response.body()
 
-                        override fun onResponse(
-                            call: Call<LoginResponse>,
-                            response: Response<LoginResponse>
-                        ) {
-                            val loginResponse = response.body()
-
-                            if (loginResponse?.statusCode == 200) {
-                                sessionManager.saveAuthToken(loginResponse.token)
-                            } else {
-                                // Error logging in
-                            }
+                        if (loginResponse?.statusCode == 200) {
+                            sessionManager.saveAuthToken(loginResponse.token)
+                        } else {
+                            // Error logging in
                         }
+                    }
 
-                        override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                            Toast.makeText(
-                                baseContext, "Erro na API: ${t.message}",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            t.printStackTrace()
-                        }
-                    })
-            )
+                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                        Toast.makeText(
+                            baseContext, "Erro na API: ${t.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        t.printStackTrace()
+                    }
+                })
         }
-         */
     }
 }
