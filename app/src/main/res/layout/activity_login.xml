@@ -24,107 +24,103 @@
             android:layout_marginTop="30dp"
             android:background="@mipmap/logo_m" />
 
-        <TextView
-            android:id="@+id/tv_titulo_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/img_header"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/montserrat_medium"
-            android:padding="20dp"
-            android:text="@string/titulo_login"
-            android:textColor="#0C0C0C"
-            android:textSize="32sp" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtInputLayoutEmail"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_titulo_login"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            app:errorEnabled="true"
-            app:errorTextColor="#CA2222"
-            app:hintAnimationEnabled="true"
-            app:hintTextColor="@color/black">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ipt_Email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_input"
-                android:drawableEnd="@drawable/ic_baseline_email"
-                android:hint="@string/hint_email"
-                android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:padding="15dp"
-                android:textSize="18sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtInputLayoutPasword"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtInputLayoutEmail"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            app:errorEnabled="true"
-            app:errorTextColor="#CA2222"
-            app:hintAnimationEnabled="true"
-            app:hintTextColor="@color/black"
-            app:passwordToggleEnabled="true">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ipt_Password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_input"
-                android:hint="@string/hint_password"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:padding="15dp"
-                android:textSize="18sp" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtInputLayoutPasword"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:layout_below="@id/img_header"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_text"
+                android:id="@+id/tv_titulo"
+                style="@style/style_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_medium"
-                android:text="@string/txt_link_login"
-                android:textColor="#0C0C0C"
-                android:textSize="16sp" />
+                android:layout_gravity="center"
+                android:padding="20dp"
+                android:text="@string/titulo_signup" />
 
-            <TextView
-                android:id="@+id/linkText"
-                android:layout_width="wrap_content"
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputLayoutEmail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autoLink="web"
-                android:fontFamily="@font/montserrat_medium"
-                android:text="@string/txt_link"
-                android:textColor="@color/blue500"
-                android:textSize="16sp" />
+                app:errorEnabled="true"
+                app:errorTextColor="#CA2222"
+                app:hintAnimationEnabled="true"
+                app:hintTextColor="@color/black">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ipt_Email"
+                    style="@style/style_ipt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:drawableEnd="@drawable/ic_baseline_email"
+                    android:hint="@string/hint_email"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputLayoutPasword"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                app:errorTextColor="#CA2222"
+                app:hintAnimationEnabled="true"
+                app:hintTextColor="@color/black"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ipt_Password"
+                    style="@style/style_ipt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="@string/hint_password"
+                    android:inputType="textPassword" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/bt_enter"
+                    style="@style/style_btnYellowLarger"
+                    android:background="@drawable/btn_solid"
+                    android:text="@string/txt_enter"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_text"
+                    style="@style/style_subText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_link_login"
+                    android:textColor="#0C0C0C" />
+
+                <TextView
+                    android:id="@+id/linkText"
+                    style="@style/style_subText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:text="@string/txt_link"
+                    android:textColor="@color/blue500" />
+
+            </LinearLayout>
         </LinearLayout>
-
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
