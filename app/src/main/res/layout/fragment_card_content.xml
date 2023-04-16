@@ -10,7 +10,6 @@
     android:layout_marginBottom="15dp"
     android:background="@drawable/card_content"
     android:elevation="5dp"
-    android:leftColor="@android:color/black"
     tools:context=".CardContent">
 
 
@@ -61,7 +60,7 @@
         android:layout_below="@id/linear_title"
         android:layout_toEndOf="@id/imageCard"
         android:fontFamily="@font/montserrat_semibold"
-        android:text="@string/tv_ability"
+        android:text="@string/tv_hability"
         android:textColor="@color/blue300" />
 
 
