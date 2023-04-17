@@ -18,4 +18,11 @@
     <string name="txt_nome_usuario">Olá, Lucas!</string>
     <string name="txt_saudacao">Com dúvidas? Utilize o fórum para se comunicar com outros estudantes</string>
     <string name="txt_entrar">Entrar</string>
+    <string name="txt_titulo_pergunta">Título da pergunta</string>
+    <string name="txt_corpo_pergunta">Início do corpo da pergunta...</string>
+    <string name="txt_qtdRespostas_pergunta">3 respostas</string>
+    <string name="txt_data_pergunta">Postado em 01/01/22\n por</string>
+    <string name="txt_nome_pergunta">Lucas Gestal</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
