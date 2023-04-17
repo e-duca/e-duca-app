@@ -6,6 +6,12 @@
     <string name="hint_password">Senha</string>
     <string name="txt_link_sign_up">Ainda não tem uma conta?</string>
     <string name="txt_link">Realizar cadastro</string>
+    <string name="txt_titulo">O quanto você gostou desse conteúdo?</string>
+    <string name="txt_naogostei">Não gostei</string>
+    <string name="txt_poderiamelhorar">Poderia Melhorar</string>
+    <string name="txt_naosei">Não sei</string>
+    <string name="txt_gostei">Gostei</string>
+    <string name="txt_amei">Amei!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

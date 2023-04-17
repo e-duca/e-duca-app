@@ -63,36 +63,34 @@
             android:layout_height="50dp"
             android:layout_marginLeft="82dp"
             android:layout_marginTop="141dp"
-            android:textStyle="bold"
-            android:text="O quanto você gostou desse conteúdo?"
+            android:text="@string/txt_titulo"
             android:textSize="16dp"
+            android:textStyle="bold"
 
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Não gostei"
-            android:layout_marginTop="60mm"
-            android:textStyle="bold"
-            android:textSize="10sp"
             android:layout_marginLeft="50dp"
-            />
-
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:text="Poderia Melhorar"
-            android:textStyle="bold"
             android:layout_marginTop="60mm"
+            android:text="@string/txt_naogostei"
             android:textSize="10sp"
-            android:layout_marginLeft="120dp"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:text="Não sei"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="60mm"
+            android:text="@string/txt_poderiamelhorar"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:text="@string/txt_naosei"
             android:textStyle="bold"
             android:layout_marginTop="60mm"
             android:textSize="10sp"
@@ -102,22 +100,20 @@
         <TextView
             android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:text="Gostei"
-            android:textStyle="bold"
-            android:layout_marginTop="60mm"
-            android:textSize="10sp"
             android:layout_marginLeft="255dp"
-            />
+            android:layout_marginTop="60mm"
+            android:text="@string/txt_gostei"
+            android:textSize="10sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:text="Amei!"
-            android:textStyle="bold"
-            android:layout_marginTop="60mm"
-            android:textSize="10sp"
             android:layout_marginLeft="322dp"
-            />
+            android:layout_marginTop="60mm"
+            android:text="@string/txt_amei"
+            android:textSize="10sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
