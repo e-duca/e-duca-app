@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login">
+    tools:context=".Login">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,7 +14,8 @@
             android:id="@+id/img_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@mipmap/banner01" />
+            android:background="@mipmap/banner01"
+            />
 
         <ImageView
             android:id="@+id/img_logo"
@@ -53,7 +54,7 @@
             app:hintTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ipt_Email"
+                android:id="@+id/ipt_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_input"
@@ -82,7 +83,7 @@
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ipt_Password"
+                android:id="@+id/ipt_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_input"
@@ -102,7 +103,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:id="@+id/lyt_text">
 
             <TextView
                 android:id="@+id/tv_text"
@@ -125,6 +127,19 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_below="@id/lyt_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/txt_fazerLogin"
+            android:layout_width="271dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/yellow300"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

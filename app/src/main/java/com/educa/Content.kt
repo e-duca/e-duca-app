@@ -2,7 +2,6 @@ package com.educa
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
 class Content : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
