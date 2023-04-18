@@ -2,15 +2,17 @@
     <string name="app_name">E-duca</string>
     <string name="tv_postada">Postada em 01/01/2023</string>
     <string name="tv_title">Título da Aula</string>
-    <string name="tv_ability">Habilidade 1</string>
+    <string name="tv_hability">Habilidade 1</string>
     <string name="hint_navbar">O que você deseja estudar hoje?</string>
     <string name="titulo_signup">Cadastre-se</string>
-    <string name="hint_name">Nome Completo</string>
-    <string name="hint_birth_date">dd/mm/aaaa</string>
+    <string name="hint_name">Nome</string>
+    <string name="hint_lastName">Sobrenome</string>
+    <string name="hint_birthdate">dd/mm/aaaa</string>
     <string name="hint_email">E-mail</string>
     <string name="hint_password">Senha</string>
     <string name="hint_confirm_password">Confirmar Senha</string>
     <string name="txt_link_sign_up">É professor?</string>
+    <string name="txt_signUp">Fazer cadastro</string>
     <string name="link_sign_up">Faça seu cadastro aqui.</string>
     <string name="titulo_login">Faça seu login</string>
     <string name="txt_link_login">Ainda não tem uma conta?</string>
@@ -32,6 +34,10 @@
     <string name="txt_access_ertificate">Acessar certificado</string>
     <string name="txt_download">Fazer download</string>
     <string name="txt_back_start">Voltar para o início</string>
-
-
+    <string name="txt_entrar">Entrar</string>
+    <string name="txt_titulo_pergunta">Título da pergunta</string>
+    <string name="txt_corpo_pergunta">Início do corpo da pergunta...</string>
+    <string name="txt_qtdRespostas_pergunta">3 respostas</string>
+    <string name="txt_data_pergunta">Postado em 01/01/22\n por</string>
+    <string name="txt_nome_pergunta">Lucas Gestal</string>
 </resources>

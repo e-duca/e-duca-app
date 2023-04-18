@@ -42,7 +42,6 @@
             android:layout_marginTop="90dp"
             android:gravity="top"
             android:text="@string/txt_nome_usuario"
-            android:textAppearance="Olá, Lucas"
             android:textSize="10sp" />
 
         <TextView
