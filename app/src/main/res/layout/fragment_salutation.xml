@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SaudacaoFragment">
+    tools:context=".FragmentSalutation">
 
 
     <RelativeLayout
@@ -41,7 +41,7 @@
             android:layout_marginLeft="67dp"
             android:layout_marginTop="90dp"
             android:gravity="top"
-            android:text="@string/txt_nome_usuario"
+            android:text="@string/txt_hello_username"
             android:textSize="10sp" />
 
         <TextView
@@ -53,11 +53,10 @@
             android:layout_marginLeft="67dp"
             android:layout_marginTop="114dp"
             android:gravity="top"
-            android:text="@string/txt_saudacao"
+            android:text="@string/txt_salutation"
             android:textColor="@color/black"
             android:textSize="10sp" />
 
     </RelativeLayout>
-
 
 </FrameLayout>
