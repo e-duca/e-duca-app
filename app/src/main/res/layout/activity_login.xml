@@ -84,7 +84,6 @@
                     android:hint="@string/hint_password"
                     android:inputType="textPassword" />
 
-
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
