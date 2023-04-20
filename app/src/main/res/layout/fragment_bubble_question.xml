@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment_pergunta">
+    tools:context=".FragmentBubbleQuestion">
 
     <RelativeLayout
         android:id="@+id/rectangle_8"
@@ -13,7 +13,7 @@
         android:layout_marginLeft="34dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="237dp"
-        android:background="@drawable/card_retangulo_pergunta"
+        android:background="@drawable/db_card_rectangle"
         />
 
 
@@ -31,7 +31,7 @@
             android:layout_marginTop="245.79dp"
             android:fontFamily="@font/montserrat"
             android:gravity="center_horizontal|top"
-            android:text="@string/txt_titulo_pergunta"
+            android:text="@string/txt_question_title"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -46,7 +46,7 @@
             android:layout_marginTop="266dp"
             android:fontFamily="@font/montserrat"
             android:gravity="center_horizontal|top"
-            android:text="@string/txt_corpo_pergunta"
+            android:text="@string/txt_body_question"
             android:textColor="@color/black"
             android:textSize="8sp" />
 
@@ -60,7 +60,7 @@
             android:layout_marginTop="288.79dp"
             android:fontFamily="@font/montserrat"
             android:gravity="top"
-            android:text="@string/txt_qtdRespostas_pergunta"
+            android:text="@string/txt_qty_answer"
             android:textColor="#D70091"
             android:textSize="7sp"
             android:textStyle="bold" />
@@ -76,7 +76,7 @@
             android:layout_marginTop="249dp"
             android:fontFamily="@font/montserrat"
             android:gravity="top"
-            android:text="@string/txt_data_pergunta"
+            android:text="@string/txt_date_question"
             android:textSize="5sp" />
 
         <TextView
@@ -88,7 +88,7 @@
             android:layout_marginTop="255.4dp"
             android:fontFamily="@font/montserrat"
             android:gravity="top"
-            android:text="@string/txt_nome_pergunta"
+            android:text="@string/txt_question_name"
             android:textColor="#FF33DF"
             android:textSize="5sp" />
 
@@ -101,7 +101,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="259dp"
             android:layout_marginTop="276dp"
-            android:src="@mipmap/editar" />
+            android:src="@mipmap/edit" />
 
         <ImageView
             android:id="@+id/image_60"
@@ -111,7 +111,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="278dp"
             android:layout_marginTop="274dp"
-            android:src="@mipmap/lixeira" />
+            android:src="@mipmap/bin" />
 
         <ImageView
 
@@ -121,7 +121,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="34dp"
             android:layout_marginTop="245.79dp"
-            android:src="@mipmap/retangulo" />
+            android:src="@mipmap/retangle" />
     </RelativeLayout>
 
 </FrameLayout>

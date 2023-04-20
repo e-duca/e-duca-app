@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DrawerMenu">
+    tools:context=".FragmentMenu">
 
     <View
         android:id="@+id/containerTop"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@mipmap/header01" />
+        android:background="@mipmap/header" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:layout_height="20dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:background="@mipmap/logo_s" />
+            android:background="@mipmap/logo_medium" />
     </LinearLayout>
 
     <LinearLayout
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:backgroundTint="@color/purple800"
-            android:drawableBottom="@drawable/ic_baseline_menu" />
+            android:drawableBottom="@drawable/ic_menu" />
 
     </LinearLayout>
 

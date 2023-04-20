@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".NavBar">
+    tools:context=".FragmentNavBar">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,8 +14,9 @@
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/navbar"
+            android:background="@drawable/db_navbar"
             android:iconifiedByDefault="false"
             android:queryHint="@string/hint_navbar" />
     </RelativeLayout>
+
 </FrameLayout>
