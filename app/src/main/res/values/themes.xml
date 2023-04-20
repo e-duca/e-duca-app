@@ -59,7 +59,7 @@
     <style name="style_ipt">
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorHint">#8D8D99</item>
-        <item name="android:background">@drawable/input</item>
+        <item name="android:background">@drawable/ic_input</item>
         <item name="android:maxLines">1</item>
         <item name="android:textSize">18sp</item>
         <item name="android:padding">15dp</item>
