@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Redirect">
+
+    <LinearLayout
+        android:id="@+id/container_top"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@mipmap/header_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@mipmap/logo_medium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_redirect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="314dp"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/redirect"
+            android:layout_gravity="center_horizontal"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_ops"
+            style="@style/style_subText"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:text="@string/txt_restTextOps"
+            style="@style/style_subText"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginTop="570dp"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_access_navigation"
+            style="@style/style_btnBorderPurpleLarger"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/db_btn_border"
+            android:text="@string/txt_access_navigation" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_back_sign"
+            android:layout_gravity="center_horizontal"
+            style="@style/style_btnYellowLarger"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/db_btn_solid"
+            android:text="@string/txt_back_sign" />
+    </LinearLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
