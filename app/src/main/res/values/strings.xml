@@ -39,4 +39,12 @@
     <string name="txt_qty_answer">3 respostas</string>
     <string name="txt_date_question">Postado em 01/01/22\n por</string>
     <string name="txt_question_name">Lucas Gestal</string>
+    <string name="txt_title">Gostou da aula? Nos dê sua opinião!</string>
+    <string name="txt_notlike">Não gostei</string>
+    <string name="txt_improve">Poderia Melhorar</string>
+    <string name="txt_doubt">Não sei</string>
+    <string name="txt_liked">Gostei</string>
+    <string name="txt_loved">Amei!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

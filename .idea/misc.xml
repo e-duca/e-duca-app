@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/drawable/ic_card_likert.xml" value="0.102" />
+        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/fragment_fragement_likert.xml" value="0.33" />
+        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/fragment_likert.xml" value="0.29259259259259257" />
+        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/fragment_menu.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Gabriel/Downloads/saudacao/e-duca-app/app/src/main/res/drawable/ic_baseline_menu.xml" value="0.102" />
         <entry key="..\:/Users/Gabriel/Downloads/saudacao/e-duca-app/app/src/main/res/layout/fragment_saudacao.xml" value="0.25" />
         <entry key="..\:/Users/Lucas/AndroidStudioProjects/Educa/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
