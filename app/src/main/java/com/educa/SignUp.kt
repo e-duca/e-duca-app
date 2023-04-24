@@ -31,6 +31,7 @@ class SignUp : AppCompatActivity() {
 
         val signUpButton = findViewById<Button>(R.id.btn_cadastro)
         signUpButton.setOnClickListener {
+
             val nameField = findViewById<EditText>(R.id.ipt_name)
             val name = nameField.text.toString()
 
@@ -49,44 +50,39 @@ class SignUp : AppCompatActivity() {
             val confirmPasswordField = findViewById<EditText>(R.id.ipt_confirmPassword)
             val confirmPassword = confirmPasswordField.text.toString()
 
-            val newStudent = Student(
-                nome = name,
-                sobrenome = lastName,
-                email = email,
-                dataNasc = birthdate,
-                senha = password
-            )
 
-            apiClient.getMainApiService().registerStudent(newStudent)
-                .enqueue(object : Callback<Student> {
-                    override fun onResponse(
-                        call: Call<Student>,
-                        response: Response<Student>
-                    ) {
-                        if (response.isSuccessful) {
-                            val student = response.body()
-                            Log.w("newStudent", "${newStudent}")
-                            Toast.makeText(
-                                baseContext, "Estudante Cadastrado: ${student}",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        } else {
-                            Log.e(
-                                "ERRO AO CRIAR NOVO ESTUDANTE",
-                                "Call: ${call} Response: ${response} NewStudent: ${newStudent}"
-                            )
-                        }
-                    }
+            if (name.isNotBlank() &&
+                lastName.isNotBlank() &&
+                birthdate.isNotBlank() &&
+                email.isNotBlank() &&
+                password.isNotBlank() &&
+                confirmPassword.isNotBlank()
+            ) {
+                if (confirmPassword == password) {
+                    val newStudent = Student(
+                        nome = name,
+                        sobrenome = lastName,
+                        email = email,
+                        dataNasc = birthdate,
+                        senha = password
+                    )
+                    signUp(newStudent)
+                } else {
+                    Toast.makeText(
+                        baseContext,
+                        "As senhas não coincidem.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            } else {
+                Toast.makeText(
+                    baseContext,
+                    "Os campos não podem estar vazios!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
 
-                    override fun onFailure(call: Call<Student>, t: Throwable) {
-                        Toast.makeText(
-                            baseContext, "Erro na API: ${t.message}",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        t.printStackTrace()
-                    }
 
-                })
         }
 
         tvDatePicker = findViewById(R.id.ipt_birthdate)
@@ -117,4 +113,38 @@ class SignUp : AppCompatActivity() {
         tvDatePicker.setText(sdf.format(myCalendar.time))
     }
 
+
+    fun signUp(newStudent: Student) {
+        apiClient.getMainApiService().registerStudent(newStudent)
+            .enqueue(object : Callback<Student> {
+                override fun onResponse(
+                    call: Call<Student>,
+                    response: Response<Student>
+                ) {
+                    if (response.isSuccessful) {
+                        val student = response.body()
+                        Log.w("newStudent", "${newStudent}")
+                        Toast.makeText(
+                            baseContext, "Estudante Cadastrado: ${student}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        Log.e(
+                            "ERRO AO CRIAR NOVO ESTUDANTE",
+                            "Call: ${call} Response: ${response} NewStudent: ${newStudent}"
+                        )
+                    }
+                }
+
+                override fun onFailure(call: Call<Student>, t: Throwable) {
+                    Toast.makeText(
+                        baseContext, "Erro na API: ${t.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    t.printStackTrace()
+                }
+
+            })
+
+    }
 }
