@@ -29,7 +29,7 @@
 
     <style name="style_bigTxt">
         <item name="android:textSize">18sp</item>
-        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
     </style>
 
     <style name="style_subText">

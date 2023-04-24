@@ -16,15 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Educa"
         tools:targetApi="33">
-        <activity
-            android:name=".Reading"
-            android:exported="false" />
-        <activity
-            android:name=".NoContent"
-            android:exported="false" />
-        <activity
-            android:name=".Redirect"
-            android:exported="false" />
+
         <activity
             android:name=".Login"
             android:exported="true">
@@ -39,6 +31,12 @@
             android:exported="false" />
         <activity
             android:name=".Content"
+            android:exported="false" />
+        <activity
+            android:name=".Reading"
+            android:exported="false" />
+        <activity
+            android:name=".Redirect"
             android:exported="false" />
 
         <meta-data
