@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiClient {
     //var BASE_URL = "http://localhost:80/"
-    var BASE_URL = "http://ec2-52-45-233-165.compute-1.amazonaws.com/"
+    var BASE_URL = "https://educaback.hopto.org/"
 
     fun getAuthApiService() : AuthApiService {
         val retrofit = Retrofit.Builder()
