@@ -3,16 +3,15 @@ package com.educa
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View.OnFocusChangeListener
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.educa.api.model.LoginRequest
 import com.educa.api.model.LoginResponse
 import com.educa.api.service.ApiClient
 import com.educa.api.service.SessionManager
-import com.google.android.material.textfield.TextInputLayout
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,6 +28,12 @@ class Login : AppCompatActivity() {
         sessionManager = SessionManager(this)
 
         val loginButton = findViewById<Button>(R.id.btn_login)
+        val signUpButton = findViewById<TextView>(R.id.linkText)
+
+        signUpButton.setOnClickListener{
+            val signUpPage = Intent(applicationContext, SignUp::class.java)
+            startActivity(signUpPage)
+        }
 
         loginButton.setOnClickListener {
             val emailField = findViewById<EditText>(R.id.ipt_email)
