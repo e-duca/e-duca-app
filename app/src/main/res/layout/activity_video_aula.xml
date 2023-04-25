@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".video_aula">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-42dp">
+
+        <fragment
+            android:id="@+id/fg_menu"
+            class="com.educa.FragmentMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_menu" />
+
+        <View
+            android:id="@+id/rectangle_1"
+            android:layout_width="315dp"
+            android:layout_height="229dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="70dp"
+            android:background="@mipmap/video"
+            android:elevation="4dp" />
+
+        <View
+            android:id="@+id/image_33"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="330dp"
+            android:background="@mipmap/play" />
+
+        <TextView
+            android:id="@+id/t_tulo_da_a"
+            android:layout_width="284dp"
+            android:layout_height="49dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="325dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="top"
+            android:text="@string/txt_title"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/postado_por"
+            android:layout_width="203dp"
+            android:layout_height="22dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="365dp"
+            android:text="@string/txt_postfor"
+            android:textColor="#898989"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="203dp"
+            android:layout_height="22dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="142dp"
+            android:layout_marginTop="365dp"
+            android:text="@string/txt_nameteacher"
+            android:textColor="#1524A7"
+            android:textSize="10sp"
+
+            />
+
+        <View
+            android:id="@+id/filtro_cate"
+            android:layout_width="98dp"
+            android:layout_height="16dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="390dp"
+            android:background="@mipmap/categoria2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/postado_por"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="290dp"
+            android:layout_marginEnd="20dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_back"
+                style="@style/style_btnBorderPurpleSmall"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/db_btn_border"
+                android:text="@string/txt_back" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_go_quiz"
+                style="@style/style_btnYellowSmall"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/db_btn_solid"
+                android:text="@string/txt_quiz_content" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
