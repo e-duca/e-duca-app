@@ -33,14 +33,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <fragment
+                <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/fg_card01"
                     class="com.educa.FragmentCardContent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/fragment_card_content" />
 
-                <fragment
+                <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/fg_card02"
                     class="com.educa.FragmentCardContent"
                     android:layout_width="match_parent"
