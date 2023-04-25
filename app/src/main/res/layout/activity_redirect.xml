@@ -11,12 +11,11 @@
         android:id="@+id/container_top"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:background="@mipmap/header_small"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/img_logo"
@@ -39,53 +38,54 @@
             android:id="@+id/img_redirect"
             android:layout_width="wrap_content"
             android:layout_height="314dp"
-            android:layout_marginTop="150dp"
-            android:background="@drawable/redirect"
             android:layout_gravity="center_horizontal"
-            />
+            android:layout_marginTop="198dp"
+            android:background="@drawable/redirect" />
+
         <TextView
+            android:layout_marginTop="16dp"
             android:id="@+id/txt_ops"
+            style="@style/style_subText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txt_ops"
             android:layout_below="@id/img_redirect"
             android:layout_centerHorizontal="true"
-            style="@style/style_subText"
-            android:textColor="@color/black"
             android:layout_gravity="center"
-            />
+            android:textSize="24dp"
+            android:text="@string/txt_ops"
+            android:textColor="@color/black" />
+
         <TextView
-            android:layout_below="@id/txt_ops"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:layout_centerHorizontal="true"
-            android:text="@string/txt_restTextOps"
-            style="@style/style_subText"
             android:id="@+id/restTextOps"
-            android:textColor="@color/black"
+            style="@style/style_subText"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_ops"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:gravity="center_horizontal"
-            />
+            android:text="@string/txt_restTextOps"
+            android:textColor="@color/black" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_access_navigation"
             style="@style/style_btnBorderPurpleLarger"
-            android:layout_gravity="center_horizontal"
             android:layout_below="@id/restTextOps"
-            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/db_btn_border"
             android:text="@string/txt_access_navigation" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_back_sign"
+            style="@style/style_btnYellowLarger"
             android:layout_below="@+id/btn_access_navigation"
             android:layout_gravity="center_horizontal"
-            style="@style/style_btnYellowLarger"
             android:background="@drawable/db_btn_solid"
             android:text="@string/txt_back_sign" />
 
     </RelativeLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
