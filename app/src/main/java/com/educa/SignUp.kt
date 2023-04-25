@@ -1,11 +1,13 @@
 package com.educa
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.educa.api.model.Student
 import com.educa.api.service.ApiClient
@@ -30,8 +32,20 @@ class SignUp : AppCompatActivity() {
         sessionManager = SessionManager(this)
 
         val signUpButton = findViewById<Button>(R.id.btn_cadastro)
-        signUpButton.setOnClickListener {
+        val teacherSignUp = findViewById<TextView>(R.id.linkText)
+        val backToLogin = findViewById<Button>(R.id.btn_backToLogin)
 
+        teacherSignUp.setOnClickListener {
+            val redirect = Intent(applicationContext, Redirect::class.java)
+            startActivity(redirect)
+        }
+
+        backToLogin.setOnClickListener {
+            val login = Intent(applicationContext, Login::class.java)
+            startActivity(login)
+        }
+
+        signUpButton.setOnClickListener {
             val nameField = findViewById<EditText>(R.id.ipt_name)
             val name = nameField.text.toString()
 
@@ -81,8 +95,6 @@ class SignUp : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
-
-
         }
 
         tvDatePicker = findViewById(R.id.ipt_birthdate)

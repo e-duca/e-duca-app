@@ -38,6 +38,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:orientation="vertical">
 
             <TextView
@@ -188,37 +189,44 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp">
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_text"
-                    style="@style/style_subText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/txt_link_sign_up"
+                    android:fontFamily="@font/montserrat"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/linkText"
-                    style="@style/style_subText"
+                    style="@style/style_link"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autoLink="web"
+                    android:fontFamily="@font/montserrat_semibold"
                     android:text="@string/txt_link"
-                    android:textColor="@color/blue500" />
+                     />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_cadastro"
                     style="@style/style_btnYellowLarger"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="48dp"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/db_btn_solid"
                     android:text="@string/txt_signUp" />
 
-
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_backToLogin"
+                    style="@style/style_btnBorderBlackLarger"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="48dp"
+                    android:background="@drawable/db_btn_border"
+                    android:text="@string/txt_back_login" />
             </LinearLayout>
 
         </LinearLayout>

@@ -30,7 +30,7 @@ class Login : AppCompatActivity() {
         val loginButton = findViewById<Button>(R.id.btn_login)
         val signUpButton = findViewById<TextView>(R.id.linkText)
 
-        signUpButton.setOnClickListener{
+        signUpButton.setOnClickListener {
             val signUpPage = Intent(applicationContext, SignUp::class.java)
             startActivity(signUpPage)
         }
