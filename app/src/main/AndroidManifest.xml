@@ -17,7 +17,7 @@
         android:theme="@style/Theme.Educa"
         tools:targetApi="33">
         <activity
-            android:name=".video_aula"
+            android:name=".Video"
             android:exported="false" />
         <activity
             android:name=".Login"
