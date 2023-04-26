@@ -76,14 +76,22 @@ class SignUp : AppCompatActivity() {
                 confirmPassword.isNotBlank()
             ) {
                 if (confirmPassword == password) {
-                    val newStudent = Student(
-                        nome = name,
-                        sobrenome = lastName,
-                        email = email,
-                        dataNasc = updateLableBack(birthdate),
-                        senha = password
-                    )
-                    signUp(newStudent)
+                     if(birthdate.length == 10) {
+                         val newStudent = Student(
+                             nome = name,
+                             sobrenome = lastName,
+                             email = email,
+                             dataNasc = updateLableBack(birthdate),
+                             senha = password
+                         )
+                         signUp(newStudent)
+                     } else {
+                         Toast.makeText(
+                             baseContext,
+                             "Data deve estar preenchida no formato: dd-mm-aaaa.",
+                             Toast.LENGTH_SHORT
+                         ).show()
+                     }
                 } else {
                     Toast.makeText(
                         baseContext,
