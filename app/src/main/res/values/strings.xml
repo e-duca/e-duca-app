@@ -7,7 +7,7 @@
     <string name="title_sign_up">Cadastre-se</string>
     <string name="hint_name">Nome</string>
     <string name="hint_lastName">Sobrenome</string>
-    <string name="hint_birthdate">dd/mm/aaaa</string>
+    <string name="hint_birthdate">dd-mm-aaaa</string>
     <string name="hint_email">E-mail</string>
     <string name="hint_password">Senha</string>
     <string name="hint_confirm_password">Confirmar Senha</string>
