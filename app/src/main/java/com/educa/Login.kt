@@ -92,7 +92,7 @@ class Login : AppCompatActivity() {
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Toast.makeText(
                         baseContext,
-                        "Erro no servidor! Por favor, tente novamente mais tarde. ERROR ${t.message}",
+                        "Erro no servidor! Por favor, tente novamente mais tarde. ERRO: ${t.message}",
                         Toast.LENGTH_SHORT
                     ).show()
                     t.printStackTrace()

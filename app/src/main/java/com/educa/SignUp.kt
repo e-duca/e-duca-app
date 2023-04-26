@@ -64,7 +64,6 @@ class SignUp : AppCompatActivity() {
             val confirmPasswordField = findViewById<EditText>(R.id.ipt_confirmPassword)
             val confirmPassword = confirmPasswordField.text.toString()
 
-
             if (name.isNotBlank() &&
                 lastName.isNotBlank() &&
                 birthdate.isNotBlank() &&
@@ -107,7 +106,6 @@ class SignUp : AppCompatActivity() {
             myCalendar.set(Calendar.MONTH, month)
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
             updateLable(myCalendar)
-
         }
 
         clickCalendar.setOnClickListener {
@@ -115,7 +113,6 @@ class SignUp : AppCompatActivity() {
                 this, datePicker, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                 myCalendar.get(Calendar.DAY_OF_MONTH)
             ).show()
-
         }
     }
 
@@ -124,7 +121,6 @@ class SignUp : AppCompatActivity() {
         val sdf = SimpleDateFormat(myFormat, Locale.UK)
         tvDatePicker.setText(sdf.format(myCalendar.time))
     }
-
 
     fun signUp(newStudent: Student) {
         apiClient.getMainApiService().registerStudent(newStudent)
@@ -137,10 +133,21 @@ class SignUp : AppCompatActivity() {
                         val student = response.body()
                         Log.w("newStudent", "${newStudent}")
                         Toast.makeText(
-                            baseContext, "Estudante Cadastrado: ${student}",
+                            baseContext,
+                            "Cadastro realizado com sucesso! Você será redirecionado(a) à tela de login.",
                             Toast.LENGTH_SHORT
                         ).show()
+
+                        val login = Intent(applicationContext, Login::class.java)
+                        startActivity(login)
+
                     } else {
+                        Toast.makeText(
+                            baseContext,
+                            "Erro ao fazer cadastro, confirme seus dados e tente novamente!",
+                            Toast.LENGTH_SHORT
+                        ).show()
+
                         Log.e(
                             "ERRO AO CRIAR NOVO ESTUDANTE",
                             "Call: ${call} Response: ${response} NewStudent: ${newStudent}"
@@ -150,13 +157,11 @@ class SignUp : AppCompatActivity() {
 
                 override fun onFailure(call: Call<Student>, t: Throwable) {
                     Toast.makeText(
-                        baseContext, "Erro na API: ${t.message}",
+                        baseContext, "Erro no servidor! Por favor, tente novamente mais tarde. ERRO: ${t.message}",
                         Toast.LENGTH_SHORT
                     ).show()
                     t.printStackTrace()
                 }
-
             })
-
     }
 }
