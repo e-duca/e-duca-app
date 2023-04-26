@@ -73,6 +73,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Last Name -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtInputLayoutLastName"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -117,7 +118,6 @@
 
 
             <!-- Email -->
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtInputLayoutEmail"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -140,7 +140,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Password -->
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtInputLayoutPasword"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -164,7 +163,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Confirm Password -->
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtInputLayoutConfirmPasword"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
