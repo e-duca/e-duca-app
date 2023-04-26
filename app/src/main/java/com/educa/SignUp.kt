@@ -57,7 +57,7 @@ class SignUp : AppCompatActivity() {
             val lastName = lastNameField.text.toString()
 
             val birthdateField = findViewById<EditText>(R.id.ipt_birthdate)
-            val birthdate = updateLableBack(birthdateField.text.toString())
+            val birthdate = birthdateField.text.toString()
 
             val emailField = findViewById<EditText>(R.id.ipt_email)
             val email = emailField.text.toString()
@@ -80,7 +80,7 @@ class SignUp : AppCompatActivity() {
                         nome = name,
                         sobrenome = lastName,
                         email = email,
-                        dataNasc = birthdate,
+                        dataNasc = updateLableBack(birthdate),
                         senha = password
                     )
                     signUp(newStudent)
