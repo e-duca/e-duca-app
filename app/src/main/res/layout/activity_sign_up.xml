@@ -18,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+
             android:id="@+id/img_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -112,6 +113,8 @@
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/ic_calendar"
                     android:hint="@string/hint_birthdate"
+                    android:digits="0123456789-"
+                    android:maxLength="10"
                     android:inputType="date" />
 
             </com.google.android.material.textfield.TextInputLayout>

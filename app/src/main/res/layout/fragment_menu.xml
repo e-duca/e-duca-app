@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".FragmentMenu">
 
     <View
@@ -24,19 +25,40 @@
             android:layout_marginTop="10dp"
             android:background="@mipmap/logo_medium" />
     </LinearLayout>
+    <!-- Botão para abrir o drawer menu -->
+    <ImageButton
+        android:id="@+id/btnOpenDrawer"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_menu" />
 
-    <LinearLayout
+    <!-- Layout do drawer menu -->
+    <RelativeLayout
+        android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="end">
+        android:layout_height="300dp"
+        android:layout_gravity="top"
+        android:layout_marginBottom="20dp"
+        android:elevation="10dp"
+        android:background="@drawable/db_header_menu"
+        android:visibility="gone">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/menu"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:backgroundTint="@color/purple800"
-            android:drawableBottom="@drawable/ic_menu" />
+        <ImageButton
+            android:id="@+id/btnCloseDrawer"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_close" />
 
-    </LinearLayout>
+        <!-- Conteúdo do drawer menu aqui -->
 
-</FrameLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
