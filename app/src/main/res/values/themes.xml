@@ -69,8 +69,7 @@
         <item name="android:textSize">16sp</item>
         <item name="android:padding">10dp</item>
         <item name="android:fontFamily">@font/montserrat</item>
-        <item name="android:layout_marginEnd">20dp</item>
-        <item name="android:layout_marginStart">20dp</item>
+
     </style>
 
     <!-- style buttons -->
@@ -97,7 +96,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">@font/montserrat_bold</item>
-        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:backgroundTint">@color/black</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">16sp</item>
     </style>

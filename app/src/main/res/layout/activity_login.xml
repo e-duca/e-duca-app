@@ -31,7 +31,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/img_header"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="56dp"
+            android:layout_marginEnd="20dp"
             android:orientation="vertical">
 
             <TextView
@@ -51,8 +53,7 @@
                 android:layout_height="wrap_content"
                 app:errorEnabled="true"
                 app:errorTextColor="#CA2222"
-                app:hintAnimationEnabled="true"
-                app:hintTextColor="@color/black">
+                app:hintAnimationEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/ipt_email"
@@ -90,9 +91,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
                 android:layout_marginTop="48dp"
-                android:layout_marginEnd="20dp"
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -103,21 +102,28 @@
                     android:background="@drawable/db_btn_solid"
                     android:text="@string/txt_enter" />
 
+                <fragment
+                    android:id="@+id/btn_modal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    class="com.educa.FragmentModal"
+                    tools:layout="@layout/fragment_modal"/>
+
                 <TextView
                     android:id="@+id/tv_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:textColor="@color/black"
                     android:fontFamily="@font/montserrat"
-                    android:text="@string/txt_link_login" />
+                    android:text="@string/txt_link_login"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/linkText"
                     style="@style/style_link"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/txt_link"/>
+                    android:text="@string/txt_link" />
 
             </LinearLayout>
 
