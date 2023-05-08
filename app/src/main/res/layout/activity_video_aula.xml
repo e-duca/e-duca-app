@@ -22,12 +22,12 @@
         <View
             android:id="@+id/rectangle_1"
             android:layout_width="315dp"
-            android:layout_height="229dp"
+            android:layout_height="225dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="118dp"
-            android:background="@mipmap/video"
+            android:layout_marginTop="110dp"
+            android:background="@drawable/ic_card_videoaula"
             android:elevation="4dp" />
 
         <View
@@ -35,7 +35,7 @@
             android:id="@+id/image_play"
             android:layout_width="26dp"
             android:layout_height="26dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="31dp"
             android:layout_alignStart="@+id/rectangle_1"
             android:background="@mipmap/play" />
 
@@ -46,6 +46,7 @@
             android:layout_below="@+id/rectangle_1"
             android:layout_alignLeft="@+id/image_play"
             android:layout_marginLeft="40dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/montserrat_semibold"
             android:text="@string/txt_title"
             android:textSize="24sp"
@@ -88,7 +89,7 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/postado_por"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="290dp"
+            android:layout_marginTop="260dp"
             android:layout_marginEnd="20dp">
 
             <androidx.appcompat.widget.AppCompatButton
