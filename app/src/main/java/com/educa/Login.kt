@@ -1,18 +1,21 @@
 package com.educa
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
-import com.educa.api.service.SessionManager
+import androidx.appcompat.app.AppCompatActivity
 import com.educa.api.model.LoginRequest
 import com.educa.api.model.LoginResponse
 import com.educa.api.service.ApiClient
+import com.educa.api.service.SessionManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class Login : AppCompatActivity() {
     private lateinit var sessionManager: SessionManager
@@ -21,11 +24,16 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
         apiClient = ApiClient()
         sessionManager = SessionManager(this)
 
         val loginButton = findViewById<Button>(R.id.btn_login)
+        val signUpButton = findViewById<TextView>(R.id.linkText)
+
+        signUpButton.setOnClickListener {
+            val signUpPage = Intent(applicationContext, SignUp::class.java)
+            startActivity(signUpPage)
+        }
 
         loginButton.setOnClickListener {
             val emailField = findViewById<EditText>(R.id.ipt_email)
@@ -34,44 +42,63 @@ class Login : AppCompatActivity() {
             val passwordField = findViewById<EditText>(R.id.ipt_password)
             val password = passwordField.text.toString()
 
-            apiClient.getAuthApiService().login(LoginRequest(email, password))
-                .enqueue(object : Callback<LoginResponse> {
-                    override fun onResponse(
-                        call: Call<LoginResponse>,
-                        response: Response<LoginResponse>
-                    ) {
+            if (email.isNotBlank() && password.isNotBlank()) {
+                login(email, password)
+            } else {
+                Toast.makeText(
+                    baseContext,
+                    "Os campos não podem estar vazios!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
 
-                        if (response.isSuccessful) {
-                            val loginResponse = response.body()?.token
-                            if (loginResponse != null) {
-                                sessionManager.saveAuthToken(loginResponse)
-                                Toast.makeText(
-                                    baseContext, "Autenticação realizada com sucesso",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                                Log.w("TOKEN", "${response.body()?.token}")
-                            }
-
-                        } else {
-                            Log.e(
-                                "ERRO AO FAZER LOGIN",
-                                "Call: ${call} Response: ${response}"
-                            )
+    fun login(email: String, password: String) {
+        Log.w("ENTROU NA FUNÇÃO LOGIN", "  $email $password")
+        apiClient.getAuthApiService().login(LoginRequest(email, password))
+            .enqueue(object : Callback<LoginResponse> {
+                override fun onResponse(
+                    call: Call<LoginResponse>,
+                    response: Response<LoginResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val loginResponse = response.body()?.token
+                        if (loginResponse != null) {
+                            sessionManager.saveAuthToken(loginResponse)
                             Toast.makeText(
-                                baseContext, "Erro, conferir Log",
+                                baseContext, "Autenticação realizada com sucesso!",
                                 Toast.LENGTH_SHORT
                             ).show()
-                        }
-                    }
+                            Log.w("TOKEN", "${response.body()?.token}")
 
-                    override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                            val contentPage = Intent(applicationContext, Content::class.java)
+                            startActivity(contentPage)
+                        }
+
+                    } else {
+                        Log.e(
+                            "ERRO AO FAZER LOGIN",
+                            "Call: ${call} Response: ${response}"
+                        )
                         Toast.makeText(
-                            baseContext, "Erro na API: ${t.message}",
+                            baseContext,
+                            "Erro ao fazer login, confirme seus dados e tente novamente!",
                             Toast.LENGTH_SHORT
                         ).show()
-                        t.printStackTrace()
                     }
-                })
-        }
+                }
+
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                    Toast.makeText(
+                        baseContext,
+                        "Erro no servidor! Por favor, tente novamente mais tarde. ERRO: ${t.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    t.printStackTrace()
+                }
+            })
+
+
     }
 }

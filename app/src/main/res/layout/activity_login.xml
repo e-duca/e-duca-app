@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/img_header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             android:background="@mipmap/header_large" />
 
         <ImageView
@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/img_header"
+            android:layout_marginTop="56dp"
             android:orientation="vertical">
 
             <TextView
@@ -90,6 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="48dp"
                 android:layout_marginEnd="20dp"
                 android:orientation="vertical">
 
@@ -103,19 +105,19 @@
 
                 <TextView
                     android:id="@+id/tv_text"
-                    style="@style/style_subText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat"
                     android:text="@string/txt_link_login" />
 
                 <TextView
                     android:id="@+id/linkText"
-                    style="@style/style_subText"
+                    style="@style/style_link"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:autoLink="web"
-                    android:text="@string/txt_link"
-                    android:textColor="@color/blue500" />
+                    android:text="@string/txt_link"/>
 
             </LinearLayout>
 
