@@ -61,14 +61,13 @@
 
         <TextView
             android:id="@+id/txt_tks"
-            android:gravity="center"
             android:layout_width="220dp"
             android:layout_height="60dp"
             android:layout_below="@id/obrigado_a_"
-            android:layout_marginLeft="120dp"
-            android:text="@string/txt_tks_avaliable2"
+            android:layout_marginLeft="106dp"
             android:fontFamily="@font/montserrat"
-            />
+            android:gravity="center"
+            android:text="@string/txt_tks_avaliable2" />
 
 
         <androidx.appcompat.widget.AppCompatButton
