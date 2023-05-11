@@ -16,8 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Educa"
         tools:targetApi="33">
-        <activity
+      <activity
             android:name=".myQuestions"
+            android:exported="false" />
+        <activity
+            android:name=".Likert_Respondido"
             android:exported="false" />
         <activity
             android:name=".Video"

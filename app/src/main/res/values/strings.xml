@@ -41,11 +41,21 @@
     <string name="txt_question_name">Lucas Gestal</string>
     <string name="txt_ops">Ops…</string>
     <string name="txt_restTextOps">Se você é professor, acesse nossa aplicação pelo navegador e aproveite nosso site!</string>
-    <string name="txt_title">Título da aula</string>
     <string name="txt_postfor">Postado por</string>
+    <string name="txt_acess_cert">Acessar certificado</string>
     <string name="txt_nameteacher">Professor Carlos Roberto</string>
     <string name="txt_see_topics">Ver todos os \n tópicos</string>
     <string name="txt_add_new_topic">Adicionar novo \n tópico</string>
     <string name="txt_context">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan mattis augue eu pellentesque. Nulla sit amet facilisis ante, sit amet interdum augue. Nullam viverra convallis lectus, maximus faucibus sem pretium sit amet. Aenean tempus aliquam fringilla.</string>
+    <string name="txt_tks_avaliable1">Obrigado(a) por avaliar!</string>
+    <string name="txt_tks_avaliable2">Estamos sempre trabalhando para garantir o melhor nos seus estudos</string>
+    <string name="txt_title_likert">Gostou da aula? Nos dê sua opinião!</string>
+    <string name="txt_notlike">Não gostei</string>
+    <string name="txt_improve">Poderia Melhorar</string>
+    <string name="txt_doubt">Não sei</string>
+    <string name="txt_liked">Gostei</string>
+    <string name="txt_loved">Amei!</string>
+    <string name="txt_title">Titulo:</string>
+    <string name="txt_topicBody">Corpo do tópico:</string>
 
 </resources>
