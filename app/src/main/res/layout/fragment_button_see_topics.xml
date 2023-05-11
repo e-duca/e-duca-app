@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ButtonSeeTopics">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/style_btnBlueLarger"
+        android:minWidth="135dp"
+        android:background="@drawable/db_btn_solid"
+        android:padding="5dp">
+
+        <ImageView
+            android:padding="2dp"
+            android:layout_marginTop="2dp"
+            android:id="@+id/img_eye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/eye"
+            />
+        <TextView
+            android:textSize="10dp"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_toRightOf="@+id/img_eye"
+            android:id="@+id/txt_see_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_see_topics"/>
+
+
+    </RelativeLayout>
+
+</FrameLayout>

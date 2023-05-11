@@ -12,7 +12,6 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="34dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="237dp"
         android:background="@drawable/db_card_rectangle"
         />
 
@@ -25,10 +24,7 @@
             android:id="@+id/t_tulo_da_p"
             android:layout_width="144dp"
             android:layout_height="19dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="48dp"
-            android:layout_marginTop="245.79dp"
+            android:layout_marginLeft="44dp"
             android:fontFamily="@font/montserrat"
             android:gravity="center_horizontal|top"
             android:text="@string/txt_question_title"
@@ -40,10 +36,8 @@
             android:id="@+id/in_cio_do_c"
             android:layout_width="121dp"
             android:layout_height="12dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+            android:layout_below="@id/t_tulo_da_p"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="266dp"
             android:fontFamily="@font/montserrat"
             android:gravity="center_horizontal|top"
             android:text="@string/txt_body_question"
@@ -54,10 +48,11 @@
             android:id="@+id/respostas"
             android:layout_width="99dp"
             android:layout_height="9dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+            android:layout_below="@id/in_cio_do_c"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="288.79dp"
+            android:layout_marginTop="18dp"
+
+
             android:fontFamily="@font/montserrat"
             android:gravity="top"
             android:text="@string/txt_qty_answer"
@@ -70,22 +65,21 @@
             android:id="@+id/postada_em_"
             android:layout_width="61dp"
             android:layout_height="27dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="251dp"
-            android:layout_marginTop="249dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/t_tulo_da_p"
             android:fontFamily="@font/montserrat"
             android:gravity="top"
             android:text="@string/txt_date_question"
             android:textSize="5sp" />
 
         <TextView
+            android:id="@+id/txt_name_teacher"
             android:layout_width="50dp"
             android:layout_height="10dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="262dp"
-            android:layout_marginTop="255.4dp"
+            android:layout_marginLeft="81dp"
+            android:layout_marginTop="11dp"
+            android:layout_toRightOf="@+id/t_tulo_da_p"
             android:fontFamily="@font/montserrat"
             android:gravity="top"
             android:text="@string/txt_question_name"
@@ -94,33 +88,29 @@
 
 
         <ImageView
+
             android:id="@+id/image_59"
             android:layout_width="14dp"
             android:layout_height="15dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+           android:layout_below="@+id/txt_name_teacher"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="259dp"
-            android:layout_marginTop="276dp"
             android:src="@mipmap/edit" />
 
         <ImageView
             android:id="@+id/image_60"
             android:layout_width="17dp"
             android:layout_height="17dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+            android:layout_below="@+id/txt_name_teacher"
             android:layout_marginLeft="278dp"
-            android:layout_marginTop="274dp"
+            android:layout_marginTop="13dp"
             android:src="@mipmap/bin" />
 
         <ImageView
-
             android:layout_width="3dp"
             android:layout_height="56dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
             android:layout_marginLeft="34dp"
-            android:layout_marginTop="245.79dp"
+            android:layout_marginTop="8dp"
             android:src="@mipmap/retangle" />
     </RelativeLayout>
 
