@@ -44,9 +44,8 @@
     <string name="txt_title">Título da aula</string>
     <string name="txt_postfor">Postado por</string>
     <string name="txt_nameteacher">Professor Carlos Roberto</string>
-    <string name="txt_see_topics">Ver todos os tópicos</string>
-    <string name="txt_add_new_topic">Adicionar novo tópico</string>
+    <string name="txt_see_topics">Ver todos os \n tópicos</string>
+    <string name="txt_add_new_topic">Adicionar novo \n tópico</string>
     <string name="txt_context">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan mattis augue eu pellentesque. Nulla sit amet facilisis ante, sit amet interdum augue. Nullam viverra convallis lectus, maximus faucibus sem pretium sit amet. Aenean tempus aliquam fringilla.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

@@ -9,15 +9,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/style_btnBlueLarger"
+        android:minWidth="135dp"
         android:background="@drawable/db_btn_solid"
         android:padding="5dp">
 
         <ImageView
-
+            android:padding="2dp"
+            android:layout_marginTop="2dp"
             android:id="@+id/img_eye"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/eye"
+            android:src="@mipmap/eye"
             />
         <TextView
             android:textSize="10dp"

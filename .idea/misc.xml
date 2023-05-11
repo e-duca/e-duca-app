@@ -67,14 +67,12 @@
         <entry key="..\:/Users/andre.dias.de.sena/Desktop/e-duca-app/app/src/main/res/layout/nav_header_main.xml" value="0.4" />
         <entry key="..\:/Users/andre.dias.de.sena/Desktop/e-duca-app/app/src/main/res/menu/main_menu.xml" value="0.2" />
         <entry key="..\:/Users/andre.dias.de.sena/Desktop/e-duca-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1835" />
-        <entry key="..\:/Users/rodrigo.r.campos/Documents/E-Duca APP/e-duca-app/app/src/main/res/layout/activity_content.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/rodrigo.r.campos/Documents/E-Duca APP/e-duca-app/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/rodrigo.r.campos/Documents/E-Duca APP/e-duca-app/app/src/main/res/layout/activity_my_questions.xml" value="0.42397914856646396" />
+        <entry key="..\:/Users/rodrigo.r.campos/Documents/E-Duca APP/e-duca-app/app/src/main/res/layout/activity_access_thread.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/rodrigo.r.campos/Documents/E-Duca APP/e-duca-app/app/src/main/res/layout/activity_my_questions.xml" value="0.536" />
         <entry key="..\:/Users/rodrigo.r.campos/Documents/E-Duca APP/e-duca-app/app/src/main/res/layout/activity_reading.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/rodrigo.r.campos/Documents/E-Duca APP/e-duca-app/app/src/main/res/layout/fragment_bubble_question.xml" value="0.31791530944625407" />
+        <entry key="..\:/Users/rodrigo.r.campos/Documents/E-Duca APP/e-duca-app/app/src/main/res/layout/fragment_bubble_question.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/rodrigo.r.campos/Documents/E-Duca APP/e-duca-app/app/src/main/res/layout/fragment_button_add_new_topic.xml" value="0.4" />
-        <entry key="..\:/Users/rodrigo.r.campos/Documents/E-Duca APP/e-duca-app/app/src/main/res/layout/fragment_button_see_topics.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/rodrigo.r.campos/Documents/E-Duca APP/e-duca-app/app/src/main/res/layout/fragment_card_content.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/rodrigo.r.campos/Documents/E-Duca APP/e-duca-app/app/src/main/res/layout/fragment_button_see_topics.xml" value="0.72" />
         <entry key="..\:/Users/rodrigo.r.campos/Documents/E-Duca APP/e-duca-app/app/src/main/res/layout/fragment_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/rodrigo.r.campos/Documents/E-Duca APP/e-duca-app/app/src/main/res/layout/fragment_salutation.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/rodrigo.r.campos/Documents/E-duca APP/e-duca-app/app/src/main/res/layout/activity_content.xml" value="0.25052083333333336" />

@@ -8,7 +8,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+
+        >
 
         <fragment
             android:id="@+id/fg_menu"
@@ -16,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout="@layout/fragment_menu"
+
             />
 
         <fragment
@@ -24,14 +27,16 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/fg_menu"
             class="com.educa.FragmentSalutation"
-            tools:layout="@layout/fragment_salutation"/>
+            tools:layout="@layout/fragment_salutation"
+            android:layout_marginLeft="20dp"
+            />
         <LinearLayout
             android:id="@+id/ll_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fg_salutation"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="45dp"
+            android:layout_centerHorizontal="true"
             >
         <fragment
             android:layout_width="wrap_content"
@@ -50,6 +55,7 @@
 
 
         <fragment
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="40dp"
             android:id="@+id/fg_bubble_question"
             android:layout_width="wrap_content"
@@ -59,6 +65,7 @@
             tools:layout="@layout/fragment_bubble_question"
             />
         <fragment
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="25dp"
             android:id="@+id/fg_second_bubble_question"
             android:layout_width="wrap_content"
@@ -68,6 +75,7 @@
             tools:layout="@layout/fragment_bubble_question"
             />
         <fragment
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="25dp"
             android:id="@+id/fg_third_bubble_question"
             android:layout_width="wrap_content"
