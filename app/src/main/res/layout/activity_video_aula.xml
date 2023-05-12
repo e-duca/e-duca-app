@@ -9,8 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-42dp">
+        >
 
         <fragment
             android:id="@+id/fg_menu"
@@ -19,24 +18,32 @@
             android:layout_height="wrap_content"
             tools:layout="@layout/fragment_menu" />
 
-        <View
-            android:id="@+id/rectangle_1"
-            android:layout_width="315dp"
-            android:layout_height="229dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="118dp"
-            android:background="@mipmap/video"
-            android:elevation="4dp" />
 
         <View
-            android:layout_below="@+id/rectangle_1"
+            android:layout_below="@+id/fg_menu"
+            android:id="@+id/rectangle_1"
+            android:layout_width="315dp"
+            android:layout_height="226dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/ic_card_videoaula"
+            android:elevation="4dp" />
+
+        <WebView
+            android:id="@+id/web_view"
+            android:layout_width="290.5dp"
+            android:layout_height="204dp"
+            android:layout_below="@id/fg_menu"
+            android:layout_marginLeft="62dp"
+            android:layout_marginTop="34dp" />
+
+        <View
             android:id="@+id/image_play"
             android:layout_width="26dp"
             android:layout_height="26dp"
-            android:layout_marginTop="6dp"
+            android:layout_below="@+id/rectangle_1"
             android:layout_alignStart="@+id/rectangle_1"
+            android:layout_marginTop="31dp"
             android:background="@mipmap/play" />
 
         <TextView
@@ -46,6 +53,7 @@
             android:layout_below="@+id/rectangle_1"
             android:layout_alignLeft="@+id/image_play"
             android:layout_marginLeft="40dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/montserrat_semibold"
             android:text="@string/txt_title"
             android:textSize="24sp"
@@ -56,11 +64,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/title_aula"
-            android:text="@string/txt_postfor"
             android:layout_marginLeft="93dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/txt_postfor"
             android:textColor="#898989"
-            android:textSize="10sp"
-            android:fontFamily="@font/montserrat_semibold" />
+            android:textSize="10sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -68,27 +76,26 @@
             android:layout_below="@+id/title_aula"
             android:layout_alignParentEnd="@+id/postado_por"
             android:layout_marginLeft="160dp"
+            android:fontFamily="@font/montserrat_semibold"
             android:text="@string/txt_nameteacher"
             android:textColor="#1524A7"
-            android:textSize="10sp"
-            android:fontFamily="@font/montserrat_semibold"
-            />
+            android:textSize="10sp" />
 
         <View
             android:id="@+id/filtro_cate"
             android:layout_width="98dp"
             android:layout_height="16dp"
+            android:layout_below="@id/postado_por"
             android:layout_marginLeft="93dp"
             android:layout_marginTop="16dp"
-            android:layout_below="@id/postado_por"
-            android:background="@mipmap/categoria2"/>
+            android:background="@mipmap/categoria2" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_below="@+id/postado_por"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="290dp"
+            android:layout_marginTop="260dp"
             android:layout_marginEnd="20dp">
 
             <androidx.appcompat.widget.AppCompatButton
