@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,38 +10,33 @@
         android:id="@+id/containerTop"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@mipmap/header"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/drawerLayout" />
+        android:background="@mipmap/header" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <RelativeLayout
+        android:id="@+id/close_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/containerTop">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/img_logo"
             android:layout_width="60dp"
             android:layout_height="20dp"
+            android:layout_alignParentStart="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:background="@mipmap/logo_medium" />
-    </LinearLayout>
-    <!-- Botão para abrir o drawer menu -->
-    <ImageButton
-        android:id="@+id/btnOpenDrawer"
-        android:layout_width="48dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_menu"
-        app:layout_constraintBottom_toBottomOf="@+id/containerTop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnOpenDrawer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_menu" />
+
+    </RelativeLayout>
 
     <!-- Layout do drawer menu -->
     <RelativeLayout
@@ -53,22 +47,122 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/db_header_menu"
         android:elevation="10dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:visibility="gone">
+        <!--  android:visibility="gone" -->
+        <RelativeLayout
+            android:id="@+id/open_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/btnCloseDrawer"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_close" />
+            <ImageView
+                android:id="@+id/logo_img"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/logo_medium" />
 
-        <!-- Conteúdo do drawer menu aqui -->
+            <ImageButton
+                android:id="@+id/btnCloseDrawer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_close" />
+        </RelativeLayout>
 
+        <!-- Conteúdo do drawer menu -->
+        <RelativeLayout
+            android:id="@+id/container_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/open_menu"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+
+            android:background="@drawable/db_container_profile">
+
+            <ImageView
+                android:id="@+id/img_profile"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/profile" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/img_profile"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/student_name"
+                    style="@style/style_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/txt_question_name"
+                    android:textColor="@color/yellow400" />
+
+                <TextView
+                    android:id="@+id/user_type"
+                    style="@style/style_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/txt_student"
+                    android:textColor="@color/yellow400" />
+
+                <TextView
+                    android:id="@+id/level"
+                    style="@style/style_textSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/txt_level"
+                    android:textColor="@color/yellow800" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@id/container_profile"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_home_page"
+                style="@style/style_subText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_home_page"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_doubt_forum"
+                style="@style/style_subText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/txt_doubt_forum"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
 
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
+

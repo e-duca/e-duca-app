@@ -57,5 +57,9 @@
     <string name="txt_loved">Amei!</string>
     <string name="txt_title">Titulo:</string>
     <string name="txt_topicBody">Corpo do tópico:</string>
+    <string name="txt_student">Aluno:</string>
+    <string name="txt_level">Nivel:</string>
+    <string name="txt_home_page">Página Inicial:</string>
+    <string name="txt_doubt_forum">Fórum de dúvidas:</string>
 
 </resources>
