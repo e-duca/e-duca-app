@@ -23,6 +23,7 @@
     <string name="txt_confirm_sign">Finalizar cadastro</string>
     <string name="txt_back_login">Voltar ao login</string>
     <string name="txt_quiz_content">Realizar quiz</string>
+    <string name="txt_quiz_finish">Finalizar quiz</string>
     <string name="txt_back">Voltar</string>
     <string name="txt_access_navigation">Acessar pelo navegador</string>
     <string name="txt_back_sign">Voltar ao cadastro</string>
@@ -61,5 +62,13 @@
     <string name="txt_level">Nivel:</string>
     <string name="txt_home_page">Página Inicial:</string>
     <string name="txt_doubt_forum">Fórum de dúvidas:</string>
+    <string name="txt_quiz"><b>Quiz: </b></string>
+    <string name="txt_title_conteudo">Título do conteúdo</string>
+    <string name="txt_questionOne"><b>1.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan mattis augue eu pellentesque?</string>
+    <string name="txt_questionTwo"><b>2.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan mattis augue eu pellentesque?</string>
+    <string name="txt_questionTree"><b>3.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan mattis augue eu?</string>
+    <string name="txt_questionFor"><b>4.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan ?</string>
+    <string name="txt_questionFIve"><b>5.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan mattis augue ?</string>
+    <string name="txt_questionSix"><b>6.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan mattis?</string>
 
 </resources>
