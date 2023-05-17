@@ -54,16 +54,16 @@
                 android:textColor="#B1B1B1" />
         </LinearLayout>
 
-    <TextView
-        android:id="@+id/hability"
-        style="@style/style_textXSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linear_title"
-        android:layout_toEndOf="@id/imageCard"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="@string/txt_ability"
-        android:textColor="@color/blue300" />
+        <TextView
+            android:id="@+id/hability"
+            style="@style/style_textXSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_title"
+            android:layout_toEndOf="@id/imageCard"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/txt_ability"
+            android:textColor="@color/blue300" />
 
     </RelativeLayout>
 

@@ -81,7 +81,6 @@
             android:layout_below="@+id/open_menu"
             android:layout_centerInParent="true"
             android:layout_marginTop="20dp"
-
             android:background="@drawable/db_container_profile">
 
             <ImageView

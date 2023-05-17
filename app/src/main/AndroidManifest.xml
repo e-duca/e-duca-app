@@ -17,18 +17,6 @@
         android:theme="@style/Theme.Educa"
         tools:targetApi="33">
         <activity
-            android:name=".Quiz"
-            android:exported="false" />
-        <activity
-            android:name=".myQuestions"
-            android:exported="false" />
-        <activity
-            android:name=".Likert_Respondido"
-            android:exported="false" />
-        <activity
-            android:name=".Video"
-            android:exported="false" />
-        <activity
             android:name=".Login"
             android:exported="true">
             <intent-filter>
@@ -44,10 +32,22 @@
             android:name=".Content"
             android:exported="false" />
         <activity
+            android:name=".LikertAnswered"
+            android:exported="false" />
+        <activity
+            android:name=".Video"
+            android:exported="false" />
+        <activity
+            android:name=".MyQuestions"
+            android:exported="false" />
+        <activity
             android:name=".Reading"
             android:exported="false" />
         <activity
             android:name=".Redirect"
+            android:exported="false" />
+        <activity
+            android:name=".Quiz"
             android:exported="false" />
 
         <meta-data

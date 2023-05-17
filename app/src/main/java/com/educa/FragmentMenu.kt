@@ -1,10 +1,12 @@
 package com.educa
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 
@@ -23,6 +25,19 @@ class FragmentMenu : Fragment() {
     @Nullable
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val homePage = view.findViewById<TextView>(R.id.tv_home_page)
+        val doubtForum = view.findViewById<TextView>(R.id.tv_doubt_forum)
+
+        homePage.setOnClickListener {
+            val content = Intent(activity, Content::class.java)
+            startActivity(content)
+        }
+
+        doubtForum.setOnClickListener {
+            val myQuestions = Intent(activity, MyQuestions::class.java)
+            startActivity(myQuestions)
+        }
 
         btnOpenDrawer = view.findViewById(R.id.btnOpenDrawer)
         btnCloseDrawer = view.findViewById(R.id.btnCloseDrawer)

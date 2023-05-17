@@ -6,28 +6,36 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 
-class FragmentModal : Fragment() {
+class FragmentEditContent : Fragment() {
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_modal, container, false)
+        return inflater.inflate(R.layout.fragment_edit_content, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnOpenPopUp: Button = view.findViewById(R.id.btn_showPopup)
+        val editContent = view.findViewById<ImageButton>(R.id.edit_content)
+        val deleteContent = view.findViewById<ImageButton>(R.id.delete_content)
 
-        btnOpenPopUp.setOnClickListener {
-            val showPopUp = FragmentPopUp()
+        editContent.setOnClickListener {
+            val showPopUp = FragmentModalUpdate()
+            showPopUp.show((activity as AppCompatActivity).supportFragmentManager, "showPopUp")
+        }
+        deleteContent.setOnClickListener {
+            val showPopUp = FragmentModalDelete()
             showPopUp.show((activity as AppCompatActivity).supportFragmentManager, "showPopUp")
         }
 
-
     }
+
 }

@@ -4,87 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".myQuestions">
+    tools:context=".MyQuestions">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        >
+        android:id="@+id/relativeLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <fragment
             android:id="@+id/fg_menu"
             class="com.educa.FragmentMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_menu"
-
-            />
+            tools:layout="@layout/fragment_menu" />
 
         <fragment
             android:id="@+id/fg_salutation"
-            android:layout_width="wrap_content"
+            class="com.educa.FragmentSalutation"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/fg_menu"
-            class="com.educa.FragmentSalutation"
-            tools:layout="@layout/fragment_salutation"
-            android:layout_marginLeft="20dp"
-            />
+            tools:layout="@layout/fragment_salutation" />
+
         <LinearLayout
             android:id="@+id/ll_buttons"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/fg_salutation"
-            android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
-            >
-        <fragment
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/fg_btn_see_topics"
-            class="com.educa.ButtonSeeTopics"
-            tools:layout="@layout/fragment_button_see_topics"/>
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="20dp">
+
             <fragment
-                android:layout_width="wrap_content"
+                android:id="@+id/fg_btn_see_topics"
+                class="com.educa.ButtonSeeTopics"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:layout="@layout/fragment_button_see_topics" />
+
+            <fragment
                 android:id="@+id/fg_btn_add_topics"
                 class="com.educa.ButtonAddNewTopic"
-                tools:layout="@layout/fragment_button_add_new_topic"
-                android:layout_marginLeft="10dp"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                tools:layout="@layout/fragment_button_add_new_topic" />
+
         </LinearLayout>
 
+        <ScrollView
+            android:layout_below="@+id/ll_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <fragment
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="40dp"
-            android:id="@+id/fg_bubble_question"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ll_buttons"
-            class="com.educa.FragmentBubbleQuestion"
-            tools:layout="@layout/fragment_bubble_question"
-            />
-        <fragment
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="25dp"
-            android:id="@+id/fg_second_bubble_question"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/fg_bubble_question"
-            class="com.educa.FragmentBubbleQuestion"
-            tools:layout="@layout/fragment_bubble_question"
-            />
-        <fragment
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="25dp"
-            android:id="@+id/fg_third_bubble_question"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/fg_second_bubble_question"
-            class="com.educa.FragmentBubbleQuestion"
-            tools:layout="@layout/fragment_bubble_question"
-            />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
+                <fragment
+                    android:id="@+id/fg_card_one"
+                    class="com.educa.FragmentEditContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_edit_content" />
+
+                <fragment
+                    android:id="@+id/fg_card_two"
+                    class="com.educa.FragmentEditContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_edit_content" />
+
+                <fragment
+                    android:id="@+id/fg_card_tree"
+                    class="com.educa.FragmentEditContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_edit_content" />
+            </LinearLayout>
+        </ScrollView>
 
     </RelativeLayout>
 
