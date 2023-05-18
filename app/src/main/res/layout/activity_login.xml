@@ -102,13 +102,6 @@
                     android:background="@drawable/db_btn_solid"
                     android:text="@string/txt_enter" />
 
-                <fragment
-                    android:id="@+id/btn_modal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    class="com.educa.FragmentModal"
-                    tools:layout="@layout/fragment_modal"/>
-
                 <TextView
                     android:id="@+id/tv_text"
                     android:layout_width="wrap_content"

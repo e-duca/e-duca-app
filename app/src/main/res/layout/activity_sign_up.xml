@@ -97,7 +97,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Birth Date -->
+<!--             Birth Date -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtInputLayoutDate"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -116,6 +116,7 @@
                     android:drawableEnd="@drawable/ic_calendar"
                     android:hint="@string/hint_birthdate"
                     android:inputType="date"
+                    android:focusable="false"
                     android:maxLength="10" />
 
             </com.google.android.material.textfield.TextInputLayout>

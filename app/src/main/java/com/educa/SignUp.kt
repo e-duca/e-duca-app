@@ -2,11 +2,11 @@ package com.educa
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -22,8 +22,8 @@ import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.util.*
 
+
 class SignUp : AppCompatActivity() {
-    private lateinit var tvDatePicker: com.google.android.material.textfield.TextInputEditText
     private lateinit var clickCalendar: com.google.android.material.textfield.TextInputEditText
     private lateinit var sessionManager: SessionManager
     private lateinit var apiClient: ApiClient
@@ -76,22 +76,22 @@ class SignUp : AppCompatActivity() {
                 confirmPassword.isNotBlank()
             ) {
                 if (confirmPassword == password) {
-                     if(birthdate.length == 10) {
-                         val newStudent = Student(
-                             nome = name,
-                             sobrenome = lastName,
-                             email = email,
-                             dataNasc = updateLableBack(birthdate),
-                             senha = password
-                         )
-                         signUp(newStudent)
-                     } else {
-                         Toast.makeText(
-                             baseContext,
-                             "Data deve estar preenchida no formato: dd-mm-aaaa.",
-                             Toast.LENGTH_SHORT
-                         ).show()
-                     }
+                    if (birthdate.length == 10) {
+                        val newStudent = Student(
+                            nome = name,
+                            sobrenome = lastName,
+                            email = email,
+                            dataNasc = updateLableBack(birthdate),
+                            senha = password
+                        )
+                        signUp(newStudent)
+                    } else {
+                        Toast.makeText(
+                            baseContext,
+                            "Data deve estar preenchida no formato: dd-mm-aaaa.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 } else {
                     Toast.makeText(
                         baseContext,
@@ -108,35 +108,8 @@ class SignUp : AppCompatActivity() {
             }
         }
 
-        val ipt_birthdate = findViewById<EditText>(R.id.ipt_birthdate)
-
-        ipt_birthdate.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val digit = ipt_birthdate.text.toString()
-
-                if (digit.length < 10) {
-                    if (count == 1 && digit.length == 2 || digit.length == 5) {
-                        ipt_birthdate.setText(
-                            StringBuilder(digit).insert(
-                                digit.length,
-                                "-"
-                            ).toString()
-                        )
-
-                        ipt_birthdate.setSelection(ipt_birthdate.text.length)
-                    }
-                }
-            }
-        })
-
-        tvDatePicker = findViewById(R.id.ipt_birthdate)
         clickCalendar = findViewById(R.id.ipt_birthdate)
+
 
         val myCalendar = Calendar.getInstance()
 
@@ -147,7 +120,8 @@ class SignUp : AppCompatActivity() {
             updateLable(myCalendar)
         }
 
-        tvDatePicker.setOnClickListener {
+        clickCalendar.setOnClickListener {
+            //closeKeyboard()
             DatePickerDialog(
                 this, datePicker, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                 myCalendar.get(Calendar.DAY_OF_MONTH)
@@ -155,10 +129,25 @@ class SignUp : AppCompatActivity() {
         }
     }
 
+    private fun closeKeyboard() {
+
+        val view = this.currentFocus
+        if (view != null) {
+
+            val manager: InputMethodManager = getSystemService(
+                Context.INPUT_METHOD_SERVICE
+            ) as InputMethodManager
+            manager
+                .hideSoftInputFromWindow(
+                    view.windowToken, 0
+                )
+        }
+    }
+
     private fun updateLable(myCalendar: Calendar) {
         val myFormat = "dd-MM-yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.UK)
-        tvDatePicker.setText(sdf.format(myCalendar.time))
+        clickCalendar.setText(sdf.format(myCalendar.time))
     }
 
     @SuppressLint("NewApi")

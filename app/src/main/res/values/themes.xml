@@ -6,11 +6,13 @@
         <item name="colorPrimaryVariant">@color/purple900</item>
         <item name="colorOnPrimary">@color/blue800</item>
         <!-- Secundary brand color -->
-        <item name="colorSecondary">@color/blue600</item>
+        <item name="colorSecondary">@color/purple800</item>
         <item name="colorSecondaryVariant">@color/blue500</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color -->
         <item name="android:statusBarColor">@color/black</item>
+
+        <item name="android:windowBackground">@color/white</item>
 
         <item name="android:textColor">@color/black</item>
     </style>
@@ -163,6 +165,7 @@
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">16sp</item>
+
 
     </style>
 

@@ -2,60 +2,58 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".FragmentSalutation">
 
+    <ImageView
+        android:id="@+id/img_figure"
+        android:layout_width="140dp"
+        android:layout_height="142dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/icon"
+        android:elevation="2dp" />
 
     <RelativeLayout
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/db_balloon">
 
 
-        <ImageView
-            android:id="@+id/rectangle_2"
-            android:layout_width="304.5dp"
-            android:layout_height="93.6dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="33dp"
-            android:layout_marginTop="77dp"
-            android:background="@drawable/borda" />
+        <LinearLayout
+            android:id="@+id/linear_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
 
-        <ImageView
+            <TextView
+                android:id="@+id/name_student"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/txt_hello_username"
+                android:textSize="16sp" />
 
-            android:id="@+id/image_74"
-            android:layout_width="121dp"
-            android:layout_height="121dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="232dp"
-            android:layout_marginTop="35dp"
-            android:background="@drawable/icon" />
+            <TextView
+                android:id="@+id/info_question"
+                style="@style/style_textSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/txt_salutation"
+                android:textColor="@color/black" />
 
-        <TextView
-            android:id="@+id/ol_lucas_"
-            android:layout_width="209dp"
-            android:layout_height="20dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="67dp"
-            android:layout_marginTop="90dp"
-            android:gravity="top"
-            android:text="@string/txt_hello_username"
-            android:textSize="10sp" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/com_d_vidas"
-            android:layout_width="170dp"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="67dp"
-            android:layout_marginTop="114dp"
-            android:gravity="top"
-            android:text="@string/txt_salutation"
-            android:textColor="@color/black"
-            android:textSize="10sp" />
 
     </RelativeLayout>
 
