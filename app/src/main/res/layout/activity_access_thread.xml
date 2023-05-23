@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccessThread">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <fragment
+            android:id="@+id/fg_menu"
+            class="com.educa.FragmentMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_menu"
+            />
+
+        <fragment
+            android:layout_below="@+id/fg_menu"
+            android:layout_marginTop="40dp"
+            android:id="@+id/fg_bubble_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            class="com.educa.FragmentEditContent"
+            tools:layout="@layout/fragment_edit_content"
+            />
+        <ScrollView
+            android:layout_below="@+id/fg_menu"
+            android:padding="20dp"
+            android:id="@+id/SV_body_answers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/db_thread"
+            android:layout_centerHorizontal="true">
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <TextView
+
+                    android:id="@+id/responses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/style_bigTxt"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/txt_answer" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/body_responses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_body_answer" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+
+                    android:id="@+id/second_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/style_bigTxt"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/txt_answer" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/body_second_responses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_body_answer"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"/>
+                <TextView
+
+                    android:id="@+id/third_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/style_bigTxt"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/txt_answer" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/body_third_responses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_body_answer" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"/>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_marginStart="80dp"
+                    android:id="@+id/btn_add_answer"
+                    style="@style/style_btnPinkSmall"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/db_btn_solid"
+                    android:text="@string/txt_add_answer"
+                    />
+
+
+            </LinearLayout>
+
+
+
+
+        </ScrollView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/SV_body_answers"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="80dp">
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_back"
+                style="@style/style_btnBorderPurpleSmall"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/db_btn_border"
+                android:text="@string/txt_back"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
