@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Content">
 
     <LinearLayout
@@ -33,47 +34,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <androidx.fragment.app.FragmentContainerView
-                    android:id="@+id/fg_card01"
-                    class="com.educa.FragmentCardContent"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_cards"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_card_content" />
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/fragment_card_content"
+                    app:layoutManager="LinearLayoutManager"
+                    />
 
-                <androidx.fragment.app.FragmentContainerView
-                    android:id="@+id/fg_card02"
-                    class="com.educa.FragmentCardContent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_card_content" />
-
-                <fragment
-                    android:id="@+id/fg_card03"
-                    class="com.educa.FragmentCardContent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_card_content" />
-
-                <fragment
-                    android:id="@+id/fg_card04"
-                    class="com.educa.FragmentCardContent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_card_content" />
-
-                <fragment
-                    android:id="@+id/fg_card05"
-                    class="com.educa.FragmentCardContent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_card_content" />
-
-                <fragment
-                    android:id="@+id/fg_card06"
-                    class="com.educa.FragmentCardContent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_card_content" />
 
             </LinearLayout>
 
