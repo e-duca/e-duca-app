@@ -2,6 +2,7 @@ package com.educa.api.service
 
 import com.educa.api.model.Content
 import com.educa.api.model.Student
+import com.educa.api.model.Topic
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -13,14 +14,14 @@ interface MainApiService {
     @POST("api/usuarios/estudantes/")
     fun registerStudent(@Body student: Student) : Call<Student>
 
-    //@GET("api/topicos/usuario-secao")
-    //fun getTopic() : Call<List<Topic>>
+    @GET("api/topicos/usuario-secao")
+    fun getTopic() : Call<List<Topic>>
 
-    //@GET("api/topicos")
-    //fun getAllTopics() : Call<List<Topic>>
+    @GET("api/topicos")
+    fun getAllTopics() : Call<List<Topic>>
 
-    //@POST("api/topicos")
-    //fun registerTopic()
+    @POST("api/topicos")
+    fun registerTopic(@Body topic: Topic) : Call<Topic>
 
     //@PUT("api/topicos/{id}")
     //fun updateTopic(@Path("id"))

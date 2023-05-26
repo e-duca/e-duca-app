@@ -2,6 +2,7 @@ package com.educa
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.educa.api.model.Content
@@ -37,6 +38,11 @@ class Content : AppCompatActivity() {
                     if (response.isSuccessful && !response.body()!!.isNullOrEmpty()) {
                         contentList.addAll(response.body()!!)
                         contentAdapter.notifyDataSetChanged()
+
+                        Log.i(
+                            "Entrou no is sucessful",
+                            "Call: ${call}"
+                        )
                     }
                 }
 
@@ -46,6 +52,11 @@ class Content : AppCompatActivity() {
                         this@Content, t.message,
                         Toast.LENGTH_SHORT
                     ).show()
+
+                    Log.e(
+                        "ERRO AO PUXAR CONTEUDO",
+                        "Call: ${call}"
+                    )
                 }
 
             })

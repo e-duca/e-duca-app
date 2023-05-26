@@ -61,35 +61,21 @@
         </LinearLayout>
 
         <ScrollView
-            android:layout_below="@+id/ll_buttons"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_buttons">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <fragment
-                    android:id="@+id/fg_card_one"
-                    class="com.educa.FragmentEditContent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_edit_content" />
-
-                <fragment
-                    android:id="@+id/fg_card_two"
-                    class="com.educa.FragmentEditContent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_edit_content" />
-
-                <fragment
-                    android:id="@+id/fg_card_tree"
-                    class="com.educa.FragmentEditContent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_edit_content" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_topics"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutManager="LinearLayoutManager"
+                    tools:listitem="@layout/fragment_card_topic" />
             </LinearLayout>
         </ScrollView>
 
