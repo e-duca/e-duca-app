@@ -14,24 +14,17 @@
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/drawable/ic_menu.xml" value="0.102" />
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/drawable/ic_person.xml" value="0.102" />
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_content.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_likert_respondido.xml" value="0.30185185185185187" />
-        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_login.xml" value="0.18" />
+        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_likert_respondido.xml" value="0.16" />
+        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_my_questions.xml" value="0.2" />
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_quiz.xml" value="0.2692307692307692" />
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_reading.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_redirect.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
-        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_video_aula.xml" value="0.25" />
+        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
+        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_video_aula.xml" value="0.23222748815165878" />
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/fragment_bubble_question.xml" value="0.2" />
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/fragment_button_add_new_topic.xml" value="0.2" />
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/fragment_button_see_topics.xml" value="0.2" />
-        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_likert_respondido.xml" value="0.16" />
-        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_my_questions.xml" value="0.2" />
-        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_reading.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_redirect.xml" value="0.17916666666666667" />
-        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
-        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/activity_video_aula.xml" value="0.23222748815165878" />
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/fragment_card_content.xml" value="0.2" />
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/fragment_likert.xml" value="0.5" />
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/fragment_menu.xml" value="0.2" />
@@ -39,7 +32,6 @@
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/fragment_navbar.xml" value="0.2" />
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/fragment_pop_up.xml" value="0.2" />
         <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/fragment_salutation.xml" value="0.2" />
-        <entry key="..\:/Users/Gabriel/Downloads/e-duca-app/app/src/main/res/layout/fragment_pop_up.xml" value="0.2" />
         <entry key="..\:/Users/Gabriel/Downloads/saudacao/e-duca-app/app/src/main/res/drawable/ic_baseline_menu.xml" value="0.102" />
         <entry key="..\:/Users/Gabriel/Downloads/saudacao/e-duca-app/app/src/main/res/layout/fragment_saudacao.xml" value="0.25" />
         <entry key="..\:/Users/Lucas/AndroidStudioProjects/Educa/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
@@ -109,6 +101,8 @@
         <entry key="..\:/Users/rodrigo.r.campos/Documents/E-duca APP/e-duca-app/app/src/main/res/layout/activity_sign_up.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/rodrigo.r.campos/Documents/E-duca APP/e-duca-app/app/src/main/res/layout/fragment_menu.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/rodrigo.r.campos/Documents/E-duca APP/e-duca-app/app/src/main/res/layout/fragment_navbar.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/rodrigo.r.campos/Documents/E-duca App/e-duca-app/app/src/main/res/drawable/db_thread.xml" value="0.1605" />
+        <entry key="..\:/Users/rodrigo.r.campos/Documents/E-duca App/e-duca-app/app/src/main/res/layout/activity_access_thread.xml" value="0.20599409033347404" />
         <entry key="app/src/main/res/drawable/db_container_solid.xml" value="0.195" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25791473195441117" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.2612227447627191" />
