@@ -46,13 +46,13 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_back"
                 style="@style/style_btnBorderBlackSmall"
-                android:layout_toStartOf="@id/btn_delete"
+                android:layout_toStartOf="@id/btn_deleteTopic"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/db_btn_border"
                 android:text="@string/txt_no" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_delete"
+                android:id="@+id/btn_deleteTopic"
                 style="@style/style_btnPinkSmall"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/db_btn_solid"

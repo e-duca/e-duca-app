@@ -44,6 +44,7 @@ class FragmentModalAddTopic : DialogFragment() {
                 description.isNotBlank()
             ) {
                 val newTopic = Topic(
+                    id,
                     titulo = subject,
                     descricao = description
                 )

@@ -4,6 +4,7 @@ import com.educa.api.model.Content
 import com.educa.api.model.Student
 import com.educa.api.model.Topic
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.http.*
 
 interface MainApiService {
@@ -23,11 +24,11 @@ interface MainApiService {
     @POST("api/topicos")
     fun registerTopic(@Body topic: Topic) : Call<Topic>
 
-    //@PUT("api/topicos/{id}")
-    //fun updateTopic(@Path("id"))
+    @PUT("api/topicos/{id}")
+    fun updateTopic(@Path("id") @Body topic: Topic): Call<Topic>
 
-    //@DELETE("api/topicos/{id}")
-    //fun deleteTopic(@Path("id"))
+    @DELETE("api/topicos/{id}")
+    fun deleteTopic(@Path("id") topicId: Int) : Callback<Topic>
 
     //@POST("api/topicos/respostas")
     //fun registerAnswer()

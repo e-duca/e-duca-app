@@ -65,7 +65,7 @@
                 android:text="@string/txt_back" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_update"
+                android:id="@+id/btn_updateTopic"
                 style="@style/style_btnPurpleSmall"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/db_btn_solid"
