@@ -44,6 +44,7 @@ class FragmentModalUpdate : DialogFragment() {
                 description.isNotBlank()
             ) {
                 val updatedTopic = Topic(
+                    id,
                     titulo = subject,
                     descricao = description
                 )

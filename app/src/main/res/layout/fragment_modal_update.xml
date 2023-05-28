@@ -60,7 +60,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_back"
                 style="@style/style_btnBorderBlackSmall"
-                android:layout_toStartOf="@id/btn_update"
+                android:layout_toStartOf="@id/btn_updateTopic"
                 android:background="@android:color/transparent"
                 android:text="@string/txt_back" />
 

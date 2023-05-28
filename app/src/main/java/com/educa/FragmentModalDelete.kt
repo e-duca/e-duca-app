@@ -34,7 +34,7 @@ class FragmentModalDelete : DialogFragment() {
         val btn_deleteTopic: Button = view.findViewById(R.id.btn_deleteTopic)
 
         btn_deleteTopic.setOnClickListener {
-                deleteTopic(deletedTopic)
+                //deleteTopic(deletedTopic)
         }
 
         btnClosePopUp.setOnClickListener {
@@ -45,7 +45,7 @@ class FragmentModalDelete : DialogFragment() {
 
     fun deleteTopic(deletedTopic: Topic) {
         apiClient.getMainApiService().deleteTopic(deletedTopic.id)
-            .enqueue(object : Callback<Topic> {
+           /* .enqueue(object : Callback<Topic> {
                 override fun onResponse(
                     call: Call<Topic>,
                     response: Response<Topic>
@@ -72,5 +72,7 @@ class FragmentModalDelete : DialogFragment() {
                 }
 
             })
+
+            */
     }
 }
