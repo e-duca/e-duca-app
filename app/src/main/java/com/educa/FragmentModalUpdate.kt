@@ -61,7 +61,9 @@ class FragmentModalUpdate : DialogFragment() {
     }
 
     fun updateTopic(updatedTopic: Topic) {
-        apiClient.getMainApiService().updateTopic(updatedTopic)
+        apiClient.getMainApiService(
+            requireActivity().applicationContext
+        ).updateTopic(updatedTopic)
             .enqueue(object : Callback<Topic> {
                 override fun onResponse(
                     call: Call<Topic>,

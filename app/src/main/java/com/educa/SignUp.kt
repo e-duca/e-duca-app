@@ -161,7 +161,7 @@ class SignUp : AppCompatActivity() {
     }
 
     fun signUp(newStudent: Student) {
-        apiClient.getMainApiService().registerStudent(newStudent)
+        apiClient.getMainApiService(this).registerStudent(newStudent)
             .enqueue(object : Callback<Student> {
                 override fun onResponse(
                     call: Call<Student>,

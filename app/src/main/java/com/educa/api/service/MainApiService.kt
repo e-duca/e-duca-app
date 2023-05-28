@@ -10,7 +10,7 @@ import retrofit2.http.*
 interface MainApiService {
 
     @GET("api/conteudos")
-    fun getAllContent(@Header("Authorization") token: String) : Call<ContentResponseArray>
+    fun getAllContent() : Call<ContentResponseArray>
 
     @POST("api/usuarios/estudantes/")
     fun registerStudent(@Body student: Student) : Call<Student>
@@ -38,8 +38,5 @@ interface MainApiService {
 
     //@DELETE("api/topicos/respostas/{id}")
     //fun deleteAnswer(@Path("id"))
-
-    @GET("/api/conteudos/avaliacoes/usuario-secao")
-    fun countRatings() : Call<List<Topic>>
 
 }

@@ -52,8 +52,8 @@ class Content : AppCompatActivity() {
             "FETCHED TOKEN: ${sessionManager.fetchAuthToken()}"
         )
 
-        apiClient.getMainApiService()
-            .getAllContent(token = "Bearer ${sessionManager.fetchAuthToken()}")
+        apiClient.getMainApiService(this)
+            .getAllContent()
             .enqueue(object : Callback<ContentResponseArray> {
                 @SuppressLint("NotifyDataSetChanged")
                 override fun onResponse(

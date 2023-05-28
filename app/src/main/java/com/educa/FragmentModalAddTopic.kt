@@ -62,7 +62,7 @@ class FragmentModalAddTopic : DialogFragment() {
     }
 
     fun addNewTopic(newTopic: Topic) {
-        apiClient.getMainApiService().registerTopic(newTopic)
+        apiClient.getMainApiService(requireActivity().applicationContext).registerTopic(newTopic)
             .enqueue(object : Callback<Topic> {
                 override fun onResponse(
                     call: Call<Topic>,

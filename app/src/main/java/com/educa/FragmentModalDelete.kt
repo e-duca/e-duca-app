@@ -34,7 +34,7 @@ class FragmentModalDelete : DialogFragment() {
         val btn_deleteTopic: Button = view.findViewById(R.id.btn_deleteTopic)
 
         btn_deleteTopic.setOnClickListener {
-                //deleteTopic(deletedTopic)
+            //deleteTopic(deletedTopic)
         }
 
         btnClosePopUp.setOnClickListener {
@@ -44,35 +44,36 @@ class FragmentModalDelete : DialogFragment() {
     }
 
     fun deleteTopic(deletedTopic: Topic) {
-        apiClient.getMainApiService().deleteTopic(deletedTopic.id)
-           /* .enqueue(object : Callback<Topic> {
-                override fun onResponse(
-                    call: Call<Topic>,
-                    response: Response<Topic>
-                ) {
-                    if (response.isSuccessful) {
-                        val deletedTopic = response.body()
-                        Log.w("Deleted Topic", "${deletedTopic}")
+        apiClient.getMainApiService(requireActivity().applicationContext)
+            .deleteTopic(deletedTopic.id)
+        /* .enqueue(object : Callback<Topic> {
+             override fun onResponse(
+                 call: Call<Topic>,
+                 response: Response<Topic>
+             ) {
+                 if (response.isSuccessful) {
+                     val deletedTopic = response.body()
+                     Log.w("Deleted Topic", "${deletedTopic}")
 
-                    } else {
+                 } else {
 
-                        Log.e(
-                            "ERRO AO DELETAR TÓPICO",
-                            "Call: ${call} Response: ${response} Tópico DELETADO: ${deletedTopic}"
-                        )
-                    }
-                }
+                     Log.e(
+                         "ERRO AO DELETAR TÓPICO",
+                         "Call: ${call} Response: ${response} Tópico DELETADO: ${deletedTopic}"
+                     )
+                 }
+             }
 
-                override fun onFailure(call: Call<Topic>, t: Throwable) {
-                    t.printStackTrace()
-                    Log.e(
-                        "ERRO NO SERVIDOR AO DELETAR TÓPICO",
-                        "Call: ${call}"
-                    )
-                }
+             override fun onFailure(call: Call<Topic>, t: Throwable) {
+                 t.printStackTrace()
+                 Log.e(
+                     "ERRO NO SERVIDOR AO DELETAR TÓPICO",
+                     "Call: ${call}"
+                 )
+             }
 
-            })
+         })
 
-            */
+         */
     }
 }

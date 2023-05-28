@@ -33,7 +33,7 @@ class MyQuestions : AppCompatActivity() {
         topicAdapter = TopicListAdapter(this, myTopicsList)
 
         fun loadMyTopicsList() {
-            apiClient.getMainApiService().getTopic().enqueue(object : Callback<List<Topic>> {
+            apiClient.getMainApiService(this).getTopic().enqueue(object : Callback<List<Topic>> {
                 override fun onResponse(
                     call: Call<List<Topic>>,
                     response: Response<List<Topic>>
@@ -71,7 +71,7 @@ class MyQuestions : AppCompatActivity() {
     fun loadAllTopicsList() {
         val allTopicsList = mutableListOf<Topic>()
 
-        apiClient.getMainApiService().getAllTopics().enqueue(object : Callback<List<Topic>> {
+        apiClient.getMainApiService(this).getAllTopics().enqueue(object : Callback<List<Topic>> {
             override fun onResponse(
                 call: Call<List<Topic>>,
                 response: Response<List<Topic>>
