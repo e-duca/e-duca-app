@@ -7,20 +7,23 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.educa.R
-import com.educa.api.model.Content
+import com.educa.api.model.ContentResponse
 
 class ContentListAdapter(
     private val context: Context,
-    private val contents: MutableList<Content>
+    private val contents: MutableList<ContentResponse>
 ) : RecyclerView.Adapter<ContentListAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        fun bind(content: Content) {
+        fun bind(content: ContentResponse) {
             val title = itemView.findViewById<TextView>(R.id.title)
             title.text = content.titulo
 
             val hability = itemView.findViewById<TextView>(R.id.hability)
             hability.text = content.habilidade.codigo
+
+            val posted = itemView.findViewById<TextView>(R.id.postedAt)
+            posted.text = content.dataCriacao
         }
     }
 

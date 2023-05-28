@@ -48,9 +48,18 @@
                 android:id="@+id/posted"
                 style="@style/style_textXXSmall"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:fontFamily="@font/montserrat_semibold"
                 android:text="@string/txt_posted"
+                android:textColor="#B1B1B1" />
+
+            <TextView
+                android:id="@+id/postedAt"
+                style="@style/style_textXXSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/txt_postedAt"
                 android:textColor="#B1B1B1" />
         </LinearLayout>
 

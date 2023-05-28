@@ -1,6 +1,6 @@
 package com.educa.api.service
 
-import com.educa.api.model.Content
+import com.educa.api.model.ContentResponseArray
 import com.educa.api.model.Student
 import com.educa.api.model.Topic
 import retrofit2.Call
@@ -10,7 +10,7 @@ import retrofit2.http.*
 interface MainApiService {
 
     @GET("api/conteudos")
-    fun getAllContent() : Call<List<Content>>
+    fun getAllContent(@Header("Authorization") token: String) : Call<ContentResponseArray>
 
     @POST("api/usuarios/estudantes/")
     fun registerStudent(@Body student: Student) : Call<Student>
@@ -38,5 +38,8 @@ interface MainApiService {
 
     //@DELETE("api/topicos/respostas/{id}")
     //fun deleteAnswer(@Path("id"))
+
+    @GET("/api/conteudos/avaliacoes/usuario-secao")
+    fun countRatings() : Call<List<Topic>>
 
 }
