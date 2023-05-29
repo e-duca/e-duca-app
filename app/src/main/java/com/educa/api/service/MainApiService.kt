@@ -24,7 +24,7 @@ interface MainApiService {
     @POST("api/topicos")
     fun registerTopic(@Body topic: Topic) : Call<Topic>
 
-    @PUT("api/topicos/{id}")
+    @PATCH("api/topicos/{id}")
     fun updateTopic(@Path("id") @Body topic: Topic): Call<Topic>
 
     @DELETE("api/topicos/{id}")

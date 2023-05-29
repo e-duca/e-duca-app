@@ -5,11 +5,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import org.w3c.dom.Text
 
 class Reading : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reading)
+
+        val contentTitle: String? = intent.getStringExtra("title")
+        val contentText: String? = intent.getStringExtra("text")
+
+        val title = findViewById<TextView>(R.id.txt_title)
+        title.text = contentTitle
+
+        val text = findViewById<TextView>(R.id.txt_content)
+        text.text = contentText
 
         val backToContent = findViewById<Button>(R.id.btn_back)
 

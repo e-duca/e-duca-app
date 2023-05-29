@@ -1,6 +1,7 @@
 package com.educa
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,15 +13,18 @@ import com.educa.api.model.ContentResponse
 import com.educa.api.service.ApiClient
 import com.educa.api.service.SessionManager
 import com.educa.ui.recyclerview.adapter.ContentListAdapter
+import com.educa.ui.recyclerview.adapter.RecyclerViewInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Content : AppCompatActivity() {
+class Content : AppCompatActivity(), RecyclerViewInterface{
     lateinit var contents: RecyclerView
     private lateinit var apiClient: ApiClient
     private lateinit var sessionManager: SessionManager
     lateinit var contentAdapter: ContentListAdapter
+    lateinit var contentList: MutableList<ContentResponse>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,8 +42,7 @@ class Content : AppCompatActivity() {
     }
 
     fun loadContentList() {
-        val contentList = mutableListOf<ContentResponse>()
-        contentAdapter = ContentListAdapter(this, contentList)
+        contentAdapter = ContentListAdapter(this, contentList, this)
 
         val layoutManager = LinearLayoutManager(this)
 
@@ -68,6 +71,7 @@ class Content : AppCompatActivity() {
                             "CONTEÚDO: ENTROU NO ISSUCCESSFUL",
                             "Call: ${call} Response: ${response.body()}"
                         )
+
                     } else {
                         Log.i(
                             "CONTEÚDO: ENTROU NO IF DO ISSUCCESSFUL MAS CAIU NO ELSE",
@@ -90,4 +94,15 @@ class Content : AppCompatActivity() {
                 }
             })
     }
+
+    override fun onItemClick(position: Int) {
+        val accessContent =  Intent(this.applicationContext, Reading::class.java)
+        accessContent.putExtra("title", contentList[position].titulo)
+        accessContent.putExtra("text", contentList[position].texto)
+        accessContent.putExtra("video", contentList[position].urlVideo)
+        accessContent.putExtra("postedAt", contentList[position].dataCriacao)
+        accessContent.putExtra("postedBy", contentList[position].usuario.nome)
+        startActivity(accessContent)
+    }
+
 }
