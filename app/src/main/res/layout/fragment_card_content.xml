@@ -8,62 +8,54 @@
     <RelativeLayout
         android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="75dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/db_card_content"
-        android:elevation="5dp">
+        android:elevation="6dp">
 
         <ImageView
             android:id="@+id/imageCard"
             android:layout_width="35dp"
             android:layout_height="40dp"
+            android:layout_centerVertical="true"
             android:layout_marginEnd="8dp"
             android:src="@mipmap/card" />
 
-        <LinearLayout
-            android:id="@+id/linear_title"
+        <TextView
+            android:id="@+id/title"
+            style="@style/style_subText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/imageCard"
-            android:gravity="start">
-
-            <TextView
-                android:id="@+id/title"
-                style="@style/style_subText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/title_class"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end">
-
-            <TextView
-                android:id="@+id/posted"
-                style="@style/style_textXXSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_semibold"
-                android:text="@string/txt_posted"
-                android:textColor="#B1B1B1" />
-        </LinearLayout>
+            android:text="@string/title_class"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/hability"
             style="@style/style_textXSmall"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/linear_title"
+            android:layout_below="@id/title"
             android:layout_toEndOf="@id/imageCard"
             android:fontFamily="@font/montserrat_semibold"
             android:text="@string/txt_ability"
             android:textColor="@color/blue300" />
+
+        <TextView
+            android:id="@+id/posted"
+            style="@style/style_textXXSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/hability"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/txt_posted"
+            android:textColor="#B1B1B1" />
 
     </RelativeLayout>
 

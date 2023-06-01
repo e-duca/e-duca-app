@@ -3,15 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/db_container_solid"
+    android:layout_height="match_parent"
+    android:background="#FF626262"
     android:orientation="vertical"
     tools:context=".FragmentModalDelete">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/db_container_solid"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +28,6 @@
             android:fontFamily="@font/montserrat_bold"
             android:text="@string/txt_the_is_sure" />
 
-
         <TextView
             android:id="@+id/tv_topicBody"
             style="@style/style_subText"
@@ -37,7 +37,6 @@
             android:fontFamily="@font/montserrat_medium"
             android:text="@string/txt_all_info_deleted" />
 
-
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,8 +45,8 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_back"
                 style="@style/style_btnBorderBlackSmall"
-                android:layout_toStartOf="@id/btn_delete"
                 android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@id/btn_delete"
                 android:background="@drawable/db_btn_border"
                 android:text="@string/txt_no" />
 

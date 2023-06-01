@@ -16,6 +16,7 @@ class FragmentMenu : Fragment() {
     private lateinit var btnOpenDrawer: ImageButton
     private lateinit var btnCloseDrawer: ImageButton
     private lateinit var drawerLayout: View
+    private lateinit var backgroundOverlay: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,21 +43,16 @@ class FragmentMenu : Fragment() {
         btnOpenDrawer = view.findViewById(R.id.btnOpenDrawer)
         btnCloseDrawer = view.findViewById(R.id.btnCloseDrawer)
         drawerLayout = view.findViewById(R.id.drawerLayout)
+        backgroundOverlay = view.findViewById(R.id.backgroundOverlay)
 
         btnOpenDrawer.setOnClickListener {
-            if (drawerLayout.visibility == View.VISIBLE) {
-                drawerLayout.visibility = View.GONE
-            } else {
-                drawerLayout.visibility = View.VISIBLE
-            }
+            openMenu()
         }
-
         btnCloseDrawer.setOnClickListener {
-            if (drawerLayout.visibility == View.VISIBLE) {
-                drawerLayout.visibility = View.GONE
-            } else {
-                drawerLayout.visibility = View.VISIBLE
-            }
+            closeMenu()
+        }
+        backgroundOverlay.setOnClickListener {
+            closeMenu()
         }
     }
 
@@ -66,8 +62,30 @@ class FragmentMenu : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_menu, container, false)
-
-
     }
 
+    private fun openMenu() {
+        // Mostrar a camada de fundo
+        backgroundOverlay.visibility = View.VISIBLE
+
+        if (drawerLayout.visibility == View.VISIBLE) {
+            drawerLayout.visibility = View.GONE
+
+        } else {
+            drawerLayout.visibility = View.VISIBLE
+        }
+    }
+
+    private fun closeMenu() {
+        // Esconder a camada de fundo
+        backgroundOverlay.visibility = View.GONE
+
+        if (drawerLayout.visibility == View.VISIBLE) {
+            drawerLayout.visibility = View.GONE
+
+        } else {
+            drawerLayout.visibility = View.VISIBLE
+        }
+    }
 }
+
