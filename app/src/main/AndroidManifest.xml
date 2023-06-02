@@ -20,7 +20,7 @@
             android:name=".AccessThread"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".Content"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +32,7 @@
             android:name=".SignUp"
             android:exported="false" />
         <activity
-            android:name=".Content"
+            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".LikertAnswered"

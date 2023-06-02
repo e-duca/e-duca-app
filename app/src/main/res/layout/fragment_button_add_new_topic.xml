@@ -6,6 +6,7 @@
     tools:context=".ButtonAddNewTopic">
 
     <RelativeLayout
+        android:id="@+id/btnAddTopic"
         style="@style/style_btnYellowLarger"
         android:layout_width="match_parent"
         android:layout_height="35dp"
