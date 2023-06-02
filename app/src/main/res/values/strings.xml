@@ -72,8 +72,7 @@
     <string name="txt_questionFor"><b>4.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan ?</string>
     <string name="txt_questionFIve"><b>5.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan mattis augue ?</string>
     <string name="txt_questionSix"><b>6.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan mattis?</string>
+    <string name="txt_loading">Carregando...</string>
     <string name="txt_answer">Resposta 1</string>
     <string name="txt_body_answer">Corpo da resposta</string>
-
-
 </resources>

@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
@@ -38,6 +39,7 @@ class SignUp : AppCompatActivity() {
         val signUpButton = findViewById<Button>(R.id.btn_cadastro)
         val teacherSignUp = findViewById<TextView>(R.id.linkText)
         val backToLogin = findViewById<Button>(R.id.btn_backToLogin)
+        val loadingView = findViewById<View>(R.id.loadingView)
 
         teacherSignUp.setOnClickListener {
             val redirect = Intent(applicationContext, Redirect::class.java)
@@ -50,6 +52,7 @@ class SignUp : AppCompatActivity() {
         }
 
         signUpButton.setOnClickListener {
+
             val nameField = findViewById<EditText>(R.id.ipt_name)
             val name = nameField.text.toString()
 
@@ -84,7 +87,9 @@ class SignUp : AppCompatActivity() {
                             dataNasc = updateLableBack(birthdate),
                             senha = password
                         )
-                        signUp(newStudent)
+
+                        signUp(newStudent, loadingView)
+
                     } else {
                         Toast.makeText(
                             baseContext,
@@ -106,6 +111,7 @@ class SignUp : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+
         }
 
         clickCalendar = findViewById(R.id.ipt_birthdate)
@@ -160,7 +166,8 @@ class SignUp : AppCompatActivity() {
         return LocalDate.parse(dataFormatter).toString()
     }
 
-    fun signUp(newStudent: Student) {
+    fun signUp(newStudent: Student, loadingView : View) {
+        loadingView.visibility = View.VISIBLE
         apiClient.getMainApiService().registerStudent(newStudent)
             .enqueue(object : Callback<Student> {
                 override fun onResponse(
@@ -202,5 +209,6 @@ class SignUp : AppCompatActivity() {
                     t.printStackTrace()
                 }
             })
+        loadingView.visibility = View.GONE
     }
 }
