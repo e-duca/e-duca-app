@@ -10,24 +10,17 @@
         android:id="@+id/relativeLayout2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <fragment
-            android:id="@+id/fg_menu"
-            class="com.educa.FragmentMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_menu" />
-
-        <fragment
             android:id="@+id/fg_salutation"
             class="com.educa.FragmentSalutation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/fg_menu"
             tools:layout="@layout/fragment_salutation" />
 
         <LinearLayout
@@ -61,9 +54,9 @@
         </LinearLayout>
 
         <ScrollView
-            android:layout_below="@+id/ll_buttons"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_buttons">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -94,5 +87,12 @@
         </ScrollView>
 
     </RelativeLayout>
+
+    <fragment
+        android:id="@+id/fg_menu"
+        class="com.educa.FragmentMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
