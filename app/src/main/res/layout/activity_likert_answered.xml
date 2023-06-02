@@ -7,32 +7,22 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <fragment
-            android:id="@+id/fg_menu"
-            class="com.educa.FragmentMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_menu" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp">
 
         <View
             android:id="@+id/rectangle_2"
             android:layout_width="319dp"
             android:layout_height="510dp"
-            android:layout_below="@+id/fg_menu"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="23dp"
             android:layout_marginTop="83dp"
-            android:background="@drawable/db_card_rectangle_likert"
-
-            />
+            android:background="@drawable/db_card_rectangle_likert" />
 
         <View
             android:id="@+id/rectangle2_likert"
             android:layout_width="7dp"
             android:layout_height="476dp"
-            android:layout_below="@id/fg_menu"
             android:layout_alignParentStart="true"
             android:layout_marginStart="43dp"
             android:layout_marginTop="103dp"
@@ -42,7 +32,6 @@
             android:id="@+id/image_35"
             android:layout_width="211dp"
             android:layout_height="121dp"
-            android:layout_below="@id/fg_menu"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="200dp"
             android:background="@mipmap/img_likert_respondido" />
@@ -78,8 +67,8 @@
             android:layout_marginTop="45dp"
             android:background="@drawable/db_btn_solid"
             android:text="@string/txt_access_certificate"
-            android:textSize="9sp"
             android:textColor="@color/black"
+            android:textSize="9sp"
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
 
@@ -97,5 +86,12 @@
             tools:ignore="TouchTargetSizeCheck" />
 
     </RelativeLayout>
+
+    <fragment
+        android:id="@+id/fg_menu"
+        class="com.educa.FragmentMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,26 +7,16 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-        <fragment
-            android:id="@+id/fg_menu"
-            class="com.educa.FragmentMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_menu" />
-
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp">
 
         <LinearLayout
-
             android:layout_width="wrap_content"
             android:layout_height="630dp"
-            android:orientation="vertical"
-            android:background="@drawable/db_card_rectangle_likert"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/fg_menu"
-            android:layout_marginTop="25dp">
+            android:layout_marginTop="25dp"
+            android:background="@drawable/db_card_rectangle_likert"
+            android:orientation="vertical">
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -43,7 +32,7 @@
                         android:id="@+id/quiz_t_tulo"
                         android:layout_width="60dp"
                         android:layout_height="30dp"
-                        android:layout_marginLeft="60dp"
+                        android:layout_marginStart="60dp"
                         android:layout_marginTop="30dp"
                         android:fontFamily="@font/montserrat_bold"
                         android:text="@string/txt_quiz"
@@ -52,15 +41,14 @@
 
                     <TextView
                         android:id="@+id/quiz_title"
-                        android:layout_marginTop="34dp"
-                        android:layout_toRightOf="@id/quiz_t_tulo"
                         android:layout_width="243dp"
                         android:layout_height="20dp"
-                        android:textSize="17sp"
+                        android:layout_marginTop="34dp"
+                        android:layout_toEndOf="@id/quiz_t_tulo"
                         android:fontFamily="@font/montserrat"
-                        android:textColor="#000000"
                         android:text="@string/txt_title_conteudo"
-                        />
+                        android:textColor="#000000"
+                        android:textSize="17sp" />
 
                     <TextView
                         android:id="@+id/lorem_ipsum"
@@ -77,32 +65,30 @@
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:layout_below="@id/lorem_ipsum"
-                        android:layout_marginLeft="55dp"
+                        android:layout_marginStart="55dp"
                         android:layout_marginTop="15dp"
                         android:background="@drawable/checkbox_rounded"
                         android:button="@null" />
 
                     <CheckBox
                         android:id="@+id/checkbox_roundedTwo"
-                        android:layout_marginLeft="55dp"
-                        android:layout_marginTop="15dp"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:layout_below="@id/checkbox_roundedOne"
-                        android:button="@null"
+                        android:layout_marginStart="55dp"
+                        android:layout_marginTop="15dp"
                         android:background="@drawable/checkbox_rounded"
-                        />
+                        android:button="@null" />
 
                     <CheckBox
                         android:id="@+id/checkbox_roundedTree"
-                        android:layout_marginLeft="55dp"
-                        android:layout_marginTop="15dp"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:layout_below="@id/checkbox_roundedTwo"
-                        android:button="@null"
+                        android:layout_marginStart="55dp"
+                        android:layout_marginTop="15dp"
                         android:background="@drawable/checkbox_rounded"
-                        />
+                        android:button="@null" />
 
                     <TextView
                         android:id="@+id/lorem_ipsumTwo"
@@ -116,36 +102,33 @@
 
                     <CheckBox
                         android:id="@+id/checkbox_roundedFor"
-                        android:layout_marginLeft="55dp"
-                        android:layout_marginTop="15dp"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:layout_below="@id/lorem_ipsumTwo"
-                        android:button="@null"
+                        android:layout_marginStart="55dp"
+                        android:layout_marginTop="15dp"
                         android:background="@drawable/checkbox_rounded"
-                        />
+                        android:button="@null" />
 
                     <CheckBox
                         android:id="@+id/checkbox_roundedFive"
-                        android:layout_marginLeft="55dp"
-                        android:layout_marginTop="15dp"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:layout_below="@id/checkbox_roundedFor"
-                        android:button="@null"
+                        android:layout_marginStart="55dp"
+                        android:layout_marginTop="15dp"
                         android:background="@drawable/checkbox_rounded"
-                        />
+                        android:button="@null" />
 
                     <CheckBox
                         android:id="@+id/checkbox_roundedSix"
-                        android:layout_marginLeft="55dp"
-                        android:layout_marginTop="15dp"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:layout_below="@id/checkbox_roundedFive"
-                        android:button="@null"
+                        android:layout_marginStart="55dp"
+                        android:layout_marginTop="15dp"
                         android:background="@drawable/checkbox_rounded"
-                        />
+                        android:button="@null" />
 
                     <TextView
                         android:id="@+id/lorem_ipsumTree"
@@ -161,10 +144,10 @@
                         android:id="@+id/ipt_question"
                         style="@style/style_ipt"
                         android:layout_width="300dp"
-                        android:layout_centerHorizontal="true"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
                         android:layout_below="@id/lorem_ipsumTree"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
                         android:background="@drawable/db_input"
                         android:inputType="text" />
 
@@ -180,42 +163,39 @@
 
                     <CheckBox
                         android:id="@+id/checkbox_roundedSeven"
-                        android:layout_marginLeft="55dp"
-                        android:layout_marginTop="15dp"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:layout_below="@id/lorem_ipsumFor"
-                        android:button="@null"
+                        android:layout_marginStart="55dp"
+                        android:layout_marginTop="15dp"
                         android:background="@drawable/checkbox_rounded"
-                        />
+                        android:button="@null" />
 
                     <CheckBox
                         android:id="@+id/checkbox_roundedEigth"
-                        android:layout_marginLeft="55dp"
-                        android:layout_marginTop="15dp"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:layout_below="@id/checkbox_roundedSeven"
-                        android:button="@null"
+                        android:layout_marginStart="55dp"
+                        android:layout_marginTop="15dp"
                         android:background="@drawable/checkbox_rounded"
-                        />
+                        android:button="@null" />
 
                     <CheckBox
                         android:id="@+id/checkboxNine"
-                        android:layout_marginLeft="55dp"
-                        android:layout_marginTop="15dp"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:layout_below="@id/checkbox_roundedEigth"
-                        android:button="@null"
+                        android:layout_marginStart="55dp"
+                        android:layout_marginTop="15dp"
                         android:background="@drawable/checkbox_rounded"
-                        />
+                        android:button="@null" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_back"
                         style="@style/style_btnBorderPurpleSmall"
                         android:layout_below="@+id/checkboxNine"
-                        android:layout_marginLeft="60dp"
+                        android:layout_marginStart="60dp"
                         android:layout_marginTop="30dp"
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/db_btn_border"
@@ -223,15 +203,14 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_go_quiz"
-                       android:layout_toRightOf="@id/btn_back"
-                        android:layout_below="@id/checkboxNine"
-                        android:layout_marginBottom="20dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="30dp"
                         style="@style/style_btnYellowSmall"
+                        android:layout_below="@id/checkboxNine"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_toEndOf="@id/btn_back"
                         android:background="@drawable/db_btn_solid"
                         android:text="@string/txt_quiz_finish" />
-
 
 
                 </RelativeLayout>
@@ -239,8 +218,13 @@
 
         </LinearLayout>
 
-
-
     </RelativeLayout>
+
+    <fragment
+        android:id="@+id/fg_menu"
+        class="com.educa.FragmentMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
