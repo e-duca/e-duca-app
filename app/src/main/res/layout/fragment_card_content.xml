@@ -35,7 +35,7 @@
             android:textColor="@color/black" />
 
         <TextView
-            android:id="@+id/hability"
+            android:id="@+id/ability"
             style="@style/style_textXSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,11 +46,11 @@
             android:textColor="@color/blue300" />
 
         <TextView
-            android:id="@+id/posted"
+            android:id="@+id/postedAt"
             style="@style/style_textXXSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/hability"
+            android:layout_alignEnd="@+id/ability"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:fontFamily="@font/montserrat_semibold"

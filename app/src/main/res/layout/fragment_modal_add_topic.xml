@@ -2,18 +2,17 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:background="#FF626262"
+    android:background="@drawable/db_container_solid"
     android:orientation="vertical"
     tools:context=".FragmentModalUpdate">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/db_container_solid"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,16 +60,16 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_back"
                 style="@style/style_btnBorderBlackSmall"
-                android:layout_toStartOf="@id/btn_updateTopic"
+                android:layout_toStartOf="@id/btn_addTopic"
                 android:background="@android:color/transparent"
                 android:text="@string/txt_back" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_updateTopic"
+                android:id="@+id/btn_addTopic"
                 style="@style/style_btnPurpleSmall"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/db_btn_solid"
-                android:text="@string/txt_update" />
+                android:text="@string/txt_add" />
         </RelativeLayout>
     </LinearLayout>
 

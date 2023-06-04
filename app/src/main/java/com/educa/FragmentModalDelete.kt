@@ -1,14 +1,23 @@
 package com.educa
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import androidx.fragment.app.DialogFragment
+import com.educa.api.model.Topic
+import com.educa.api.service.ApiClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class FragmentModalDelete : DialogFragment() {
+
+    lateinit var apiClient: ApiClient
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,6 +31,11 @@ class FragmentModalDelete : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val btnClosePopUp: Button = view.findViewById(R.id.btn_back)
+        val btn_deleteTopic: Button = view.findViewById(R.id.btn_deleteTopic)
+
+        btn_deleteTopic.setOnClickListener {
+            //deleteTopic(deletedTopic)
+        }
 
         btnClosePopUp.setOnClickListener {
             dismiss()
@@ -29,4 +43,37 @@ class FragmentModalDelete : DialogFragment() {
 
     }
 
+    fun deleteTopic(deletedTopic: Topic) {
+        apiClient.getMainApiService(requireActivity().applicationContext)
+            .deleteTopic(deletedTopic.id)
+        /* .enqueue(object : Callback<Topic> {
+             override fun onResponse(
+                 call: Call<Topic>,
+                 response: Response<Topic>
+             ) {
+                 if (response.isSuccessful) {
+                     val deletedTopic = response.body()
+                     Log.w("Deleted Topic", "${deletedTopic}")
+
+                 } else {
+
+                     Log.e(
+                         "ERRO AO DELETAR TÓPICO",
+                         "Call: ${call} Response: ${response} Tópico DELETADO: ${deletedTopic}"
+                     )
+                 }
+             }
+
+             override fun onFailure(call: Call<Topic>, t: Throwable) {
+                 t.printStackTrace()
+                 Log.e(
+                     "ERRO NO SERVIDOR AO DELETAR TÓPICO",
+                     "Call: ${call}"
+                 )
+             }
+
+         })
+
+         */
+    }
 }

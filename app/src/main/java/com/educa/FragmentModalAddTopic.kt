@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.educa.api.model.Topic
 import com.educa.api.service.ApiClient
@@ -15,7 +16,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class FragmentModalUpdate : DialogFragment() {
+class FragmentModalAddTopic : DialogFragment() {
 
     lateinit var apiClient: ApiClient
 
@@ -30,10 +31,9 @@ class FragmentModalUpdate : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnClosePopUp: Button = view.findViewById(R.id.btn_back)
-        val btn_updateTopic = view.findViewById<Button>(R.id.btn_updateTopic)
+        val btn_addTopic = view.findViewById<Button>(R.id.btn_addTopic)
 
-        btn_updateTopic.setOnClickListener {
+        btn_addTopic.setOnClickListener {
             val subjectField = view.findViewById<EditText>(R.id.ipt_name)
             val subject = subjectField.text.toString()
 
@@ -43,40 +43,40 @@ class FragmentModalUpdate : DialogFragment() {
             if (subject.isNotBlank() &&
                 description.isNotBlank()
             ) {
-                val updatedTopic = Topic(
+                val newTopic = Topic(
                     id,
                     titulo = subject,
                     descricao = description
                 )
-                updateTopic(updatedTopic)
+                addNewTopic(newTopic)
             } else {
                 Log.e("ERRO", "Os campos não podem estar vazios")
             }
         }
 
+        val btnClosePopUp: Button = view.findViewById(R.id.btn_back)
+
         btnClosePopUp.setOnClickListener {
             dismiss()
         }
-
     }
 
-    fun updateTopic(updatedTopic: Topic) {
-        apiClient.getMainApiService(
-            requireActivity().applicationContext
-        ).updateTopic(updatedTopic)
+    fun addNewTopic(newTopic: Topic) {
+        apiClient.getMainApiService(requireActivity().applicationContext).registerTopic(newTopic)
             .enqueue(object : Callback<Topic> {
                 override fun onResponse(
                     call: Call<Topic>,
                     response: Response<Topic>
                 ) {
                     if (response.isSuccessful) {
-                        val updatedTopic = response.body()
-                        Log.w("Updated Topic", "${updatedTopic}")
+                        val topic = response.body()
+                        Log.w("newTopic", "${newTopic}")
 
                     } else {
+
                         Log.e(
-                            "ERRO AO ATULIZAR TÓPICO",
-                            "Call: ${call} Response: ${response} NewStudent: ${updatedTopic}"
+                            "ERRO AO CRIAR NOVO TÓPICO",
+                            "Call: ${call} Response: ${response} NewStudent: ${newTopic}"
                         )
                     }
                 }
@@ -84,10 +84,12 @@ class FragmentModalUpdate : DialogFragment() {
                 override fun onFailure(call: Call<Topic>, t: Throwable) {
                     t.printStackTrace()
                     Log.e(
-                        "ERRO NO SERVIDOR AO ATULIZAR TÓPICO",
+                        "ERRO NO SERVIDOR AO CADASTRAR NOVO TÓPICO",
                         "Call: ${call}"
                     )
                 }
+
             })
     }
+
 }

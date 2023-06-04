@@ -136,7 +136,6 @@ class SignUp : AppCompatActivity() {
     }
 
     private fun closeKeyboard() {
-
         val view = this.currentFocus
         if (view != null) {
 
@@ -171,10 +170,11 @@ class SignUp : AppCompatActivity() {
         loadingView.visibility = View.VISIBLE
 
         val coroutineScope = CoroutineScope(Dispatchers.Main)
+
         coroutineScope.launch {
             // Delay de 2 segundos
             delay(2000)
-            apiClient.getMainApiService().registerStudent(newStudent)
+            apiClient.getMainApiService(this@SignUp).registerStudent(newStudent)
                 .enqueue(object : Callback<Student> {
                     override fun onResponse(
                         call: Call<Student>,
@@ -189,7 +189,8 @@ class SignUp : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
 
-                            val login = Intent(applicationContext, Login::class.java)
+                            val login =
+                                Intent(applicationContext, Login::class.java)
                             startActivity(login)
 
                         } else {
@@ -223,5 +224,4 @@ class SignUp : AppCompatActivity() {
                 })
         }
     }
-
 }
