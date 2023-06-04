@@ -18,7 +18,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Content : AppCompatActivity(), RecyclerViewInterface{
+class Content : AppCompatActivity(), RecyclerViewInterface {
     lateinit var contents: RecyclerView
     private lateinit var apiClient: ApiClient
     private lateinit var sessionManager: SessionManager
@@ -42,6 +42,7 @@ class Content : AppCompatActivity(), RecyclerViewInterface{
     }
 
     fun loadContentList() {
+        contentList = mutableListOf()
         contentAdapter = ContentListAdapter(this, contentList, this)
 
         val layoutManager = LinearLayoutManager(this)
@@ -96,10 +97,17 @@ class Content : AppCompatActivity(), RecyclerViewInterface{
     }
 
     override fun onItemClick(position: Int) {
-        val accessContent =  Intent(this.applicationContext, Reading::class.java)
+        val accessContent =
+            if (contentList[position].urlVideo !== null) {
+                Intent(this.applicationContext, Video::class.java)
+            } else {
+                Intent(this.applicationContext, Reading::class.java)
+            }
+
         accessContent.putExtra("title", contentList[position].titulo)
         accessContent.putExtra("text", contentList[position].texto)
         accessContent.putExtra("video", contentList[position].urlVideo)
+        accessContent.putExtra("ability", contentList[position].habilidade.codigo)
         accessContent.putExtra("postedAt", contentList[position].dataCriacao)
         accessContent.putExtra("postedBy", contentList[position].usuario.nome)
         startActivity(accessContent)

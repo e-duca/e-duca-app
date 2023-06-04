@@ -39,21 +39,11 @@
             android:layout_marginEnd="20dp"
             android:text="@string/txt_context" />
 
-        <TextView
-            android:id="@+id/txt_contentTwo"
-            style="@style/style_bigTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/txt_context" />
-
         <LinearLayout
             android:layout_marginTop="50dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_below="@+id/txt_contentTwo"
+            android:layout_below="@+id/txt_content"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="20dp">
 

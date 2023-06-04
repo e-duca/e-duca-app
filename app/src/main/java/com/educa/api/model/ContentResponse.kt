@@ -8,7 +8,7 @@ data class ContentResponse(
     val idConteudo: Int,
     val titulo: String,
     val tempoEstimado: String,
-    val habilidade: Hability,
+    val habilidade: Ability,
     val texto: String,
     val urlVideo: String,
     val usuario: User,
