@@ -136,7 +136,6 @@ class SignUp : AppCompatActivity() {
     }
 
     private fun closeKeyboard() {
-
         val view = this.currentFocus
         if (view != null) {
 
@@ -170,74 +169,59 @@ class SignUp : AppCompatActivity() {
         // Aparecer o loadingView após a validação
         loadingView.visibility = View.VISIBLE
 
-        apiClient.getMainApiService(this).registerStudent(newStudent)
-            .enqueue(object : Callback<Student> {
-                override fun onResponse(
-                    call: Call<Student>,
-                    response: Response<Student>
-                ) {
-                    if (response.isSuccessful) {
-                        val student = response.body()
-                        Log.w("newStudent", "${newStudent}")
+        val coroutineScope = CoroutineScope(Dispatchers.Main)
+
+        coroutineScope.launch {
+            // Delay de 2 segundos
+            delay(2000)
+            apiClient.getMainApiService(this@SignUp).registerStudent(newStudent)
+                .enqueue(object : Callback<Student> {
+                    override fun onResponse(
+                        call: Call<Student>,
+                        response: Response<Student>
+                    ) {
+                        if (response.isSuccessful) {
+                            val student = response.body()
+                            Log.w("newStudent", "${newStudent}")
+                            Toast.makeText(
+                                baseContext,
+                                "Cadastro realizado com sucesso! Você será redirecionado(a) à tela de login.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                            val login =
+                                Intent(applicationContext, Login::class.java)
+                            startActivity(login)
+
+                        } else {
+                            Toast.makeText(
+                                baseContext,
+                                "Erro ao fazer cadastro, confirme seus dados e tente novamente!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                            Log.e(
+                                "ERRO AO CRIAR NOVO ESTUDANTE",
+                                "Call: ${call} Response: ${response} NewStudent: ${newStudent}"
+                            )
+                        }
+
+                        // Esconder o loadingView após a validação
+                        loadingView.visibility = View.GONE
+                    }
+
+                    override fun onFailure(call: Call<Student>, t: Throwable) {
                         Toast.makeText(
                             baseContext,
-                            "Cadastro realizado com sucesso! Você será redirecionado(a) à tela de login.",
+                            "Erro no servidor! Por favor, tente novamente mais tarde. ERRO: ${t.message}",
                             Toast.LENGTH_SHORT
                         ).show()
+                        t.printStackTrace()
 
-                        val coroutineScope = CoroutineScope(Dispatchers.Main)
-                        coroutineScope.launch {
-                            // Delay de 2 segundos
-                            delay(2000)
-                            apiClient.getMainApiService().registerStudent(newStudent)
-                                .enqueue(object : Callback<Student> {
-                                    override fun onResponse(
-                                        call: Call<Student>,
-                                        response: Response<Student>
-                                    ) {
-                                        if (response.isSuccessful) {
-                                            val student = response.body()
-                                            Log.w("newStudent", "${newStudent}")
-                                            Toast.makeText(
-                                                baseContext,
-                                                "Cadastro realizado com sucesso! Você será redirecionado(a) à tela de login.",
-                                                Toast.LENGTH_SHORT
-                                            ).show()
-
-                                            val login =
-                                                Intent(applicationContext, Login::class.java)
-                                            startActivity(login)
-
-                                        } else {
-                                            Toast.makeText(
-                                                baseContext,
-                                                "Erro ao fazer cadastro, confirme seus dados e tente novamente!",
-                                                Toast.LENGTH_SHORT
-                                            ).show()
-
-                                            Log.e(
-                                                "ERRO AO CRIAR NOVO ESTUDANTE",
-                                                "Call: ${call} Response: ${response} NewStudent: ${newStudent}"
-                                            )
-                                        }
-
-                                        // Esconder o loadingView após a validação
-                                        loadingView.visibility = View.GONE
-                                    }
-
-                                    override fun onFailure(call: Call<Student>, t: Throwable) {
-                                        Toast.makeText(
-                                            baseContext,
-                                            "Erro no servidor! Por favor, tente novamente mais tarde. ERRO: ${t.message}",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                        t.printStackTrace()
-
-                                        // Esconder o loadingView após a falha
-                                        loadingView.visibility = View.GONE
-                                    }
-                                })
-                        }
+                        // Esconder o loadingView após a falha
+                        loadingView.visibility = View.GONE
                     }
-                }
-            }
+                })
+        }
+    }
+}
