@@ -1,4 +1,4 @@
-package com.educa.ui.recyclerview.adapter
+package com.educa.ui.recyclerview
 
 interface RecyclerViewInterface {
     fun onItemClick(position: Int)

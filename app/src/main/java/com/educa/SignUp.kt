@@ -24,7 +24,6 @@ import java.time.LocalDate
 import java.util.*
 import kotlinx.coroutines.*
 
-
 class SignUp : AppCompatActivity() {
     private lateinit var clickCalendar: com.google.android.material.textfield.TextInputEditText
     private lateinit var sessionManager: SessionManager

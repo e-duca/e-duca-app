@@ -1,17 +1,13 @@
 package com.educa
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.educa.api.model.Content
-import com.educa.api.model.Student
 import com.educa.api.model.Topic
 import com.educa.api.service.ApiClient
-import com.educa.ui.recyclerview.adapter.ContentListAdapter
-import com.educa.ui.recyclerview.adapter.TopicListAdapter
+import com.educa.ui.adapters.TopicListAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

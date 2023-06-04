@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.webkit.WebView
-import android.webkit.WebViewClient
 import android.widget.TextView
 
 class Video : AppCompatActivity() {

@@ -61,8 +61,8 @@
     <string name="txt_topicBody">Corpo do tópico:</string>
     <string name="txt_student">Aluno:</string>
     <string name="txt_level">Nivel:</string>
-    <string name="txt_home_page">Página Inicial:</string>
-    <string name="txt_doubt_forum">Fórum de dúvidas:</string>
+    <string name="txt_home_page">Página Inicial</string>
+    <string name="txt_doubt_forum">Fórum de dúvidas</string>
     <string name="txt_quiz"><b>Quiz: </b></string>
     <string name="txt_title_conteudo">Título do conteúdo</string>
     <string name="txt_the_is_sure">Tem certeza que deseja deletar esse tópico?</string>

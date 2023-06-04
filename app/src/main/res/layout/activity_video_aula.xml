@@ -104,7 +104,7 @@
 
             <fragment
                 android:id="@+id/fg_likert"
-                class="com.educa.likert"
+                class="com.educa.ui.fragments.likert"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/filtro_cate"
@@ -144,7 +144,7 @@
 
     <fragment
         android:id="@+id/fg_menu"
-        class="com.educa.FragmentMenu"
+        class="com.educa.ui.fragments.FragmentMenu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_menu" />

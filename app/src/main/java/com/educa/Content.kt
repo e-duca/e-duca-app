@@ -12,8 +12,8 @@ import com.educa.api.model.ContentResponseArray
 import com.educa.api.model.ContentResponse
 import com.educa.api.service.ApiClient
 import com.educa.api.service.SessionManager
-import com.educa.ui.recyclerview.adapter.ContentListAdapter
-import com.educa.ui.recyclerview.adapter.RecyclerViewInterface
+import com.educa.ui.adapters.ContentListAdapter
+import com.educa.ui.recyclerview.RecyclerViewInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

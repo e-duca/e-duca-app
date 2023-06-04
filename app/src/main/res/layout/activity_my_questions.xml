@@ -18,7 +18,7 @@
 
         <fragment
             android:id="@+id/fg_salutation"
-            class="com.educa.FragmentSalutation"
+            class="com.educa.ui.fragments.FragmentSalutation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/fragment_salutation" />
@@ -36,7 +36,7 @@
 
             <fragment
                 android:id="@+id/fg_btn_see_topics"
-                class="com.educa.ButtonSeeTopics"
+                class="com.educa.ui.fragments.ButtonSeeTopics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -76,7 +76,7 @@
 
     <fragment
         android:id="@+id/fg_menu"
-        class="com.educa.FragmentMenu"
+        class="com.educa.ui.fragments.FragmentMenu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_menu" />

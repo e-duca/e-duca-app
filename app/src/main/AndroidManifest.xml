@@ -34,11 +34,7 @@
             android:exported="false" />
         <activity
             android:name=".Content"
-            android:exported="false" >
-
-
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".LikertAnswered"
             android:exported="false" />
@@ -47,9 +43,6 @@
             android:exported="false" />
         <activity
             android:name=".MyQuestions"
-            android:exported="false" />
-        <activity
-            android:name=".AccessThread"
             android:exported="false" />
         <activity
             android:name=".Reading"

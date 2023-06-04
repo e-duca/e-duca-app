@@ -7,7 +7,7 @@
     android:layout_gravity="center_horizontal"
     android:background="@drawable/db_container_solid"
     android:orientation="vertical"
-    tools:context=".FragmentModalUpdate">
+    tools:context=".ui.fragments.FragmentModalUpdate">
 
     <LinearLayout
         android:id="@+id/linearLayout"
