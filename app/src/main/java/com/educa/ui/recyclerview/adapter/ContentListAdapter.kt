@@ -20,8 +20,8 @@ class ContentListAdapter(
             val title = itemView.findViewById<TextView>(R.id.title)
             title.text = content.titulo
 
-            val hability = itemView.findViewById<TextView>(R.id.hability)
-            hability.text = content.habilidade.codigo
+            val ability = itemView.findViewById<TextView>(R.id.ability)
+            ability.text = content.habilidade.codigo
 
             val posted = itemView.findViewById<TextView>(R.id.postedAt)
             posted.text = content.dataCriacao

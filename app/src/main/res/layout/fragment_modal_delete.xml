@@ -47,7 +47,6 @@
                 style="@style/style_btnBorderBlackSmall"
                 android:layout_toStartOf="@id/btn_deleteTopic"
                 android:layout_marginEnd="10dp"
-                android:layout_toStartOf="@id/btn_delete"
                 android:background="@drawable/db_btn_border"
                 android:text="@string/txt_no" />
 
