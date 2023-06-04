@@ -9,14 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
         android:orientation="vertical">
-
-        <fragment
-            android:id="@+id/fg_menu"
-            class="com.educa.FragmentMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_menu" />
 
         <fragment
             android:id="@+id/fg_navBar"
@@ -49,5 +43,11 @@
 
     </LinearLayout>
 
+    <fragment
+        android:id="@+id/fg_menu"
+        class="com.educa.FragmentMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

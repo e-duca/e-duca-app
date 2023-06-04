@@ -11,22 +11,15 @@
         android:id="@+id/relative_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <fragment
-            android:id="@+id/fg_menu"
-            class="com.educa.FragmentMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_menu" />
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/fg_menu"
             android:layout_marginTop="20dp">
 
             <view
@@ -147,7 +140,13 @@
 
         </RelativeLayout>
 
-
     </RelativeLayout>
+
+    <fragment
+        android:id="@+id/fg_menu"
+        class="com.educa.FragmentMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

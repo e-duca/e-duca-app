@@ -49,6 +49,9 @@
             android:name=".MyQuestions"
             android:exported="false" />
         <activity
+            android:name=".AccessThread"
+            android:exported="false" />
+        <activity
             android:name=".Reading"
             android:exported="false" />
         <activity
@@ -57,7 +60,6 @@
         <activity
             android:name=".Quiz"
             android:exported="false" />
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
