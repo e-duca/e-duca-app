@@ -1,4 +1,4 @@
-package com.educa
+package com.educa.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,9 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
+import com.educa.Content
+import com.educa.MyQuestions
+import com.educa.R
 
 class FragmentMenu : Fragment() {
 

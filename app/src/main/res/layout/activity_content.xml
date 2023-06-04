@@ -14,7 +14,7 @@
 
         <fragment
             android:id="@+id/fg_navBar"
-            class="com.educa.FragmentNavBar"
+            class="com.educa.ui.fragments.FragmentNavBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout="@layout/fragment_navbar" />
@@ -45,7 +45,7 @@
 
     <fragment
         android:id="@+id/fg_menu"
-        class="com.educa.FragmentMenu"
+        class="com.educa.ui.fragments.FragmentMenu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_menu" />

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FF626262"
     android:orientation="vertical"
-    tools:context=".FragmentModalDelete">
+    tools:context=".ui.fragments.FragmentModalDelete">
 
     <LinearLayout
         android:id="@+id/linearLayout"

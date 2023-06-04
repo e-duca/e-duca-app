@@ -1,4 +1,4 @@
-package com.educa.ui.recyclerview.adapter
+package com.educa.ui.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.educa.R
 import com.educa.api.model.ContentResponse
+import com.educa.ui.recyclerview.RecyclerViewInterface
 
 class ContentListAdapter(
     private val context: Context,

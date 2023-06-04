@@ -1,4 +1,4 @@
-package com.educa
+package com.educa.ui.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.educa.R
 import com.educa.api.model.Topic
 import com.educa.api.service.ApiClient
 import retrofit2.Call
