@@ -93,14 +93,27 @@
                 android:id="@+id/txt_teacher_name"
                 android:textColor="#1524A7" />
 
-            <View
+            <RelativeLayout
                 android:id="@+id/filtro_cate"
                 android:layout_width="98dp"
                 android:layout_height="16dp"
                 android:layout_below="@id/postad_for"
                 android:layout_alignStart="@+id/txt_title_class"
-                android:layout_marginTop="16dp"
-                android:background="@mipmap/categoria2" />
+                android:layout_marginStart="-1dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/db_category" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/txt_category"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textColor="@color/white"
+                    android:textSize="9sp" />
+            </RelativeLayout>
+
+
 
             <fragment
                 android:id="@+id/fg_likert"
