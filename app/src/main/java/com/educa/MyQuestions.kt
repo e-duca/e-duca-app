@@ -1,51 +1,92 @@
 package com.educa
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.fragment.app.FragmentContainerView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.educa.api.model.Topic
+import com.educa.api.model.*
 import com.educa.api.service.ApiClient
+import com.educa.api.service.SessionManager
 import com.educa.ui.adapters.TopicListAdapter
+import com.educa.ui.recyclerview.RecyclerViewInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MyQuestions : AppCompatActivity() {
+class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
     lateinit var myTopics: RecyclerView
     private lateinit var apiClient: ApiClient
+    private lateinit var sessionManager: SessionManager
     lateinit var topicAdapter: TopicListAdapter
+    lateinit var myTopicsList: MutableList<TopicResponse>
+    lateinit var allTopicsList: MutableList<TopicResponse>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_questions)
 
         apiClient = ApiClient()
-        myTopics = findViewById<RecyclerView>(R.id.rv_topics)
+        sessionManager = SessionManager(this)
+        myTopics = findViewById<RecyclerView>(R.id.rv_topics)!!
 
-        val myTopicsList = mutableListOf<Topic>()
+        loadMyTopicsList()
+        Log.i(
+            "TÓPICO: CHAMOU A FUNÇÃO",
+            "loadMyTopicsList"
+        )
 
-        topicAdapter = TopicListAdapter(this, myTopicsList)
+        val newTopic = findViewById<FragmentContainerView>(R.id.fg_addNewTopic)
+        newTopic.setOnClickListener{
 
-        fun loadMyTopicsList() {
-            apiClient.getMainApiService(this).getTopic().enqueue(object : Callback<List<Topic>> {
+        }
+    }
+
+    fun loadMyTopicsList() {
+        myTopicsList = mutableListOf()
+        topicAdapter = TopicListAdapter(this, myTopicsList, this)
+
+        val layoutManager = LinearLayoutManager(this)
+
+        myTopics.layoutManager = layoutManager
+
+        myTopics.adapter = topicAdapter
+
+        Log.e(
+            "TÓPICO: ENTROU NA FUNÇÃO LoadMyTopicsList e puxou o token",
+            "FETCHED TOKEN: ${sessionManager.fetchAuthToken()}"
+        )
+
+        apiClient.getMainApiService(this)
+            .getMyTopics()
+            .enqueue(object : Callback<TopicResponseArray> {
+                @SuppressLint("NotifyDataSetChanged")
                 override fun onResponse(
-                    call: Call<List<Topic>>,
-                    response: Response<List<Topic>>
+                    call: Call<TopicResponseArray>,
+                    response: Response<TopicResponseArray>
                 ) {
-                    if (response.isSuccessful && !response.body()!!.isNullOrEmpty()) {
-                        myTopicsList.addAll(response.body()!!)
+                    if (response.isSuccessful) {
+                        response.body()?.topic?.let { myTopicsList.addAll(it) }
                         topicAdapter.notifyDataSetChanged()
 
                         Log.i(
-                            "Entrou no is sucessful",
-                            "Call: ${call}"
+                            "TÓPICO: ENTROU NO ISSUCCESSFUL",
+                            "Call: ${call} Response: ${response.body()} ${response} ${myTopicsList}"
+                        )
+
+                    } else {
+                        Log.i(
+                            "TÓPICO: ENTROU NO IF DO ISSUCCESSFUL MAS CAIU NO ELSE",
+                            "Call: ${call}, Response: ${response.code()} ${response.body()})"
                         )
                     }
                 }
 
-                override fun onFailure(call: Call<List<Topic>>, t: Throwable) {
+                override fun onFailure(call: Call<TopicResponseArray>, t: Throwable) {
                     t.printStackTrace()
                     Toast.makeText(
                         this@MyQuestions, t.message,
@@ -53,27 +94,24 @@ class MyQuestions : AppCompatActivity() {
                     ).show()
 
                     Log.e(
-                        "ERRO AO PUXAR CONTEUDO",
-                        "Call: ${call}"
+                        "ERRO AO PUXAR TÓPICO",
+                        "Call: ${call}  ${t.message} ${t.printStackTrace()}"
                     )
                 }
-
             })
-        }
-        loadMyTopicsList()
-
     }
 
     fun loadAllTopicsList() {
-        val allTopicsList = mutableListOf<Topic>()
+        allTopicsList = mutableListOf()
 
-        apiClient.getMainApiService(this).getAllTopics().enqueue(object : Callback<List<Topic>> {
+        apiClient.getMainApiService(this).getAllTopics().enqueue(object : Callback<TopicResponseArray> {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onResponse(
-                call: Call<List<Topic>>,
-                response: Response<List<Topic>>
+                call: Call<TopicResponseArray>,
+                response: Response<TopicResponseArray>
             ) {
-                if (response.isSuccessful && !response.body()!!.isNullOrEmpty()) {
-                    allTopicsList.addAll(response.body()!!)
+                if (response.isSuccessful) {
+                    response.body()?.topic?.let { allTopicsList.addAll(it) }
                     topicAdapter.notifyDataSetChanged()
 
                     Log.i(
@@ -83,7 +121,7 @@ class MyQuestions : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<List<Topic>>, t: Throwable) {
+            override fun onFailure(call: Call<TopicResponseArray>, t: Throwable) {
                 t.printStackTrace()
                 Toast.makeText(
                     this@MyQuestions, t.message,
@@ -92,9 +130,19 @@ class MyQuestions : AppCompatActivity() {
 
                 Log.e(
                     "ERRO AO PUXAR TODOS OS TOPICOS",
-                    "Call: ${call}"
+                    "Call: ${call}  ${t.message} ${t.printStackTrace()}"
                 )
             }
         })
     }
+
+    override fun onItemClick(position: Int) {
+        val accessTopic = Intent(this.applicationContext, AccessThread::class.java)
+
+        accessTopic.putExtra("title", myTopicsList[position].titulo)
+        accessTopic.putExtra("txt_postedAt", myTopicsList[position].dataCriacao)
+        accessTopic.putExtra("txt_nameStudent", myTopicsList[position].usuario.nome)
+        startActivity(accessTopic)
+    }
+
 }

@@ -34,7 +34,7 @@
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="20dp">
 
-            <fragment
+            <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fg_btn_see_topics"
                 class="com.educa.ui.fragments.ButtonSeeTopics"
                 android:layout_width="match_parent"
@@ -42,8 +42,8 @@
                 android:layout_weight="1"
                 tools:layout="@layout/fragment_button_see_topics" />
 
-            <fragment
-                android:id="@+id/fg_btn_add_topics"
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fg_addNewTopic"
                 class="com.educa.ButtonAddNewTopic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

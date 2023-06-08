@@ -3,6 +3,7 @@ package com.educa.api.service
 import com.educa.api.model.ContentResponseArray
 import com.educa.api.model.Student
 import com.educa.api.model.Topic
+import com.educa.api.model.TopicResponseArray
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.http.*
@@ -16,10 +17,10 @@ interface MainApiService {
     fun registerStudent(@Body student: Student) : Call<Student>
 
     @GET("api/topicos/usuario-secao")
-    fun getTopic() : Call<List<Topic>>
+    fun getMyTopics() : Call<TopicResponseArray>
 
     @GET("api/topicos")
-    fun getAllTopics() : Call<List<Topic>>
+    fun getAllTopics() : Call<TopicResponseArray>
 
     @POST("api/topicos")
     fun registerTopic(@Body topic: Topic) : Call<Topic>

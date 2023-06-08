@@ -25,7 +25,6 @@ class Content : AppCompatActivity(), RecyclerViewInterface {
     lateinit var contentAdapter: ContentListAdapter
     lateinit var contentList: MutableList<ContentResponse>
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_content)
