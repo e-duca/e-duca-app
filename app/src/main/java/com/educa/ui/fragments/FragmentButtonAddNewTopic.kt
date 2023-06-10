@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RelativeLayout
 import androidx.annotation.Nullable
+import androidx.appcompat.app.AppCompatActivity
+import com.educa.ui.fragments.FragmentModalAddTopic
 
 class ButtonAddNewTopic : Fragment() {
 
@@ -26,8 +28,8 @@ class ButtonAddNewTopic : Fragment() {
         val btnAddTopic = view.findViewById<RelativeLayout>(R.id.btnAddTopic)
 
         btnAddTopic.setOnClickListener {
-            val accessThread = Intent(activity, AccessThread::class.java)
-            startActivity(accessThread)
+            val showPopUp = FragmentModalAddTopic()
+            showPopUp.show((activity as AppCompatActivity).supportFragmentManager, "showPopUp")
         }
     }
 }

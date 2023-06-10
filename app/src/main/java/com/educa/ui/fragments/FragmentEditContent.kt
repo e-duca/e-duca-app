@@ -11,8 +11,6 @@ import com.educa.R
 
 class FragmentEditContent : Fragment() {
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,7 +33,6 @@ class FragmentEditContent : Fragment() {
             val showPopUp = FragmentModalDelete()
             showPopUp.show((activity as AppCompatActivity).supportFragmentManager, "showPopUp")
         }
-
     }
 
 }

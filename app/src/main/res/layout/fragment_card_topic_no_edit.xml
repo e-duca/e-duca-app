@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.fragments.FragmentEditContent">
+    tools:context=".ui.fragments.FragmentCardTopicNoEdit">
 
 
     <RelativeLayout
@@ -41,7 +41,7 @@
                 style="@style/style_subText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/title_questions"
+                android:text="@string/title_class"
                 android:textColor="@color/black" />
 
             <TextView
@@ -95,34 +95,6 @@
                 android:fontFamily="@font/montserrat"
                 android:text="@string/txt_question_name"
                 android:textColor="@color/pink550" />
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rl_posted"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="10dp">
-
-            <ImageButton
-                android:id="@+id/edit_content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:background="@android:color/transparent"
-                android:src="@mipmap/edit" />
-
-            <ImageButton
-                android:id="@+id/delete_content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:background="@android:color/transparent"
-                android:src="@mipmap/bin" />
 
         </RelativeLayout>
     </RelativeLayout>

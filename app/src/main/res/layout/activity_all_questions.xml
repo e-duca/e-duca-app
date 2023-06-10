@@ -35,7 +35,7 @@
             android:layout_marginBottom="20dp">
 
             <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fg_btn_seeAlltopics"
+                android:id="@+id/fg_btn_seeMyTopics"
                 class="com.educa.ui.fragments.ButtonSeeTopics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,13 +64,11 @@
                 android:orientation="vertical">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_topics"
+                    android:id="@+id/rv_allTopics"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layoutManager="LinearLayoutManager"
-                    tools:listitem="@layout/fragment_card_topic" />
-
-
+                    tools:listitem="@layout/fragment_card_topic_no_edit" />
             </LinearLayout>
         </ScrollView>
 

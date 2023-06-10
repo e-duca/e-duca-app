@@ -30,12 +30,13 @@ class FragmentModalUpdate : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        apiClient = ApiClient()
 
         val btnClosePopUp: Button = view.findViewById(R.id.btn_back)
         val btn_updateTopic = view.findViewById<Button>(R.id.btn_updateTopic)
 
         btn_updateTopic.setOnClickListener {
-            val subjectField = view.findViewById<EditText>(R.id.ipt_name)
+            val subjectField = view.findViewById<EditText>(R.id.ipt_titleContent)
             val subject = subjectField.text.toString()
 
             val descriptionField = view.findViewById<EditText>(R.id.ipt_topicBody)
@@ -49,7 +50,7 @@ class FragmentModalUpdate : DialogFragment() {
                     titulo = subject,
                     descricao = description
                 )
-                updateTopic(updatedTopic)
+                updateTopicInfo(updatedTopic)
             } else {
                 Log.e("ERRO", "Os campos não podem estar vazios")
             }
@@ -61,10 +62,10 @@ class FragmentModalUpdate : DialogFragment() {
 
     }
 
-    fun updateTopic(updatedTopic: Topic) {
+    fun updateTopicInfo(updatedTopic: Topic) {
         apiClient.getMainApiService(
             requireActivity().applicationContext
-        ).updateTopic(updatedTopic)
+        ).updateTopic(updatedTopic.id, updatedTopic)
             .enqueue(object : Callback<Topic> {
                 override fun onResponse(
                     call: Call<Topic>,
@@ -77,7 +78,7 @@ class FragmentModalUpdate : DialogFragment() {
                     } else {
                         Log.e(
                             "ERRO AO ATULIZAR TÓPICO",
-                            "Call: ${call} Response: ${response} NewStudent: ${updatedTopic}"
+                            "Call: ${call} Response: ${response} TópicoErro no else: ${updatedTopic}"
                         )
                     }
                 }
