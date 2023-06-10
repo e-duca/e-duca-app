@@ -69,6 +69,8 @@
                     android:layout_height="match_parent"
                     app:layoutManager="LinearLayoutManager"
                     tools:listitem="@layout/fragment_card_topic" />
+
+
             </LinearLayout>
         </ScrollView>
 

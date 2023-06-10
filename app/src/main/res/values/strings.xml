@@ -3,6 +3,7 @@
     <string name="txt_posted">Postada em</string>
     <string name="txt_postedAt">01/01/2023</string>
     <string name="title_class">Título da Aula</string>
+    <string name="title_questions">Título da Pergunta</string>
     <string name="txt_ability">Habilidade 1</string>
     <string name="hint_navbar">O que você deseja estudar hoje?</string>
     <string name="title_sign_up">Cadastre-se</string>
@@ -77,4 +78,5 @@
     <string name="txt_answer">Resposta 1</string>
     <string name="txt_category">Categoria 2</string>
     <string name="txt_body_answer">Corpo da resposta</string>
+    <string name="txt_btn_exit">Sair</string>
 </resources>

@@ -1,5 +1,5 @@
 <h1 align="center">
-<img alt="Logotipo Educa" src="https://user-images.githubusercontent.com/89034213/189702040-f6247403-97d5-4b26-8a90-0c9174756491.png"
+<img alt="Logotipo Educa" src="https://user-images.githubusercontent.com/89034213/189702040-f6247403-97d5-4b26-8a90-0c9174756491.png"/>
 </h1>
 
 ## 📃 Sumário

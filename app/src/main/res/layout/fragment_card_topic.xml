@@ -41,7 +41,7 @@
                 style="@style/style_subText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/title_class"
+                android:text="@string/title_questions"
                 android:textColor="@color/black" />
 
             <TextView
