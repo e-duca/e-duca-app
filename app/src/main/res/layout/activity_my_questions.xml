@@ -70,13 +70,7 @@
                     app:layoutManager="LinearLayoutManager"
                     tools:listitem="@layout/fragment_card_topic" />
 
-                <fragment
-                    android:id="@+id/fg_btn_exit"
-                    android:layout_marginLeft="275dp"
-                    class="com.educa.ui.fragments.FragmentMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    tools:layout="@layout/fragment_btn_exit" />
+
             </LinearLayout>
         </ScrollView>
 

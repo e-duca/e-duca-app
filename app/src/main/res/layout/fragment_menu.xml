@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="335dp"
         android:layout_gravity="top"
         android:background="@drawable/db_header_menu"
         android:elevation="10dp"
@@ -121,7 +121,14 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/txt_doubt_forum"
                 android:textColor="@color/white" />
-
+            <TextView
+                android:id="@+id/tv_exit"
+                style="@style/style_subText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/txt_btn_exit"
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </RelativeLayout>
