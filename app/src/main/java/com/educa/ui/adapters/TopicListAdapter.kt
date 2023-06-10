@@ -1,5 +1,6 @@
 package com.educa.ui.adapters
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,7 @@ class TopicListAdapter(
 ) : RecyclerView.Adapter<TopicListAdapter.ViewHolder>() {
 
     class ViewHolder(view: View, recyclerViewInterface: RecyclerViewInterface) : RecyclerView.ViewHolder(view) {
+        @SuppressLint("SetTextI18n")
         fun bind(topic: TopicResponse, recyclerViewInterface: RecyclerViewInterface) {
             val title = itemView.findViewById<TextView>(R.id.title)
             title.text = topic.titulo
@@ -27,7 +29,10 @@ class TopicListAdapter(
             val posted = itemView.findViewById<TextView>(R.id.txt_postedAt)
             posted.text = topic.dataCriacao
 
-            itemView.setOnClickListener(View.OnClickListener {
+            val answers = itemView.findViewById<TextView>(R.id.answers)
+            answers.text = "${topic.respostas.size} respostas"
+
+            title.setOnClickListener(View.OnClickListener {
                 if (true) {
                     val position = adapterPosition
                     if (position != RecyclerView.NO_POSITION){
@@ -40,8 +45,18 @@ class TopicListAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.fragment_card_topic, parent, false)
+
+        val fragment = getCurrentActivity()
+        val view = inflater.inflate(fragment, parent, false)
         return ViewHolder(view, recyclerViewInterface)
+    }
+
+    fun getCurrentActivity(): Int {
+        if (context.toString().contains("com.educa.MyQuestions") ) {
+            return R.layout.fragment_card_topic
+        } else {
+            return R.layout.fragment_card_topic_no_edit
+        }
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

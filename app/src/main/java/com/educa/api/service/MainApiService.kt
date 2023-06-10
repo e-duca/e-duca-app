@@ -26,7 +26,7 @@ interface MainApiService {
     fun registerTopic(@Body topic: Topic) : Call<Topic>
 
     @PUT("api/topicos/{id}")
-    fun updateTopic(@Path("id") @Body topic: Topic): Call<Topic>
+    fun updateTopic(@Path("id") topicId: Int, @Body topic: Topic): Call<Topic>
 
     @DELETE("api/topicos/{id}")
     fun deleteTopic(@Path("id") topicId: Int) : Callback<Topic>
@@ -35,7 +35,7 @@ interface MainApiService {
     //fun registerAnswer()
 
     //@PUT("api/topicos/respostas/{id}")
-    //fun updateAnswer(@Path("id"))
+    //fun updateAnswer(@Path("id") topicId: Int, @Body answer: Answer)
 
     //@DELETE("api/topicos/respostas/{id}")
     //fun deleteAnswer(@Path("id"))

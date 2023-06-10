@@ -40,6 +40,7 @@ class FragmentMenu : Fragment() {
 
         doubtForum.setOnClickListener {
             val myQuestions = Intent(activity, MyQuestions::class.java)
+            myQuestions.putExtra("btn_text", "Ver todos os tópicos")
             startActivity(myQuestions)
         }
 

@@ -26,6 +26,8 @@
         <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/drawable/db_input.xml" value="0.2115" />
         <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/drawable/db_navbar.xml" value="0.2115" />
         <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/activity_access_thread.xml" value="0.22375057313159102" />
+        <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/activity_all_questions.xml" value="0.2" />
+        <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/activity_card_content_no_edit.xml" value="0.17699871740059855" />
         <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/activity_content.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/activity_likert_answered.xml" value="0.1" />
         <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/activity_login.xml" value="0.2" />
@@ -37,7 +39,8 @@
         <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/fragment_button_add_new_topic.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/fragment_button_see_topics.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/fragment_card_content.xml" value="0.264" />
-        <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/fragment_card_topic.xml" value="0.536" />
+        <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/fragment_card_topic.xml" value="0.46356275303643724" />
+        <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/fragment_card_topic_no_edit.xml" value="0.16545532278751604" />
         <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/fragment_edit_content.xml" value="0.264" />
         <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/fragment_likert.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/Lucas/AndroidStudioProjects/e-duca-app/app/src/main/res/layout/fragment_menu.xml" value="0.20863616930312098" />

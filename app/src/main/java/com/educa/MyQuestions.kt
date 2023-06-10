@@ -24,7 +24,6 @@ class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
     private lateinit var sessionManager: SessionManager
     lateinit var topicAdapter: TopicListAdapter
     lateinit var myTopicsList: MutableList<TopicResponse>
-    lateinit var allTopicsList: MutableList<TopicResponse>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,9 +39,11 @@ class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
             "loadMyTopicsList"
         )
 
-        val newTopic = findViewById<FragmentContainerView>(R.id.fg_addNewTopic)
-        newTopic.setOnClickListener{
-
+        val seeAll = findViewById<FragmentContainerView>(R.id.fg_btn_seeAlltopics)
+        seeAll.setOnClickListener{
+            val allTopicsPage = Intent(applicationContext, AllQuestions::class.java)
+            allTopicsPage.putExtra("btn_text", "Ver meus tópicos")
+            startActivity(allTopicsPage)
         }
     }
 
@@ -55,11 +56,6 @@ class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
         myTopics.layoutManager = layoutManager
 
         myTopics.adapter = topicAdapter
-
-        Log.e(
-            "TÓPICO: ENTROU NA FUNÇÃO LoadMyTopicsList e puxou o token",
-            "FETCHED TOKEN: ${sessionManager.fetchAuthToken()}"
-        )
 
         apiClient.getMainApiService(this)
             .getMyTopics()
@@ -101,40 +97,6 @@ class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
             })
     }
 
-    fun loadAllTopicsList() {
-        allTopicsList = mutableListOf()
-
-        apiClient.getMainApiService(this).getAllTopics().enqueue(object : Callback<TopicResponseArray> {
-            @SuppressLint("NotifyDataSetChanged")
-            override fun onResponse(
-                call: Call<TopicResponseArray>,
-                response: Response<TopicResponseArray>
-            ) {
-                if (response.isSuccessful) {
-                    response.body()?.topic?.let { allTopicsList.addAll(it) }
-                    topicAdapter.notifyDataSetChanged()
-
-                    Log.i(
-                        "PUXOU TODOS OS TOPICOS COM SUCESSO",
-                        "Call: ${call}"
-                    )
-                }
-            }
-
-            override fun onFailure(call: Call<TopicResponseArray>, t: Throwable) {
-                t.printStackTrace()
-                Toast.makeText(
-                    this@MyQuestions, t.message,
-                    Toast.LENGTH_SHORT
-                ).show()
-
-                Log.e(
-                    "ERRO AO PUXAR TODOS OS TOPICOS",
-                    "Call: ${call}  ${t.message} ${t.printStackTrace()}"
-                )
-            }
-        })
-    }
 
     override fun onItemClick(position: Int) {
         val accessTopic = Intent(this.applicationContext, AccessThread::class.java)
