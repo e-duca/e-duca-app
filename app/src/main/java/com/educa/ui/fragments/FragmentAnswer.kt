@@ -7,11 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.educa.R
 
-class FragmentCardTopicNoEdit : Fragment() {
-
+class FragmentAnswer : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -19,8 +17,7 @@ class FragmentCardTopicNoEdit : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_card_topic_no_edit, container, false)
+        return inflater.inflate(R.layout.fragment_answer, container, false)
     }
-
 
 }

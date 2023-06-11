@@ -100,10 +100,13 @@ class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
 
     override fun onItemClick(position: Int) {
         val accessTopic = Intent(this.applicationContext, AccessThread::class.java)
+        accessTopic.putExtra("current", position)
+        accessTopic.putExtra("array", arrayOf(myTopicsList[position].respostas))
 
         accessTopic.putExtra("title", myTopicsList[position].titulo)
         accessTopic.putExtra("txt_postedAt", myTopicsList[position].dataCriacao)
         accessTopic.putExtra("txt_nameStudent", myTopicsList[position].usuario.nome)
+        accessTopic.putExtra("txt_description", myTopicsList[position].descricao)
         startActivity(accessTopic)
     }
 

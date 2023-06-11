@@ -32,6 +32,9 @@ class TopicListAdapter(
             val answers = itemView.findViewById<TextView>(R.id.answers)
             answers.text = "${topic.respostas.size} respostas"
 
+            val description = itemView.findViewById<TextView>(R.id.description)
+            description.text = topic.descricao
+
             title.setOnClickListener(View.OnClickListener {
                 if (true) {
                     val position = adapterPosition

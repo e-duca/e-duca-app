@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AccessThread">
 
     <RelativeLayout
@@ -10,7 +11,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="60dp">
 
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fg_bubble_question"
             class="com.educa.ui.fragments.FragmentEditContent"
             android:layout_width="wrap_content"
@@ -18,112 +19,37 @@
             android:layout_marginTop="40dp"
             tools:layout="@layout/fragment_card_topic" />
 
-        <ScrollView
-            android:id="@+id/SV_body_answers"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/lyt_body_answers"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="140dp"
-            android:background="@drawable/db_thread"
-            android:padding="20dp">
+            android:layout_below="@id/fg_bubble_question"
+            android:orientation="vertical">
 
-            <LinearLayout
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_answers"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:layout_height="match_parent"
+                tools:listitem="@layout/fragment_answer" />
 
-                <TextView
-
-                    android:id="@+id/responses"
-                    style="@style/style_bigTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:text="@string/txt_answer" />
-
-                <TextView
-                    android:id="@+id/body_responses"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/txt_body_answer" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@android:color/darker_gray" />
-
-                <TextView
-
-                    android:id="@+id/second_answer"
-                    style="@style/style_bigTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:text="@string/txt_answer" />
-
-                <TextView
-                    android:id="@+id/body_second_responses"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/txt_body_answer" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@android:color/darker_gray" />
-
-                <TextView
-
-                    android:id="@+id/third_answer"
-                    style="@style/style_bigTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:text="@string/txt_answer" />
-
-                <TextView
-                    android:id="@+id/body_third_responses"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/txt_body_answer" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@android:color/darker_gray" />
-
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_add_answer"
-                    style="@style/style_btnPinkSmall"
-                    android:layout_marginStart="80dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/db_btn_solid"
-                    android:text="@string/txt_add_answer" />
-
-            </LinearLayout>
-
-
-        </ScrollView>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/SV_body_answers"
+            android:layout_below="@id/lyt_body_answers"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="80dp"
             android:layout_marginEnd="50dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_add_answer"
+                style="@style/style_btnPinkSmall"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/db_btn_solid"
+                android:text="@string/txt_add_answer" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnBack"
