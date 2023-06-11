@@ -63,13 +63,7 @@
                 android:background="@drawable/db_btn_border"
                 android:text="@string/txt_back"
                 />
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_go_quiz"
-                android:layout_marginStart="10dp"
-                style="@style/style_btnYellowSmall"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/db_btn_solid"
-                android:text="@string/txt_quiz_content" />
+
         </LinearLayout>
 
     </RelativeLayout>
