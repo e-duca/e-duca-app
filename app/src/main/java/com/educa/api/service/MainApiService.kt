@@ -1,9 +1,6 @@
 package com.educa.api.service
 
-import com.educa.api.model.ContentResponseArray
-import com.educa.api.model.Student
-import com.educa.api.model.Topic
-import com.educa.api.model.TopicResponseArray
+import com.educa.api.model.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.http.*
@@ -40,4 +37,6 @@ interface MainApiService {
     //@DELETE("api/topicos/respostas/{id}")
     //fun deleteAnswer(@Path("id"))
 
+    @POST("api/conteudos/avaliacoes")
+    fun registerRating(@Body rating: Rating) : Call<Rating>
 }

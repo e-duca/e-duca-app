@@ -103,6 +103,7 @@ class Content : AppCompatActivity(), RecyclerViewInterface {
                 Intent(this.applicationContext, Reading::class.java)
             }
 
+        accessContent.putExtra("contentId", contentList[position].idConteudo.toString())
         accessContent.putExtra("title", contentList[position].titulo)
         accessContent.putExtra("text", contentList[position].texto)
         accessContent.putExtra("video", contentList[position].urlVideo)

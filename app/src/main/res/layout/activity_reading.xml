@@ -36,9 +36,9 @@
                 android:text="@string/txt_context" />
 
         </ScrollView>
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fg_likert"
-            class="com.educa.ui.fragments.likert"
+            class="com.educa.ui.fragments.Likert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

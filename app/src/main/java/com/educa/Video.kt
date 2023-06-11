@@ -4,9 +4,11 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.webkit.WebView
 import android.widget.TextView
+import androidx.fragment.app.FragmentContainerView
 
 class Video : AppCompatActivity() {
     @SuppressLint("SetJavaScriptEnabled")
@@ -15,6 +17,10 @@ class Video : AppCompatActivity() {
         setContentView(R.layout.activity_video_aula)
 
         val videoTitle: String? = intent.getStringExtra("title")
+        val contentId: String? = intent.getStringExtra("contentId")
+        if (contentId != null) {
+            Log.e("CONTENT ID NO VIDEO", contentId)
+        }
         val teacherName: String? = intent.getStringExtra("postedBy")
         val urlVideo: String? = intent.getStringExtra("video")
         val abilityCode: String? = intent.getStringExtra("ability")
@@ -25,11 +31,11 @@ class Video : AppCompatActivity() {
         val name = findViewById<TextView>(R.id.txt_teacher_name)
         name.text = teacherName
 
+        val ability = findViewById<TextView>(R.id.txt_category)
+        ability.text = abilityCode
+
         val webView: WebView = findViewById(R.id.web_view)
         webView.settings.javaScriptEnabled = true
-
-        val videoId = "j6dy4VrsFvA" // Substitua VIDEO_ID pelo ID do vídeo do YouTube que você deseja exibir
-        val url = "https://www.youtube.com/embed/$videoId"
 
         if (urlVideo != null) {
             webView.loadUrl(urlVideo)
