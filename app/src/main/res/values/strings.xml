@@ -3,6 +3,7 @@
     <string name="txt_posted">Postada em</string>
     <string name="txt_postedAt">01/01/2023</string>
     <string name="title_class">Título da Aula</string>
+    <string name="title_questions">Título da Pergunta</string>
     <string name="txt_ability">Habilidade 1</string>
     <string name="hint_navbar">O que você deseja estudar hoje?</string>
     <string name="title_sign_up">Cadastre-se</string>
@@ -19,7 +20,7 @@
     <string name="txt_link_login">Ainda não tem uma conta?</string>
     <string name="txt_link">Realizar cadastro</string>
     <string name="txt_hello_username">Olá, Lucas!</string>
-    <string name="txt_salutation">Com dúvidas? Utilize o fórum para\n se comunicar com outros\n estudantes</string>
+    <string name="txt_salutation">Com dúvidas? Utilize o fórum para\nse comunicar com outros\nestudantes</string>
     <string name="txt_enter">Entrar</string>
     <string name="txt_confirm_sign">Finalizar cadastro</string>
     <string name="txt_back_login">Voltar ao login</string>
@@ -75,7 +76,8 @@
     <string name="txt_questionSix"><b>6.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan mattis?</string>
     <string name="txt_loading">Carregando…</string>
     <string name="txt_answer">Resposta 1</string>
+    <string name="txt_category">Categoria 2</string>
     <string name="txt_body_answer">Corpo da resposta</string>
     <string name="txt_no_content_found_itle">nenhum conteúdo encontrado com este título</string>
-
+    <string name="txt_btn_exit">Sair</string>
 </resources>

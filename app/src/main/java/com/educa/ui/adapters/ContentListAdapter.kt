@@ -49,7 +49,6 @@ class ContentListAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val content = contents[position]
         holder.bind(content, recyclerViewInterface)
-
     }
 
     // Determina quantos itens estarão dentro

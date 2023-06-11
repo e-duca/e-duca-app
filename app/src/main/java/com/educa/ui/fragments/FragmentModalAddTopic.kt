@@ -25,16 +25,16 @@ class FragmentModalAddTopic : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_modal_update, container, false)
+        return inflater.inflate(R.layout.fragment_modal_add_topic, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        apiClient = ApiClient()
         val btn_addTopic = view.findViewById<Button>(R.id.btn_addTopic)
 
         btn_addTopic.setOnClickListener {
-            val subjectField = view.findViewById<EditText>(R.id.ipt_name)
+            val subjectField = view.findViewById<EditText>(R.id.ipt_titleTopic)
             val subject = subjectField.text.toString()
 
             val descriptionField = view.findViewById<EditText>(R.id.ipt_topicBody)

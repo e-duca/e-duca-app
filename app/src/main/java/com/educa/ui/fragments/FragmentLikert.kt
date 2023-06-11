@@ -1,61 +1,129 @@
 package com.educa.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.Toast
 import com.educa.R
+import com.educa.api.model.Rating
+import com.educa.api.service.ApiClient
+import com.educa.api.service.SessionManager
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [likert.newInstance] factory method to
- * create an instance of this fragment.
- */
-class likert : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class Likert : Fragment() {
+    private lateinit var sessionManager: SessionManager
+    private lateinit var apiClient: ApiClient
+    private lateinit var rating: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_likert, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_likert, container, false)
+        apiClient = ApiClient()
+        sessionManager = SessionManager(view.context)
+
+        val contentId: String? = activity?.intent?.getStringExtra("contentId")
+
+        val dislike = view.findViewById<ImageView>(R.id.img_notlike)
+        dislike.setOnClickListener {
+            rating = "Não gostei"
+            val newRating = Rating(
+                idConteudo = contentId,
+                avaliacao = rating
+            )
+            sendLikert(view, newRating)
+        }
+        val improve = view.findViewById<ImageView>(R.id.img_improve)
+        improve.setOnClickListener {
+            rating = "Poderia melhorar"
+            val newRating = Rating(
+                idConteudo = contentId,
+                avaliacao = rating
+            )
+            sendLikert(view, newRating)
+        }
+        val doubt = view.findViewById<ImageView>(R.id.img_doubt)
+        doubt.setOnClickListener {
+            rating = "Não sei"
+            val newRating = Rating(
+                idConteudo = contentId,
+                avaliacao = rating
+            )
+            sendLikert(view, newRating)
+        }
+        val liked = view.findViewById<ImageView>(R.id.img_liked)
+        liked.setOnClickListener {
+            rating = "Gostei"
+            val newRating = Rating(
+                idConteudo = contentId,
+                avaliacao = rating
+            )
+            sendLikert(view, newRating)
+        }
+        val loved = view.findViewById<ImageView>(R.id.img_love)
+        loved.setOnClickListener {
+            rating = "Amei!"
+            val newRating = Rating(
+                idConteudo = contentId,
+                avaliacao = rating
+            )
+            sendLikert(view, newRating)
+        }
+
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment likert.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            likert().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    fun sendLikert(view: View, newRating: Rating) {
+        Log.e("NEW RATING AVALICAO", newRating.toString())
+        apiClient.getMainApiService(view.context).registerRating(newRating)
+            .enqueue(object : Callback<Rating> {
+                override fun onResponse(
+                    call: Call<Rating>,
+                    response: Response<Rating>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseNewRating = response.body()
+                        Log.w("AVALIACAO responseNewRating", "${responseNewRating}")
+
+                    } else {
+                        Toast.makeText(
+                            context,
+                            "Erro ao fazer cadastro, confirme seus dados e tente novamente!",
+                            Toast.LENGTH_SHORT
+                        ).show()
+
+                        Log.e(
+                            "ERRO AO CRIAR NOVA AVALIACAO",
+                        "Call: ${call} Response: ${response} "
+                        )
+                    }
+
                 }
-            }
+
+                override fun onFailure(call: Call<Rating>, t: Throwable) {
+                    Toast.makeText(
+                        context,
+                        "Erro no servidor! Por favor, tente novamente mais tarde. ERRO: ${t.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    t.printStackTrace()
+
+                }
+            })
     }
 }

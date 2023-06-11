@@ -3,6 +3,7 @@ package com.educa
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 
@@ -11,6 +12,10 @@ class Reading : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reading)
 
+        val contentId: String? = intent.getStringExtra("contentId")
+        if (contentId != null) {
+            Log.e("CONTENT ID NO READING", contentId)
+        }
         val contentTitle: String? = intent.getStringExtra("title")
         val contentText: String? = intent.getStringExtra("text")
 

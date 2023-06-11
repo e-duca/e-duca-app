@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.fragments.likert">
+    tools:context=".ui.fragments.Likert">
 
     <RelativeLayout
         android:id="@+id/container_likert"

@@ -13,5 +13,5 @@ data class ContentResponse(
     val urlVideo: String,
     val usuario: User,
     val dataCriacao: String,
-    val avaliacoes: List<Rating>
+    val avaliacoes: List<RatingResponse>
 )
