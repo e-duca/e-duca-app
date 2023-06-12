@@ -67,7 +67,7 @@ class Login : AppCompatActivity() {
         coroutineScope.launch {
             delay(2000)
             Log.w("ENTROU NA FUNÇÃO LOGIN", "  $email $password")
-            apiClient.getAuthApiService().login(LoginRequest(email, password))
+            apiClient.getAuthApiService(this@Login).login(LoginRequest(email, password))
                 .enqueue(object : Callback<LoginResponse> {
                     override fun onResponse(
                         call: Call<LoginResponse>,

@@ -19,7 +19,7 @@
     <string name="title_login">Faça seu login</string>
     <string name="txt_link_login">Ainda não tem uma conta?</string>
     <string name="txt_link">Realizar cadastro</string>
-    <string name="txt_hello_username">Olá, Lucas!</string>
+    <string name="txt_hello_username">Olá, Aluno(a)!</string>
     <string name="txt_salutation">Com dúvidas? Utilize o fórum para\nse comunicar com outros\nestudantes</string>
     <string name="txt_enter">Entrar</string>
     <string name="txt_confirm_sign">Finalizar cadastro</string>
@@ -41,7 +41,7 @@
     <string name="txt_body_question">Início do corpo da pergunta…</string>
     <string name="txt_qty_answer">3 respostas</string>
     <string name="txt_date_question">Postado em 01/01/22\n por</string>
-    <string name="txt_question_name">Lucas Gestal</string>
+    <string name="txt_question_name">Aluno(a)</string>
     <string name="txt_ops">Ops…</string>
     <string name="txt_restTextOps">Se você é professor, acesse nossa aplicação pelo navegador e aproveite nosso site!</string>
     <string name="txt_postfor">Postado por</string>
