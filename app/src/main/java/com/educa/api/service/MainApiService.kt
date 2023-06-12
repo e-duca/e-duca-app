@@ -28,11 +28,11 @@ interface MainApiService {
     @DELETE("api/topicos/{id}")
     fun deleteTopic(@Path("id") topicId: Int) : Callback<Topic>
 
-    //@POST("api/topicos/respostas")
-    //fun registerAnswer()
+    @POST("api/topicos/respostas")
+    fun registerAnswer(@Body answer: Answer) : Call<Answer>
 
     //@PUT("api/topicos/respostas/{id}")
-    //fun updateAnswer(@Path("id") topicId: Int, @Body answer: Answer)
+    //fun updateAnswer(@Path("id") topicId: Int, @Body answer: AnswerResponse)
 
     //@DELETE("api/topicos/respostas/{id}")
     //fun deleteAnswer(@Path("id"))

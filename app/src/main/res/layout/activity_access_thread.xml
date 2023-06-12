@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AccessThread">
 
     <RelativeLayout
@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            tools:layout="@layout/fragment_card_topic" />
+            tools:layout="@layout/fragment_card_topic_no_edit" />
 
         <LinearLayout
             android:id="@+id/lyt_body_answers"
@@ -28,17 +28,38 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_answers"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/fragment_answer" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lyt_addAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lyt_body_answers"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/ipt_answer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:text="@string/saveAnswer" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/lyt_body_answers"
+            android:layout_below="@id/lyt_addAnswer"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="80dp"
             android:layout_marginEnd="50dp">
