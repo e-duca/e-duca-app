@@ -65,7 +65,6 @@ class Content : AppCompatActivity(), RecyclerViewInterface {
         })
     }
 
-
     fun loadContentList() {
         loadingView.visibility = View.VISIBLE
 

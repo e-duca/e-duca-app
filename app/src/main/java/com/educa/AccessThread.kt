@@ -43,7 +43,6 @@ class AccessThread : AppCompatActivity(), RecyclerViewInterface {
         val layoutAnswer = findViewById<LinearLayout>(R.id.lyt_addAnswer)
         val btnAddAnswer = findViewById<Button>(R.id.btn_add_answer)
 
-
         answerAdapter = AnswerListAdapter(this, answerList, this)
 
         val layoutManager = LinearLayoutManager(this)

@@ -5,10 +5,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.educa.R
 import com.educa.api.model.TopicResponse
+import com.educa.ui.fragments.FragmentModalDelete
+import com.educa.ui.fragments.FragmentModalUpdate
 import com.educa.ui.recyclerview.RecyclerViewInterface
 import java.text.SimpleDateFormat
 import java.util.*
@@ -22,6 +26,7 @@ class TopicListAdapter(
     class ViewHolder(view: View, recyclerViewInterface: RecyclerViewInterface) : RecyclerView.ViewHolder(view) {
         @SuppressLint("SetTextI18n")
         fun bind(topic: TopicResponse, recyclerViewInterface: RecyclerViewInterface) {
+
             val title = itemView.findViewById<TextView>(R.id.title)
             title.text = topic.titulo
 
@@ -55,6 +60,18 @@ class TopicListAdapter(
                     }
                 }
             })
+
+            val editContent = itemView.findViewById<ImageButton>(R.id.edit_content)
+            val deleteContent = itemView.findViewById<ImageButton>(R.id.delete_content)
+
+            editContent?.setOnClickListener {
+                val showPopUp = FragmentModalUpdate((topic.idTopico))
+                showPopUp.show((itemView.context as AppCompatActivity).supportFragmentManager, "showPopUp")
+            }
+            deleteContent?.setOnClickListener {
+                val showPopUp = FragmentModalDelete(topic.idTopico)
+                showPopUp.show((itemView.context as AppCompatActivity).supportFragmentManager, "showPopUp")
+            }
         }
     }
 
