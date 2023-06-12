@@ -26,16 +26,16 @@ interface MainApiService {
     fun updateTopic(@Path("id") topicId: Int, @Body topic: Topic): Call<Topic>
 
     @DELETE("api/topicos/{id}")
-    fun deleteTopic(@Path("id") topicId: Int) : Callback<Topic>
+    fun deleteTopic(@Path("id") topicId: Int) : Call<Topic>
 
     @POST("api/topicos/respostas")
     fun registerAnswer(@Body answer: Answer) : Call<Answer>
 
-    //@PUT("api/topicos/respostas/{id}")
-    //fun updateAnswer(@Path("id") topicId: Int, @Body answer: AnswerResponse)
+    @PUT("api/topicos/respostas/{id}")
+    fun updateAnswer(@Path("id") topicId: Int, @Body answer: Answer) : Call<Answer>
 
-    //@DELETE("api/topicos/respostas/{id}")
-    //fun deleteAnswer(@Path("id"))
+    @DELETE("api/topicos/respostas/{id}")
+    fun deleteAnswer(@Path("id") answerId: Int) : Call<Answer>
 
     @POST("api/conteudos/avaliacoes")
     fun registerRating(@Body rating: Rating) : Call<Rating>

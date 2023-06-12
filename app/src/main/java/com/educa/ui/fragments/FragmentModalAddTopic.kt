@@ -44,7 +44,6 @@ class FragmentModalAddTopic : DialogFragment() {
                 description.isNotBlank()
             ) {
                 val newTopic = Topic(
-                    id,
                     titulo = subject,
                     descricao = description
                 )
@@ -70,13 +69,12 @@ class FragmentModalAddTopic : DialogFragment() {
                 ) {
                     if (response.isSuccessful) {
                         val topic = response.body()
-                        Log.w("newTopic", "${newTopic}")
-
+                        Log.w("NOVO TÓPICO", "${newTopic}")
+                        dismiss()
                     } else {
-
                         Log.e(
                             "ERRO AO CRIAR NOVO TÓPICO",
-                            "Call: ${call} Response: ${response} NewStudent: ${newTopic}"
+                            "Call: ${call} Response: ${response} TÓPICO NO ELSE: ${newTopic}"
                         )
                     }
                 }
@@ -88,7 +86,6 @@ class FragmentModalAddTopic : DialogFragment() {
                         "Call: ${call}"
                     )
                 }
-
             })
     }
 

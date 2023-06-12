@@ -9,23 +9,24 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.DialogFragment
 import com.educa.R
-import com.educa.api.model.Topic
+import com.educa.api.model.Answer
 import com.educa.api.service.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
-class FragmentModalUpdate(val currentTopic: Int) : DialogFragment() {
-
+class FragmentModalUpdateAnswer(val idResposta: Int) : DialogFragment() {
     lateinit var apiClient: ApiClient
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_modal_update, container, false)
+        return inflater.inflate(R.layout.fragment_modal_update_answer, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -33,23 +34,20 @@ class FragmentModalUpdate(val currentTopic: Int) : DialogFragment() {
         apiClient = ApiClient()
 
         val btnClosePopUp: Button = view.findViewById(R.id.btn_back)
-        val btn_updateTopic = view.findViewById<Button>(R.id.btn_updateTopic)
+        val btn_updateTopic = view.findViewById<Button>(R.id.btn_updateAnswer)
+
+        val topicId = idResposta
 
         btn_updateTopic.setOnClickListener {
-            val subjectField = view.findViewById<EditText>(R.id.ipt_titleContent)
-            val subject = subjectField.text.toString()
+            val answerField = view.findViewById<EditText>(R.id.ipt_answerBody)
+            val answer = answerField.text.toString()
 
-            val descriptionField = view.findViewById<EditText>(R.id.ipt_topicBody)
-            val description = descriptionField.text.toString()
-
-            if (subject.isNotBlank() &&
-                description.isNotBlank()
-            ) {
-                val updatedTopic = Topic(
-                    titulo = subject,
-                    descricao = description
+            if (answer.isNotBlank()) {
+                val updatedAnswer = Answer(
+                    idTopico = topicId,
+                    resposta = answer
                 )
-                updateTopicInfo(currentTopic, updatedTopic)
+                updateCurrentAnswer(updatedAnswer)
             } else {
                 Log.e("ERRO", "Os campos não podem estar vazios")
             }
@@ -61,34 +59,35 @@ class FragmentModalUpdate(val currentTopic: Int) : DialogFragment() {
 
     }
 
-    fun updateTopicInfo(currentTopic: Int, updatedTopic: Topic) {
+    fun updateCurrentAnswer(updatedAnswer: Answer) {
         apiClient.getMainApiService(
             requireActivity().applicationContext
-        ).updateTopic(currentTopic, updatedTopic)
-            .enqueue(object : Callback<Topic> {
+        ).updateAnswer(updatedAnswer.idTopico, updatedAnswer)
+            .enqueue(object : Callback<Answer> {
                 override fun onResponse(
-                    call: Call<Topic>,
-                    response: Response<Topic>
+                    call: Call<Answer>,
+                    response: Response<Answer>
                 ) {
                     if (response.isSuccessful) {
-                        val updatedTopic = response.body()
-                        Log.w("TÓPICO ATUALIZADO", "${updatedTopic}")
-                        dismiss()
+                        val updatedAnswerResponse = response.body()
+                        Log.w("ANSWER ATUALIZADA", "${updatedAnswerResponse}")
+
                     } else {
                         Log.e(
-                            "ERRO AO ATULIZAR TÓPICO",
-                            "Call: ${call} Response: ${response} TópicoErro no else: ${updatedTopic}"
+                            "ERRO AO ATULIZAR ANSWER",
+                            "Call: ${call} Response: ${response} ANSWER no else: ${updatedAnswer}"
                         )
                     }
                 }
 
-                override fun onFailure(call: Call<Topic>, t: Throwable) {
+                override fun onFailure(call: Call<Answer>, t: Throwable) {
                     t.printStackTrace()
                     Log.e(
-                        "ERRO NO SERVIDOR AO ATULIZAR TÓPICO",
+                        "ERRO NO SERVIDOR AO ATULIZAR ANSWER",
                         "Call: ${call}"
                     )
                 }
             })
     }
+
 }
