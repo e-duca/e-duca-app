@@ -24,6 +24,7 @@ class AccessThread : AppCompatActivity(), RecyclerViewInterface {
     lateinit var apiClient: ApiClient
     lateinit var answers: RecyclerView
     lateinit var answerAdapter: AnswerListAdapter
+    lateinit var page: Intent
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +32,7 @@ class AccessThread : AppCompatActivity(), RecyclerViewInterface {
         apiClient = ApiClient()
         answers = findViewById<RecyclerView>(R.id.rv_answers)!!
 
+        val returnPage = intent.getStringExtra("page")
         val topicList: TopicResponseArray? = intent.getParcelableExtra("topicList")
         val position: String? = intent.getStringExtra("position")
         val topic = topicList?.topic?.get(position!!.toInt())
@@ -68,9 +70,14 @@ class AccessThread : AppCompatActivity(), RecyclerViewInterface {
         }
 
         btnBack.setOnClickListener {
-            val myQuestions = Intent(applicationContext, MyQuestions::class.java)
-            myQuestions.putExtra("btn_text", "Ver meus tópicos")
-            startActivity(myQuestions)
+            if (returnPage!!.contains("myQuestions")) {
+                page = Intent(applicationContext, MyQuestions::class.java)
+                page.putExtra("btn_text", "Ver todos os tópicos")
+            } else {
+                page = Intent(applicationContext, AllQuestions::class.java)
+                page.putExtra("btn_text", "Ver meus tópicos")
+            }
+            startActivity(page)
         }
     }
 

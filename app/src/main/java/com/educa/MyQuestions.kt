@@ -104,6 +104,7 @@ class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
         val accessTopic = Intent(this.applicationContext, AccessThread::class.java)
         accessTopic.putExtra("topicList", TopicResponseArray(myTopicsList))
         accessTopic.putExtra("position", position.toString())
+        accessTopic.putExtra("page", "myQuestions")
 
         startActivity(accessTopic)
     }

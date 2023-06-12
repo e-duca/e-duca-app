@@ -93,6 +93,7 @@ class AllQuestions : AppCompatActivity(), RecyclerViewInterface {
         val accessTopic = Intent(this.applicationContext, AccessThread::class.java)
         accessTopic.putExtra("topicList", TopicResponseArray(allTopicsList))
         accessTopic.putExtra("position", position.toString())
+        accessTopic.putExtra("page", "allQuestions")
 
         startActivity(accessTopic)
     }
