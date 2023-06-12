@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.educa.R
 import com.educa.api.model.ContentResponse
 import com.educa.ui.recyclerview.RecyclerViewInterface
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ContentListAdapter(
     private val context: Context,
@@ -25,7 +27,18 @@ class ContentListAdapter(
             ability.text = content.habilidade.codigo
 
             val posted = itemView.findViewById<TextView>(R.id.postedAt)
-            posted.text = content.dataCriacao
+
+            val dateString = content.dataCriacao
+
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            val parsedDate = dateFormat.parse(dateString)
+
+            val formattedDate = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(parsedDate)
+
+            val postInString = itemView.context.getString(R.string.txt_postIn)
+            val finalDateString = "$postInString $formattedDate"
+            posted.text = finalDateString
+
 
             itemView.setOnClickListener(View.OnClickListener {
                 if (true) {

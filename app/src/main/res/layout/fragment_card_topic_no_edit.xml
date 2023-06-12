@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/card_contentEdit"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="95dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="30dp"
@@ -19,84 +19,85 @@
 
         <View
             android:id="@+id/border_side"
-            android:layout_width="7dp"
-            android:layout_height="70dp"
+            android:layout_width="6dp"
+            android:layout_height="80dp"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:layout_marginStart="0.5dp"
+            android:layout_marginStart="0.7dp"
             android:background="@drawable/db_border_side" />
 
         <LinearLayout
             android:id="@+id/linear_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="22dp"
             android:layout_toEndOf="@id/border_side"
             android:gravity="start"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/title"
-                style="@style/style_subText"
+                style="@style/style_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/title_class"
-                android:textColor="@color/black" />
+                android:text="@string/title_questions"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/description"
                 style="@style/style_textXXSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="220dp"
+                android:layout_height="30dp"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/txt_body_question"
                 android:textColor="@color/black" />
 
-            <TextView
-                android:id="@+id/answers"
-                style="@style/style_textXSmall"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/rl_posted"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/montserrat_semibold"
-                android:text="@string/txt_qty_answer"
-                android:textColor="@color/pink550" />
+                android:layout_marginEnd="20dp"
+                >
+
+                <TextView
+                    android:id="@+id/txt_postedAt"
+                    style="@style/style_textXXSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/txt_date_question"
+                    android:textColor="#B1B1B1" />
+
+                <TextView
+                    android:id="@+id/txt_nameStudent"
+                    style="@style/style_textXXSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/txt_question_name"
+                    android:textColor="@color/pink550" />
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
 
 
-        <RelativeLayout
-            android:id="@+id/rl_posted"
+        <TextView
+            android:id="@+id/answers"
+            style="@style/style_textXSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="7dp"
             android:layout_marginEnd="20dp"
-            android:gravity="end">
-
-            <TextView
-                android:id="@+id/txt_postedAt"
-                style="@style/style_textXXSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_semibold"
-                android:text="@string/txt_date_question"
-                android:textColor="#B1B1B1" />
-
-            <TextView
-                android:id="@+id/txt_nameStudent"
-                style="@style/style_textXXSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/txt_postedAt"
-                android:layout_centerInParent="true"
-                android:fontFamily="@font/montserrat"
-                android:text="@string/txt_question_name"
-                android:textColor="@color/pink550" />
-
-        </RelativeLayout>
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/txt_qty_answer"
+            android:textColor="@color/pink550" />
     </RelativeLayout>
 
 </FrameLayout>

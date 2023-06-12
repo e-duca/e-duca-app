@@ -65,7 +65,7 @@ class Login : AppCompatActivity() {
 
         val coroutineScope = CoroutineScope(Dispatchers.Main)
         coroutineScope.launch {
-            delay(2000)
+            delay(400)
             Log.w("ENTROU NA FUNÇÃO LOGIN", "  $email $password")
             apiClient.getAuthApiService().login(LoginRequest(email, password))
                 .enqueue(object : Callback<LoginResponse> {

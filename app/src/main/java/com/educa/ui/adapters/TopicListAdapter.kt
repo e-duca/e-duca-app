@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.educa.R
 import com.educa.api.model.TopicResponse
 import com.educa.ui.recyclerview.RecyclerViewInterface
+import java.text.SimpleDateFormat
+import java.util.*
 
 class TopicListAdapter(
     private val context: Context,
@@ -24,13 +26,23 @@ class TopicListAdapter(
             title.text = topic.titulo
 
             val name = itemView.findViewById<TextView>(R.id.txt_nameStudent)
-            name.text = topic.usuario.nome
 
             val posted = itemView.findViewById<TextView>(R.id.txt_postedAt)
-            posted.text = topic.dataCriacao
 
             val answers = itemView.findViewById<TextView>(R.id.answers)
             answers.text = "${topic.respostas.size} respostas"
+
+            val dateString = topic.dataCriacao
+
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            val parsedDate = dateFormat.parse(dateString)
+
+            val formattedDate = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(parsedDate)
+
+            val postInString = itemView.context.getString(R.string.txt_postIn)
+            val finalDateString = "$postInString $formattedDate por "
+            posted.text = finalDateString
+            name.text = topic.usuario.nome
 
             title.setOnClickListener(View.OnClickListener {
                 if (true) {

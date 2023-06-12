@@ -40,11 +40,12 @@
     <string name="txt_question_title">Título da pergunta</string>
     <string name="txt_body_question">Início do corpo da pergunta…</string>
     <string name="txt_qty_answer">3 respostas</string>
-    <string name="txt_date_question">Postado em 01/01/22\n por</string>
+    <string name="txt_date_question">Postado em 01/01/22 por </string>
     <string name="txt_question_name">Lucas Gestal</string>
     <string name="txt_ops">Ops…</string>
     <string name="txt_restTextOps">Se você é professor, acesse nossa aplicação pelo navegador e aproveite nosso site!</string>
     <string name="txt_postfor">Postado por</string>
+    <string name="txt_postIn">Postado em</string>
     <string name="txt_acess_cert">Acessar certificado</string>
     <string name="txt_nameteacher">Professor Carlos Roberto</string>
     <string name="txt_see_topics">Ver todos os \n tópicos</string>

@@ -172,7 +172,7 @@ class SignUp : AppCompatActivity() {
 
         coroutineScope.launch {
             // Delay de 2 segundos
-            delay(2000)
+            delay(400)
             apiClient.getMainApiService(this@SignUp).registerStudent(newStudent)
                 .enqueue(object : Callback<Student> {
                     override fun onResponse(
