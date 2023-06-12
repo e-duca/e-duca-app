@@ -84,15 +84,6 @@
                     android:text="@string/txt_student"
                     android:textColor="@color/yellow400" />
 
-                <TextView
-                    android:id="@+id/level"
-                    style="@style/style_textSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/montserrat_medium"
-                    android:text="@string/txt_level"
-                    android:textColor="@color/yellow800" />
             </LinearLayout>
 
         </RelativeLayout>

@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import com.educa.Content
+import com.educa.Login
 import com.educa.MyQuestions
 import com.educa.R
 
@@ -32,6 +33,7 @@ class FragmentMenu : Fragment() {
 
         val homePage = view.findViewById<TextView>(R.id.tv_home_page)
         val doubtForum = view.findViewById<TextView>(R.id.tv_doubt_forum)
+        val exit = view.findViewById<TextView>(R.id.tv_exit)
 
         homePage.setOnClickListener {
             val content = Intent(activity, Content::class.java)
@@ -43,6 +45,13 @@ class FragmentMenu : Fragment() {
             myQuestions.putExtra("btn_text", "Ver todos os tópicos")
             startActivity(myQuestions)
         }
+
+        exit.setOnClickListener{
+            val login = Intent(activity, Login::class.java)
+            startActivity(login)
+        }
+
+
 
         btnOpenDrawer = view.findViewById(R.id.btnOpenDrawer)
         btnCloseDrawer = view.findViewById(R.id.btnCloseDrawer)
