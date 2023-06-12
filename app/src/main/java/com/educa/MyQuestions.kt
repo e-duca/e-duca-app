@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcel
+import android.os.Parcelable
 import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.FragmentContainerView
@@ -100,10 +102,10 @@ class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
 
     override fun onItemClick(position: Int) {
         val accessTopic = Intent(this.applicationContext, AccessThread::class.java)
+        accessTopic.putExtra("topicList", TopicResponseArray(myTopicsList))
+        accessTopic.putExtra("position", position.toString())
+        accessTopic.putExtra("page", "myQuestions")
 
-        accessTopic.putExtra("title", myTopicsList[position].titulo)
-        accessTopic.putExtra("txt_postedAt", myTopicsList[position].dataCriacao)
-        accessTopic.putExtra("txt_nameStudent", myTopicsList[position].usuario.nome)
         startActivity(accessTopic)
     }
 

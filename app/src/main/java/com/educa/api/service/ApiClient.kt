@@ -12,10 +12,11 @@ class ApiClient {
     // var BASE_URL = "http://localhost:80/"
     var BASE_URL = "https://educabacktest.hopto.org/"
 
-    fun getAuthApiService(): AuthApiService {
+    fun getAuthApiService(context: Context): AuthApiService {
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)
+            .client(okhttpClient(context))
             .build()
         return retrofit.create(AuthApiService::class.java)
     }

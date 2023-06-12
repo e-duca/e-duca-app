@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import com.educa.R
 import com.educa.api.model.Rating
@@ -21,7 +23,10 @@ class Likert : Fragment() {
     private lateinit var sessionManager: SessionManager
     private lateinit var apiClient: ApiClient
     private lateinit var rating: String
-
+    private lateinit var feedback: TextView
+    private lateinit var emojis: LinearLayout
+    private lateinit var ratings: LinearLayout
+    private lateinit var text: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -97,9 +102,16 @@ class Likert : Fragment() {
                     response: Response<Rating>
                 ) {
                     if (response.isSuccessful) {
+                        feedback = view.findViewById<TextView>(R.id.txt_feedback)
+                        text = view.findViewById<TextView>(R.id.txt_aula)
+                        emojis = view.findViewById<LinearLayout>(R.id.ln_emoticon)
+                        ratings = view.findViewById<LinearLayout>(R.id.ln_txt)
+                        emojis.visibility = View.GONE
+                        text.visibility = View.GONE
+                        ratings.visibility = View.GONE
+                        feedback.visibility = View.VISIBLE
                         val responseNewRating = response.body()
                         Log.w("AVALIACAO responseNewRating", "${responseNewRating}")
-
                     } else {
                         Toast.makeText(
                             context,
@@ -109,7 +121,7 @@ class Likert : Fragment() {
 
                         Log.e(
                             "ERRO AO CRIAR NOVA AVALIACAO",
-                        "Call: ${call} Response: ${response} "
+                            "Call: ${call} Response: ${response} "
                         )
                     }
 
