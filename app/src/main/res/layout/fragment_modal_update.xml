@@ -50,6 +50,7 @@
             style="@style/style_ipt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="top"
             android:inputType="textMultiLine"
             android:lines="5" />
 

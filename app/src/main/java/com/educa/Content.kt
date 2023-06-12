@@ -70,7 +70,7 @@ class Content : AppCompatActivity(), RecyclerViewInterface {
         loadingView.visibility = View.VISIBLE
 
         loadingJob = coroutineScope.launch {
-            delay(1000)
+            delay(100)
 
             contentList = mutableListOf()
             filteredContentList = mutableListOf() // Inicialize a lista aqui
