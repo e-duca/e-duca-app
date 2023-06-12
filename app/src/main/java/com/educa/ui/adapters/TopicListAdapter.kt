@@ -46,7 +46,6 @@ class TopicListAdapter(
             val postInString = itemView.context.getString(R.string.txt_postIn)
             val finalDateString = "$postInString $formattedDate por "
             posted.text = finalDateString
-            name.text = topic.usuario.nome
 
             title.setOnClickListener(View.OnClickListener {
                 if (true) {
