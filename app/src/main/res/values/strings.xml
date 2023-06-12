@@ -80,4 +80,7 @@
     <string name="txt_body_answer">Corpo da resposta</string>
     <string name="txt_no_content_found_itle">nenhum conteúdo encontrado com este título</string>
     <string name="txt_btn_exit">Sair</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="saveAnswer">Salvar</string>
 </resources>
