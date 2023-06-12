@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.educa.R
+import org.json.JSONObject
 import com.educa.api.model.AnswerResponse
+import com.educa.api.service.SessionManager
 import com.educa.ui.recyclerview.RecyclerViewInterface
 
 class AnswerListAdapter(
@@ -16,8 +18,10 @@ class AnswerListAdapter(
     private val recyclerViewInterface: RecyclerViewInterface
 ) : RecyclerView.Adapter<AnswerListAdapter.ViewHolder>() {
 
+     private lateinit var sessionManager: SessionManager
     class ViewHolder(view: View, recyclerViewInterface: RecyclerViewInterface) :
         RecyclerView.ViewHolder(view) {
+
         fun bind(answer: AnswerResponse, recyclerViewInterface: RecyclerViewInterface) {
             val title = itemView.findViewById<TextView>(R.id.answerBody)
             title.text = answer.resposta
@@ -45,6 +49,9 @@ class AnswerListAdapter(
     override fun onBindViewHolder(holder: AnswerListAdapter.ViewHolder, position: Int) {
         val answer = answers?.get(position)
         holder.bind(answer!!, recyclerViewInterface)
+        sessionManager = SessionManager(context)
+        val mDecode = sessionManager.decodeToken(sessionManager.fetchAuthToken()!!)
+        val userId = JSONObject(mDecode).getString("sub")
     }
 
     override fun getItemCount(): Int = answers!!.size
