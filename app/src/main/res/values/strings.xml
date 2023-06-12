@@ -83,4 +83,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="saveAnswer">Salvar</string>
+    <string name="txt_ty">Obrigado(a) pelo feedback!</string>
 </resources>
