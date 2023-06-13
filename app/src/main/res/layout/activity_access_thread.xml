@@ -31,30 +31,39 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/fragment_answer" />
+                tools:listitem="@layout/fragment_answer"
+                />
 
         </LinearLayout>
 
-        <LinearLayout
+
+        <RelativeLayout
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
             android:id="@+id/lyt_addAnswer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/lyt_body_answers"
-            android:visibility="gone">
+            android:visibility="gone"
+            >
 
             <EditText
                 android:id="@+id/ipt_answer"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSave"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
+                style="@style/style_btnYellowSmall"
+                android:layout_below="@+id/ipt_answer"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/db_btn_solid"
                 android:text="@string/saveAnswer" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
