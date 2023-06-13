@@ -23,7 +23,6 @@
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:layout_below="@id/txt_title"
-
             android:id="@+id/SV_text">
             <TextView
                 android:id="@+id/txt_content"
@@ -33,7 +32,9 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="20dp"
-                android:text="@string/txt_context" />
+                android:text="@string/txt_context"
+                android:paddingBottom="50dp"
+                />
 
         </ScrollView>
         <androidx.fragment.app.FragmentContainerView
@@ -45,6 +46,7 @@
             tools:layout="@layout/fragment_likert"
             android:layout_below="@id/SV_text"
             android:layout_centerHorizontal="true"
+
             />
 
         <LinearLayout
