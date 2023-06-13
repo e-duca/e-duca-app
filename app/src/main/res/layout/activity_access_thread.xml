@@ -32,7 +32,7 @@
                 android:layout_height="match_parent"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/fragment_answer"
-                android:visibility="gone"/>
+                />
 
         </LinearLayout>
 
@@ -44,6 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/lyt_body_answers"
+            android:visibility="gone"
             >
 
             <EditText
