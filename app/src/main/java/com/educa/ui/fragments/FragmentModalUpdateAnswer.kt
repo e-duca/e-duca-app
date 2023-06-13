@@ -8,12 +8,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.DialogFragment
+import com.educa.AccessThread
 import com.educa.R
 import com.educa.api.model.Answer
 import com.educa.api.service.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class FragmentModalUpdateAnswer(val idResposta: Int) : DialogFragment() {
     lateinit var apiClient: ApiClient
@@ -72,6 +74,12 @@ class FragmentModalUpdateAnswer(val idResposta: Int) : DialogFragment() {
                         val updatedAnswerResponse = response.body()
                         Log.w("ANSWER ATUALIZADA", "${updatedAnswerResponse}")
 
+                        val answer = activity as AccessThread
+
+                        if (Objects.nonNull(updatedAnswer)) {
+                            answer.updateListTAnswer(updatedAnswer, updatedAnswer.idTopico)
+                        }
+                        dismiss()
                     } else {
                         Log.e(
                             "ERRO AO ATULIZAR ANSWER",

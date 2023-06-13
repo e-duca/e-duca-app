@@ -49,6 +49,34 @@ class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
         }
     }
 
+    fun updateListTopic(topic: Topic?, id: Int) {
+        myTopicsList.map{
+            if (it.idTopico == id) {
+                it.titulo = topic!!.titulo
+                it.descricao = topic.descricao
+            }
+        }
+
+        updateLayout()
+    }
+
+    fun deleteTopic(id: Int) {
+        myTopicsList = myTopicsList.filter { it.idTopico != id } as MutableList<TopicResponse>
+        updateLayout()
+    }
+
+    fun updateLayout() {
+        topicAdapter = TopicListAdapter(this, myTopicsList, this)
+
+        val layoutManager = LinearLayoutManager(this)
+
+        myTopics.layoutManager = layoutManager
+
+        myTopics.adapter = topicAdapter
+
+        topicAdapter.notifyDataSetChanged()
+    }
+
     fun loadMyTopicsList() {
         myTopicsList = mutableListOf()
         topicAdapter = TopicListAdapter(this, myTopicsList, this)

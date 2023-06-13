@@ -45,6 +45,11 @@ class Content : AppCompatActivity(), RecyclerViewInterface {
         noContentText = findViewById(R.id.noContentText)
         loadingView = findViewById(R.id.loadingView)
 
+        filteredContentList = mutableListOf() // Inicialize a lista aqui
+        contentList = mutableListOf()
+
+        contentAdapter = ContentListAdapter(this@Content, filteredContentList, this@Content)
+
         loadContentList()
         Log.i(
             "CONTEÚDO: CHAMOU A FUNÇÃO",
@@ -71,10 +76,8 @@ class Content : AppCompatActivity(), RecyclerViewInterface {
         loadingJob = coroutineScope.launch {
             delay(100)
 
-            contentList = mutableListOf()
-            filteredContentList = mutableListOf() // Inicialize a lista aqui
 
-            contentAdapter = ContentListAdapter(this@Content, filteredContentList, this@Content)
+//            filteredContentList = mutableListOf() // Inicialize a lista aqui
 
             val layoutManager = LinearLayoutManager(this@Content)
 

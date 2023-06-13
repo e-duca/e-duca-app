@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context=".ui.fragments.FragmentCardTopic">
 
 
@@ -39,7 +39,9 @@
             <TextView
                 android:id="@+id/title"
                 style="@style/style_text"
-                android:layout_width="match_parent"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:text="@string/title_questions"
                 android:textColor="@color/black"
@@ -50,6 +52,8 @@
                 style="@style/style_textXXSmall"
                 android:layout_width="220dp"
                 android:layout_height="30dp"
+                android:maxLines="2"
+                android:ellipsize="end"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/txt_body_question"
                 android:textColor="@color/black" />

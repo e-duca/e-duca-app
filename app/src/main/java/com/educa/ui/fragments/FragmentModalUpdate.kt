@@ -8,12 +8,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.DialogFragment
+import com.educa.MyQuestions
 import com.educa.R
 import com.educa.api.model.Topic
 import com.educa.api.service.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 
 class FragmentModalUpdate(val currentTopic: Int) : DialogFragment() {
@@ -73,6 +75,12 @@ class FragmentModalUpdate(val currentTopic: Int) : DialogFragment() {
                     if (response.isSuccessful) {
                         val updatedTopic = response.body()
                         Log.w("TÓPICO ATUALIZADO", "${updatedTopic}")
+
+                        val question = activity as MyQuestions
+
+                        if (Objects.nonNull(updatedTopic)) {
+                            question.updateListTopic(updatedTopic, currentTopic)
+                        }
                         dismiss()
                     } else {
                         Log.e(

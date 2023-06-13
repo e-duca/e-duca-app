@@ -4,16 +4,17 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.educa.api.model.Answer
-import com.educa.api.model.TopicResponseArray
+import com.educa.api.model.*
 import com.educa.api.service.ApiClient
 import com.educa.ui.adapters.AnswerListAdapter
+import com.educa.ui.adapters.TopicListAdapter
 import com.educa.ui.recyclerview.RecyclerViewInterface
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,6 +26,7 @@ class AccessThread : AppCompatActivity(), RecyclerViewInterface {
     lateinit var answers: RecyclerView
     lateinit var answerAdapter: AnswerListAdapter
     lateinit var page: Intent
+    lateinit var myAnswerList: MutableList<AnswerResponse>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,17 +35,19 @@ class AccessThread : AppCompatActivity(), RecyclerViewInterface {
         answers = findViewById<RecyclerView>(R.id.rv_answers)!!
 
         val returnPage = intent.getStringExtra("page")
+
         val topicList: TopicResponseArray? = intent.getParcelableExtra("topicList")
         val position: String? = intent.getStringExtra("position")
         val topic = topicList?.topic?.get(position!!.toInt())
         val answerList = topic?.respostas
+        myAnswerList = answerList as MutableList<AnswerResponse>
 
         val btnBack = findViewById<Button>(R.id.btnBack)
         val btnSave = findViewById<Button>(R.id.btnSave)
         val layoutAnswer = findViewById<LinearLayout>(R.id.lyt_addAnswer)
         val btnAddAnswer = findViewById<Button>(R.id.btn_add_answer)
 
-        answerAdapter = AnswerListAdapter(this, answerList, this)
+        answerAdapter = AnswerListAdapter(this, myAnswerList, this)
 
         val layoutManager = LinearLayoutManager(this)
 
@@ -110,6 +114,33 @@ class AccessThread : AppCompatActivity(), RecyclerViewInterface {
                     )
                 }
             })
+    }
+
+    fun updateListTAnswer(answer: Answer?, id: Int) {
+        myAnswerList.map{
+            if (it.idResposta == id) {
+                it.resposta = answer!!.resposta
+            }
+        }
+
+        updateAnswer()
+    }
+
+    fun deleteTAnswer(id: Int) {
+        myAnswerList = myAnswerList.filter { it.idResposta != id } as MutableList<AnswerResponse>
+        updateAnswer()
+    }
+
+    fun updateAnswer() {
+        answerAdapter = AnswerListAdapter(this, myAnswerList, this)
+
+        val layoutManager = LinearLayoutManager(this)
+
+        answers.layoutManager = layoutManager
+
+        answers.adapter = answerAdapter
+
+        answerAdapter.notifyDataSetChanged()
     }
 
     override fun onItemClick(position: Int) {
