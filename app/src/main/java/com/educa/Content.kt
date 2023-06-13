@@ -141,11 +141,12 @@ class Content : AppCompatActivity(), RecyclerViewInterface {
     }
 
     override fun onItemClick(position: Int) {
+        val urlVideo = contentList[position].urlVideo
         val accessContent =
-            if (contentList[position].urlVideo !== null) {
-                Intent(this.applicationContext, Video::class.java)
-            } else {
+            if (urlVideo == null || urlVideo == "https://www.youtube.com/embed/") {
                 Intent(this.applicationContext, Reading::class.java)
+            } else {
+                Intent(this.applicationContext, Video::class.java)
             }
 
         accessContent.putExtra("contentId", contentList[position].idConteudo.toString())
