@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
 import android.util.Log
+import android.view.View
+import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.fragment.app.FragmentContainerView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,6 +28,7 @@ class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
     private lateinit var sessionManager: SessionManager
     lateinit var topicAdapter: TopicListAdapter
     lateinit var myTopicsList: MutableList<TopicResponse>
+    lateinit var emptyView: RelativeLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,6 +68,7 @@ class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
         updateLayout()
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateLayout() {
         topicAdapter = TopicListAdapter(this, myTopicsList, this)
 
@@ -75,6 +79,9 @@ class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
         myTopics.adapter = topicAdapter
 
         topicAdapter.notifyDataSetChanged()
+
+        updateEmptyViewVisibility()
+
     }
 
     fun loadMyTopicsList() {
@@ -110,6 +117,8 @@ class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
                             "Call: ${call}, Response: ${response.code()} ${response.body()})"
                         )
                     }
+                    updateEmptyViewVisibility()
+
                 }
 
                 override fun onFailure(call: Call<TopicResponseArray>, t: Throwable) {
@@ -123,10 +132,11 @@ class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
                         "ERRO AO PUXAR TÓPICO",
                         "Call: ${call}  ${t.message} ${t.printStackTrace()}"
                     )
+                    updateEmptyViewVisibility()
+
                 }
             })
     }
-
 
     override fun onItemClick(position: Int) {
         val accessTopic = Intent(this.applicationContext, AccessThread::class.java)
@@ -135,6 +145,16 @@ class MyQuestions : AppCompatActivity(), RecyclerViewInterface {
         accessTopic.putExtra("page", "myQuestions")
 
         startActivity(accessTopic)
+    }
+
+    private fun updateEmptyViewVisibility() {
+        emptyView = findViewById(R.id.emptyView)
+
+        if (myTopicsList.isEmpty()) {
+            emptyView.visibility = View.VISIBLE
+        } else {
+            emptyView.visibility = View.GONE
+        }
     }
 
 }

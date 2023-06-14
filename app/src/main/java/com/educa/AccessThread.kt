@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.ScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.educa.api.model.*
@@ -19,8 +20,10 @@ import com.educa.ui.recyclerview.RecyclerViewInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class AccessThread : AppCompatActivity(), RecyclerViewInterface {
+    lateinit var scrollView: ScrollView
     lateinit var newAnswer: Answer
     lateinit var apiClient: ApiClient
     lateinit var answers: RecyclerView
@@ -33,6 +36,8 @@ class AccessThread : AppCompatActivity(), RecyclerViewInterface {
         setContentView(R.layout.activity_access_thread)
         apiClient = ApiClient()
         answers = findViewById<RecyclerView>(R.id.rv_answers)!!
+
+        scrollView = findViewById<ScrollView>(R.id.sv_body_answers)
 
         val returnPage = intent.getStringExtra("page")
 
@@ -65,11 +70,19 @@ class AccessThread : AppCompatActivity(), RecyclerViewInterface {
                     resposta = answer
                 )
                 addAnswer(newAnswer)
+                updateAnswer()
+
+                answerField.text.clear()
+
             }
         }
 
         btnAddAnswer.setOnClickListener {
             layoutAnswer.visibility = android.view.View.VISIBLE
+
+            scrollView.post {
+                scrollView.fullScroll(ScrollView.FOCUS_DOWN)
+            }
         }
 
         btnBack.setOnClickListener {
@@ -84,7 +97,7 @@ class AccessThread : AppCompatActivity(), RecyclerViewInterface {
         }
     }
 
-    fun addAnswer(newAnswer: Answer) {
+    fun addAnswer(newAnswer: Answer ) {
         apiClient.getMainApiService(this.applicationContext).registerAnswer(newAnswer)
             .enqueue(object : Callback<Answer> {
                 @SuppressLint("NotifyDataSetChanged")
@@ -97,6 +110,7 @@ class AccessThread : AppCompatActivity(), RecyclerViewInterface {
                         Log.w("NEW ANSWER", "${newAnswer}")
                         Log.w("RESPONSE BODY NEW ANSWER", "${answer}")
                         answerAdapter.notifyDataSetChanged()
+                        updateAnswer()
 
                     } else {
                         Log.e(
@@ -126,11 +140,12 @@ class AccessThread : AppCompatActivity(), RecyclerViewInterface {
         updateAnswer()
     }
 
-    fun deleteTAnswer(id: Int) {
+    fun deleteAnswer(id: Int) {
         myAnswerList = myAnswerList.filter { it.idResposta != id } as MutableList<AnswerResponse>
         updateAnswer()
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateAnswer() {
         answerAdapter = AnswerListAdapter(this, myAnswerList, this)
 

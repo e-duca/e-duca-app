@@ -19,6 +19,8 @@ import java.util.*
 
 class FragmentModalUpdateAnswer(val idResposta: Int) : DialogFragment() {
     lateinit var apiClient: ApiClient
+    private lateinit var answerField: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -41,13 +43,12 @@ class FragmentModalUpdateAnswer(val idResposta: Int) : DialogFragment() {
         val topicId = idResposta
 
         btn_updateTopic.setOnClickListener {
-            val answerField = view.findViewById<EditText>(R.id.ipt_answerBody)
-            val answer = answerField.text.toString()
+            val userAnswer = answerField.text.toString()
 
-            if (answer.isNotBlank()) {
+            if (userAnswer.isNotBlank()) {
                 val updatedAnswer = Answer(
                     idTopico = topicId,
-                    resposta = answer
+                    resposta = userAnswer
                 )
                 updateCurrentAnswer(updatedAnswer)
             } else {
@@ -59,6 +60,7 @@ class FragmentModalUpdateAnswer(val idResposta: Int) : DialogFragment() {
             dismiss()
         }
 
+        answerField = view.findViewById(R.id.ipt_answerBody)
     }
 
     fun updateCurrentAnswer(updatedAnswer: Answer) {
@@ -97,5 +99,4 @@ class FragmentModalUpdateAnswer(val idResposta: Int) : DialogFragment() {
                 }
             })
     }
-
 }

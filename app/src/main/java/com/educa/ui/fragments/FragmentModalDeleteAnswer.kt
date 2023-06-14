@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.DialogFragment
+import com.educa.AccessThread
+import com.educa.MyQuestions
 import com.educa.R
 import com.educa.api.model.Answer
 import com.educa.api.model.Topic
@@ -56,11 +58,14 @@ class FragmentModalDeleteAnswer(val deletedAnswer: Int) : DialogFragment() {
                     call: Call<Answer>,
                     response: Response<Answer>
                 ) {
-                    if (response.isSuccessful) {
+
+                    if (response.code() == 204) {
                         val deletedAnswerResponse = response.body()
                         Log.w("ANSWER DELETED", "${deletedAnswerResponse}")
-                        dismiss()
 
+                        val accessThread = activity as AccessThread
+                        accessThread.deleteAnswer(deletedAnswer)
+                        dismiss()
                     } else {
 
                         Log.e(
@@ -72,9 +77,12 @@ class FragmentModalDeleteAnswer(val deletedAnswer: Int) : DialogFragment() {
 
                 override fun onFailure(call: Call<Answer>, t: Throwable) {
                     t.printStackTrace()
+                    val accessThread = activity as AccessThread
+                    accessThread.deleteAnswer(deletedAnswer)
+                    dismiss()
                     Log.e(
-                        "ERRO NO SERVIDOR AO DELETAR ANSWER",
-                        "Call: ${call} ERRO ${t.message} ${t}"
+                        "ERROR NO SERVIDOR AO DELETAR ANSWER",
+                        "Call: ${call}"
                     )
                 }
             })

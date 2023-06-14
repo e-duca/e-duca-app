@@ -53,6 +53,33 @@
 
         </LinearLayout>
 
+        <RelativeLayout
+            android:id="@+id/emptyView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_buttons"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_notFound"
+                android:layout_width="260dp"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="100dp"
+                android:background="@mipmap/empty" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/style_subTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_notFound"
+                android:layout_centerInParent="true"
+                android:text="@string/txt_no_topic_create"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

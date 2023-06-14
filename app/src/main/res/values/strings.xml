@@ -81,8 +81,11 @@
     <string name="txt_body_answer">Corpo da resposta</string>
     <string name="txt_no_content_found_itle">nenhum conteúdo encontrado com este título</string>
     <string name="txt_btn_exit">Sair</string>
- <string name="saveAnswer">Salvar</string>
+    <string name="saveAnswer">Salvar</string>
     <string name="txt_ty">Obrigado(a) pelo feedback!</string>
     <string name="txt_deleteAnswer">Deseja deletar sua resposta?</string>
     <string name="txt_hintDelete">Você não poderá mais recuperá-la após realizar essa ação.</string>
+    <string name="txt_no_topic_create">Você ainda não criou nenhum tópico</string>
+
+
 </resources>
