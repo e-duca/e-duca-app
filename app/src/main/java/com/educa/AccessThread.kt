@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.ScrollView
+import android.widget.RelativeLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.educa.api.model.*
@@ -49,7 +50,7 @@ class AccessThread : AppCompatActivity(), RecyclerViewInterface {
 
         val btnBack = findViewById<Button>(R.id.btnBack)
         val btnSave = findViewById<Button>(R.id.btnSave)
-        val layoutAnswer = findViewById<LinearLayout>(R.id.lyt_addAnswer)
+        val layoutAnswer = findViewById<RelativeLayout>(R.id.lyt_addAnswer)
         val btnAddAnswer = findViewById<Button>(R.id.btn_add_answer)
 
         answerAdapter = AnswerListAdapter(this, myAnswerList, this)
