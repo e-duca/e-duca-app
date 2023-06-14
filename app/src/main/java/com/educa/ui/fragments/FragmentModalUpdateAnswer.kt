@@ -8,15 +8,19 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.DialogFragment
+import com.educa.AccessThread
 import com.educa.R
 import com.educa.api.model.Answer
 import com.educa.api.service.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class FragmentModalUpdateAnswer(val idResposta: Int) : DialogFragment() {
     lateinit var apiClient: ApiClient
+    private lateinit var answerField: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -39,13 +43,12 @@ class FragmentModalUpdateAnswer(val idResposta: Int) : DialogFragment() {
         val topicId = idResposta
 
         btn_updateTopic.setOnClickListener {
-            val answerField = view.findViewById<EditText>(R.id.ipt_answerBody)
-            val answer = answerField.text.toString()
+            val userAnswer = answerField.text.toString()
 
-            if (answer.isNotBlank()) {
+            if (userAnswer.isNotBlank()) {
                 val updatedAnswer = Answer(
                     idTopico = topicId,
-                    resposta = answer
+                    resposta = userAnswer
                 )
                 updateCurrentAnswer(updatedAnswer)
             } else {
@@ -57,6 +60,7 @@ class FragmentModalUpdateAnswer(val idResposta: Int) : DialogFragment() {
             dismiss()
         }
 
+        answerField = view.findViewById(R.id.ipt_answerBody)
     }
 
     fun updateCurrentAnswer(updatedAnswer: Answer) {
@@ -72,6 +76,12 @@ class FragmentModalUpdateAnswer(val idResposta: Int) : DialogFragment() {
                         val updatedAnswerResponse = response.body()
                         Log.w("ANSWER ATUALIZADA", "${updatedAnswerResponse}")
 
+                        val answer = activity as AccessThread
+
+                        if (Objects.nonNull(updatedAnswer)) {
+                            answer.updateListTAnswer(updatedAnswer, updatedAnswer.idTopico)
+                        }
+                        dismiss()
                     } else {
                         Log.e(
                             "ERRO AO ATULIZAR ANSWER",
@@ -89,5 +99,4 @@ class FragmentModalUpdateAnswer(val idResposta: Int) : DialogFragment() {
                 }
             })
     }
-
 }

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.DialogFragment
+import com.educa.MyQuestions
 import com.educa.R
 import com.educa.api.model.Topic
 import com.educa.api.service.ApiClient
@@ -52,21 +53,26 @@ class FragmentModalDelete(val currentTopic: Int) : DialogFragment() {
                     call: Call<Topic>,
                     response: Response<Topic>
                 ) {
-                    if (response.isSuccessful) {
+                    if (response.code() == 204) {
                         val deletedTopic = response.body()
-                        Log.w("Deleted Topic", "${deletedTopic}")
-                            dismiss()
+                        Log.w("TÓPICO DELETADO", "${deletedTopic}")
+
+                        val myQuestions = activity as MyQuestions
+                        myQuestions.deleteTopic(currentTopic)
+                        dismiss()
                     } else {
                         Log.e(
                             "ERRO AO DELETAR TÓPICO",
                             "Call: ${call} Response: ${response} Tópico DELETADO: ${currentTopic}"
                         )
-                        dismiss()
                     }
                 }
 
                 override fun onFailure(call: Call<Topic>, t: Throwable) {
                     t.printStackTrace()
+                    val myQuestions = activity as MyQuestions
+                    myQuestions.deleteTopic(currentTopic)
+                    dismiss()
                     Log.e(
                         "ERROR NO SERVIDOR AO DELETAR TÓPICO",
                         "Call: ${call}"

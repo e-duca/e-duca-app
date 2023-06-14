@@ -17,6 +17,8 @@ import com.educa.api.service.SessionManager
 import com.educa.ui.fragments.FragmentModalDeleteAnswer
 import com.educa.ui.fragments.FragmentModalUpdateAnswer
 import com.educa.ui.recyclerview.RecyclerViewInterface
+import java.text.SimpleDateFormat
+import java.util.*
 
 class AnswerListAdapter(
     private val context: Context,
@@ -34,7 +36,20 @@ class AnswerListAdapter(
             userId: String
         ) {
             val title = itemView.findViewById<TextView>(R.id.answerBody)
-            title.text = answer.resposta
+            title?.text = answer?.resposta
+
+            val dateString = answer.dataCriacao
+
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            val parsedDate = dateFormat.parse(dateString)
+
+            val formattedDate = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(parsedDate)
+
+            val postInString = itemView.context.getString(R.string.txt_postIn)
+            val finalDateString = "$postInString $formattedDate por "
+
+            val posted = itemView.findViewById<TextView>(R.id.txt_postedAt)
+            posted?.text = finalDateString
 
             val icons = itemView.findViewById<RelativeLayout>(R.id.icons)
             val editContent = itemView.findViewById<ImageButton>(R.id.edit_content)

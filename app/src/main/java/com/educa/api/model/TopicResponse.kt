@@ -36,11 +36,11 @@ data class TopicResponseArray(
 
 data class TopicResponse(
     val idTopico: Int,
-    val titulo: String?,
-    val descricao: String?,
+    var titulo: String?,
+    var descricao: String?,
     val dataCriacao: String?,
     val usuario: User?,
-    val respostas: List<AnswerResponse>?
+    var respostas: List<AnswerResponse>?
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),

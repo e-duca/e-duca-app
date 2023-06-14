@@ -5,7 +5,7 @@ import android.os.Parcelable
 
 data class AnswerResponse(
     val idResposta: Int,
-    val resposta: String?,
+    var resposta: String?,
     val dataCriacao: String?,
     val usuario: User?
 ) : Parcelable {
