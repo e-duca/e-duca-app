@@ -31,3 +31,4 @@ As aplicação é hospedada na AWS. O app se comunica com a API das aplicação 
 - [Figma](https://www.figma.com/file/IFa75b4b0aiR99MQm8oyyt/e-duca?node-id=0%3A1)
 
 # e-duca-app
+# educa-app
